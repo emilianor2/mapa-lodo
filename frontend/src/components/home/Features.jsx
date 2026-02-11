@@ -1,105 +1,150 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, Target, Users, Zap, Search, Network, BarChart3, Globe } from 'lucide-react';
+import { Rocket, Target, Users, Zap, Search, Network, Globe } from 'lucide-react';
 
-const Card = ({ title, subtitle, icon: Icon, features, colorClass }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="group relative p-8 rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden"
-    >
-        <div className={`absolute top-0 right-0 w-32 h-32 blur-[60px] opacity-20 -mr-10 -mt-10 ${colorClass}`} />
-        <div className="relative z-10">
-            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-white/5 border border-white/10 group-hover:scale-110 transition-transform`}>
-                <Icon className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-white mb-2">{title}</h3>
-            <p className="text-zinc-400 mb-8 leading-relaxed">{subtitle}</p>
+const Card = React.memo(({ title, subtitle, icon: Icon, features, isLodo, logoSrc }) => {
+    const lodoGreen = "#6FE844";
+    const lodoLight = "#f4f4f5"; // Gris claro (casi blanco)
+    const lodoDark = "#59595B";  // Fondo de la sección
 
-            <div className="grid grid-cols-1 gap-4">
-                {features.map((f, i) => (
-                    <div key={i} className="flex items-center gap-3 text-zinc-300">
-                        <div className={`w-1.5 h-1.5 rounded-full ${colorClass.replace('bg-', 'bg-opacity-100 bg-')}`} />
-                        <span className="text-sm font-medium">{f}</span>
-                    </div>
-                ))}
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -15 }}
+            viewport={{ once: true }}
+            style={{ 
+                backgroundColor: isLodo ? lodoGreen : lodoLight,
+                color: lodoDark,
+                borderColor: lodoDark 
+            }}
+            className="group relative p-8 rounded-[2.5rem] border-2 transition-all duration-500 overflow-hidden cursor-pointer shadow-xl hover:shadow-[0_25px_50px_rgba(0,0,0,0.2)]"
+            onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = isLodo ? lodoLight : lodoGreen;
+                e.currentTarget.style.borderColor = "transparent"; 
+            }}
+            onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = isLodo ? lodoGreen : lodoLight;
+                e.currentTarget.style.borderColor = lodoDark;
+            }}
+        >
+            <div className="relative z-10">
+                {/* Cuadrado del logo con lógica de contraste */}
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border border-black/5 transition-all duration-500 group-hover:scale-110 ${
+                    isLodo 
+                    ? 'bg-[#f4f4f5] group-hover:bg-white' // En card verde es gris, al invertir es blanco
+                    : 'bg-white group-hover:bg-[#f4f4f5]' // En card gris es blanco, al invertir es gris
+                }`}>
+                    {isLodo && logoSrc ? (
+                        <img src={logoSrc} alt="Lodo Logo" className="w-full h-full object-contain p-2" />
+                    ) : (
+                        <Icon className="w-8 h-8 text-[#59595B]" />
+                    )}
+                </div>
+                
+                <h3 className="text-3xl font-bold mb-2 font-montserrat uppercase tracking-tight">
+                    {title}
+                </h3>
+                <p className="mb-8 leading-relaxed font-medium opacity-80">
+                    {subtitle}
+                </p>
+
+                <div className="grid grid-cols-1 gap-4">
+                    {features.map((f, i) => (
+                        <div key={i} className="flex items-center gap-3">
+                            <div className="w-2 h-2 rounded-full bg-[#59595B] opacity-40 group-hover:opacity-100 transition-opacity" />
+                            <span className="text-sm font-bold">
+                                {f}
+                            </span>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-    </motion.div>
-);
+        </motion.div>
+    );
+});
 
 const Features = () => {
-    const roadmapSteps = [
+    const lodoDark = "#59595B";
+    const roadmapSteps = useMemo(() => [
         { label: "Convocatoria", icon: Search },
         { label: "Selección", icon: Target },
         { label: "Mentoría", icon: Users },
         { label: "Inversión", icon: Zap },
         { label: "Escala", icon: Globe }
-    ];
+    ], []);
 
     return (
-        <section id="features" className="py-24 px-6 max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
-                <Card
-                    title="LODO"
-                    subtitle="La plataforma centralizada para el descubrimiento y mapeo del ecosistema. Datos en tiempo real para decisiones estratégicas."
-                    icon={Network}
-                    colorClass="bg-primary"
-                    features={[
-                        "Mapa interactivo de organizaciones",
-                        "Filtros avanzados por sector y tipo",
-                        "Directorio de startups y proveedores",
-                        "Análisis de clusters por región"
-                    ]}
-                />
-                <Card
-                    title="LODAR"
-                    subtitle="Nuestro brazo ejecutor y acelerador. Programas diseñados para potenciar el crecimiento de startups de alto impacto."
-                    icon={Rocket}
-                    colorClass="bg-emerald-500"
-                    features={[
-                        "Programas de aceleración a medida",
-                        "Red de mentores especializados",
-                        "Acceso a capital semilla y venture",
-                        "Validación técnica y comercial"
-                    ]}
-                />
-            </div>
-
-            {/* Timeline / Roadmap */}
-            <div className="relative">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">El camino al éxito</h2>
-                    <p className="text-zinc-500 max-w-2xl mx-auto">Nuestro proceso está diseñado para transformar ideas innovadoras en empresas líderes en el mercado global.</p>
+        <section id="features" className="py-24 px-6" style={{ backgroundColor: lodoDark }}>
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
+                    <Card
+                        title="LODO"
+                        subtitle="La plataforma centralizada para el descubrimiento y mapeo del ecosistema. Datos en tiempo real para decisiones estratégicas."
+                        logoSrc="/lodo2.png"
+                        features={[
+                            "Mapa interactivo de organizaciones",
+                            "Filtros avanzados por sector y tipo",
+                            "Directorio de startups y proveedores",
+                            "Análisis de clusters por región"
+                        ]}
+                        isLodo={true}
+                    />
+                    <Card
+                        title="LODAR"
+                        subtitle="Nuestro brazo ejecutor y acelerador. Programas diseñados para potenciar el crecimiento de startups de alto impacto."
+                        icon={Rocket}
+                        features={[
+                            "Programas de aceleración a medida",
+                            "Red de mentores especializados",
+                            "Acceso a capital semilla y venture",
+                            "Validación técnica y comercial"
+                        ]}
+                        isLodo={false}
+                    />
                 </div>
 
-                <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
-                    {/* Connecting line */}
-                    <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent hidden md:block" />
+                <div className="relative">
+                    <div className="text-center mb-20">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-montserrat tracking-tight">
+                            El camino al <span className="text-[#6FE844]">éxito</span>
+                        </h2>
+                    </div>
 
-                    {roadmapSteps.map((step, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: idx * 0.1 }}
-                            viewport={{ once: true }}
-                            className="relative z-10 flex flex-col items-center group"
-                        >
-                            <div className="w-16 h-16 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center mb-4 group-hover:border-primary/50 transition-colors shadow-xl">
-                                <step.icon className="w-6 h-6 text-zinc-400 group-hover:text-primary transition-colors" />
-                            </div>
-                            <span className="text-sm font-semibold text-zinc-500 group-hover:text-white transition-colors">{step.label}</span>
-                            <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                                {idx + 1}
-                            </div>
-                        </motion.div>
-                    ))}
+                    <div className="relative max-w-5xl mx-auto">
+                        <div className="absolute top-10 left-0 w-full h-[2px] bg-white/10 hidden md:block" />
+
+                        <div className="relative flex flex-col md:flex-row items-center justify-between gap-12">
+                            {roadmapSteps.map((step, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="relative z-10 flex flex-col items-center group"
+                                >
+                                    <div 
+                                        style={{ backgroundColor: lodoDark }}
+                                        className="w-20 h-20 rounded-full border-2 border-white/10 flex items-center justify-center mb-6 group-hover:border-[#6FE844] transition-all duration-300 shadow-xl group-hover:scale-110"
+                                    >
+                                        <step.icon className="w-8 h-8 text-white/40 group-hover:text-[#6FE844] transition-colors" />
+                                    </div>
+                                    <span className="text-sm font-bold text-white/60 group-hover:text-white transition-colors uppercase tracking-widest text-center">
+                                        {step.label}
+                                    </span>
+                                    
+                                    <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-[#6FE844] flex items-center justify-center text-[11px] font-black text-[#59595B] shadow-lg border-2 border-[#59595B]">
+                                        {idx + 1}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     );
 };
 
-export default Features;
+export default React.memo(Features);

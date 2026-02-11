@@ -8,52 +8,65 @@ import { Input } from '../ui/input';
 export default function AppShell({ children, onSearchChange, searchValue, resultsCount }) {
     const location = useLocation();
     const { isAdmin, isAuthenticated } = useAuth();
+    const isMapPage = location.pathname.startsWith('/map');
+    const isAdminPage = location.pathname.startsWith('/admin');
+    const isContactPage = location.pathname.startsWith('/contacto');
+    const useUnifiedHeader = isMapPage || isAdminPage;
+    const showSearch = !isAdmin && onSearchChange !== undefined;
+    const actionButtonClass = 'hidden sm:flex text-white/90 hover:text-[#6FEA44] hover:bg-white/10 transition-colors border border-transparent';
+    const activeActionButtonClass = 'hidden sm:flex text-white bg-white/15 hover:bg-white/20 border border-white/20';
 
     const navigate = useNavigate();
 
     return (
         <div className="flex flex-col h-screen bg-background overflow-hidden">
             {/* Header */}
-            <header className="sticky top-0 z-[2200] w-full border-b bg-background/100 backdrop-blur-sm shadow-sm">
+            <header
+                className={`sticky top-0 z-[2200] w-full ${
+                    useUnifiedHeader
+                        ? 'border-b border-white/15 bg-[#59595B]/95 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.24)]'
+                        : 'border-b bg-background/100 backdrop-blur-sm shadow-sm'
+                }`}
+            >
                 <div
-                    className={`flex ${
-                        location.pathname.startsWith('/map')
-                            ? 'h-[52px]'
-                            : location.pathname.startsWith('/contacto') || location.pathname.startsWith('/admin')
+                    className={`mx-auto flex items-center justify-between px-4 ${
+                        useUnifiedHeader
+                            ? 'h-16 w-full text-white'
+                            : isContactPage
                                 ? 'h-16'
                                 : 'h-10'
-                    } items-center justify-between px-3`}
+                    }`}
                 >
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3 group transition-all duration-300 active:scale-95">
-                        {location.pathname.startsWith('/map') ||
-                        location.pathname.startsWith('/contacto') ||
-                        location.pathname.startsWith('/admin') ? (
-                            <img
-                                src="/lodo1.png"
-                                alt="LODO"
-                                className={`object-contain ${
-                                    location.pathname.startsWith('/contacto') || location.pathname.startsWith('/admin')
-                                        ? 'h-[96px] w-[96px]'
-                                        : 'h-20 w-20'
-                                }`}
-                            />
-                        ) : (
-                            <div className="p-0.5 rounded-lg shadow-primary/20 shadow-lg group-hover:rotate-6 transition-transform bg-transparent">
-                                <img src="/lodo.png" alt="LODO" className="h-10 w-10 object-contain" />
-                            </div>
-                        )}
+                        <img
+                            src="/lodo.png"
+                            alt="LODO"
+                            className={`w-auto object-contain transition-transform duration-300 ${
+                                useUnifiedHeader ? 'h-12 group-hover:scale-[1.02]' : 'h-10 group-hover:scale-[1.04]'
+                            }`}
+                        />
                     </Link>
 
                     {/* Search (visible on map page) */}
-                    {!isAdmin && onSearchChange !== undefined && (
-                        <div className="flex-1 max-w-xl mx-12 hidden md:block">
+                    {showSearch && (
+                        <div className={`flex-1 max-w-xl hidden md:block ${useUnifiedHeader ? 'mx-8' : 'mx-12'}`}>
                             <div className="relative group">
-                                <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                                <Search
+                                    className={`absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 transition-colors ${
+                                        useUnifiedHeader
+                                            ? 'text-white/55 group-focus-within:text-[#6FEA44]'
+                                            : 'text-muted-foreground group-focus-within:text-primary'
+                                    }`}
+                                />
                                 <Input
                                     type="search"
                                     placeholder="Buscar por nombre, etiquetas, sector..."
-                                    className="pl-10 h-10 bg-muted/50 border-transparent focus:bg-background transition-all duration-200"
+                                    className={`pl-10 h-10 transition-all duration-200 ${
+                                        useUnifiedHeader
+                                            ? 'border-white/15 bg-white/10 text-white placeholder:text-white/50 focus:border-[#6FEA44] focus:bg-white/15'
+                                            : 'bg-muted/50 border-transparent focus:bg-background'
+                                    }`}
                                     value={searchValue || ''}
                                     onChange={(e) => onSearchChange(e.target.value)}
                                 />
@@ -63,9 +76,9 @@ export default function AppShell({ children, onSearchChange, searchValue, result
 
                     {/* Right section */}
                     <div className="flex items-center gap-3">
-                        {!location.pathname.startsWith('/map') && (
+                        {!isMapPage && (
                             <Link to="/map">
-                                <Button variant="ghost" size="sm" className="hidden sm:flex hover:bg-primary/5 hover:text-primary transition-colors">
+                                <Button variant="ghost" size="sm" className={actionButtonClass}>
                                     <Map className="h-4 w-4 mr-2" />
                                     Ver Mapa
                                 </Button>
@@ -73,7 +86,7 @@ export default function AppShell({ children, onSearchChange, searchValue, result
                         )}
                         {location.pathname !== '/' && (
                             <Link to="/">
-                                <Button variant="ghost" size="sm" className="hidden sm:flex hover:bg-primary/5 hover:text-primary transition-colors">
+                                <Button variant="ghost" size="sm" className={actionButtonClass}>
                                     <Home className="h-4 w-4 mr-2" />
                                     Volver al Inicio
                                 </Button>
@@ -84,7 +97,7 @@ export default function AppShell({ children, onSearchChange, searchValue, result
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="hidden sm:flex hover:bg-primary/5 hover:text-primary transition-colors"
+                                className={actionButtonClass}
                                 onClick={() => navigate('/contacto')}
                             >
                                 <Map className="h-4 w-4 mr-2" />
@@ -95,9 +108,9 @@ export default function AppShell({ children, onSearchChange, searchValue, result
                             <>
                                 <Link to="/admin/stats">
                                     <Button
-                                        variant={location.pathname.startsWith('/admin/stats') ? 'secondary' : 'ghost'}
+                                        variant="ghost"
                                         size="sm"
-                                        className="hidden sm:flex hover:bg-primary/5 hover:text-primary transition-colors"
+                                        className={location.pathname.startsWith('/admin/stats') ? activeActionButtonClass : actionButtonClass}
                                     >
                                         <BarChart3 className="h-4 w-4 mr-2" />
                                         Estadisticas
@@ -105,9 +118,9 @@ export default function AppShell({ children, onSearchChange, searchValue, result
                                 </Link>
                                 <Link to="/admin">
                                     <Button
-                                        variant={location.pathname === '/admin' ? 'secondary' : 'ghost'}
+                                        variant="ghost"
                                         size="sm"
-                                        className="hidden sm:flex hover:bg-primary/5 hover:text-primary transition-colors"
+                                        className={location.pathname === '/admin' ? activeActionButtonClass : actionButtonClass}
                                     >
                                         <Settings className="h-4 w-4 mr-2" />
                                         Admin
@@ -116,7 +129,7 @@ export default function AppShell({ children, onSearchChange, searchValue, result
                             </>
                         )}
                         {/* Mobile menu (simulated) */}
-                        <Button variant="ghost" size="icon" className="md:hidden">
+                        <Button variant="ghost" size="icon" className={useUnifiedHeader ? 'md:hidden text-white/90 hover:text-[#6FEA44] hover:bg-white/10' : 'md:hidden'}>
                             <Menu className="h-5 w-5" />
                         </Button>
                     </div>
@@ -126,7 +139,7 @@ export default function AppShell({ children, onSearchChange, searchValue, result
             {/* Main Content */}
             <main
                 className={`flex-1 relative ${
-                    location.pathname.startsWith('/map') ? 'overflow-hidden' : 'overflow-y-auto'
+                    isMapPage ? 'overflow-hidden' : 'overflow-y-auto'
                 }`}
             >
                 {children}

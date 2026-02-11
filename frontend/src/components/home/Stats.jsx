@@ -1,62 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Search, Filter, Layers, Pin, Globe } from 'lucide-react';
 import { fetchAggregates } from '../../services/api';
 
-const AnimatedCounter = ({ value }) => {
+const AnimatedCounter = React.memo(({ value }) => {
     const [displayValue, setDisplayValue] = useState(0);
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true });
 
     useEffect(() => {
         if (isInView && value > 0) {
-            let start = 0;
+            let startTimestamp = null;
             const end = parseInt(value);
             const duration = 2000;
-            const increment = Math.ceil(end / (duration / 16)); // ~60fps
 
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= end) {
-                    setDisplayValue(end);
-                    clearInterval(timer);
-                } else {
-                    setDisplayValue(start);
-                }
-            }, 16);
-
-            return () => clearInterval(timer);
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                setDisplayValue(Math.floor(progress * end));
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
         }
     }, [isInView, value]);
 
     return <span ref={ref}>{displayValue}</span>;
-};
+});
 
 const Stats = () => {
-    const [stats, setStats] = useState({
-        organizations: 0,
-        countries: 0,
-        sectors: 0,
-        types: 0
-    });
+    const [stats, setStats] = useState({ organizations: 0, countries: 0, sectors: 0, types: 0 });
     const [loading, setLoading] = useState(true);
+
+    // Colores de marca
+    const lodoGreen = "#6FE844";
+    const lodoDark = "#59595B";
 
     useEffect(() => {
         const loadStats = async () => {
             try {
                 const data = await fetchAggregates();
-
-                // Calcular totales desde los agregados
-                const totalOrgs = data.organizationTypes.reduce((acc, curr) => acc + curr.count, 0);
-                const totalCountries = data.countries.filter(c => c.value && c.value !== '').length;
-                const totalSectors = data.sectorsPrimary.length;
-                const totalTypes = data.organizationTypes.length;
-
                 setStats({
-                    organizations: totalOrgs,
-                    countries: totalCountries,
-                    sectors: totalSectors,
-                    types: totalTypes
+                    organizations: data.organizationTypes.reduce((acc, curr) => acc + curr.count, 0),
+                    countries: data.countries.filter(c => c.value && c.value !== '').length,
+                    sectors: data.sectorsPrimary.length,
+                    types: data.organizationTypes.length
                 });
             } catch (error) {
                 console.error("Error loading stats:", error);
@@ -64,103 +51,106 @@ const Stats = () => {
                 setLoading(false);
             }
         };
-
         loadStats();
     }, []);
 
-    const statsConfig = [
+    const statsConfig = useMemo(() => [
         { label: 'Organizaciones', value: stats.organizations, icon: Layers },
         { label: 'Países', value: stats.countries, icon: Globe },
         { label: 'Sectores', value: stats.sectors, icon: Pin },
         { label: 'Tipos', value: stats.types, icon: Search },
-    ];
+    ], [stats]);
 
     return (
-        <section className="py-24 bg-[#080808]">
+        <section className="py-24 bg-zinc-100 transition-colors duration-500 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
-                    {/* Mock Map Visual */}
-                    <div className="flex-1 relative order-2 lg:order-1">
+                    
+                    {/* Visual de Mapa con Interactividad de Movimiento */}
+                    <div className="flex-1 relative order-2 lg:order-1 w-full group/map">
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, rotateY: -10 }}
+                            whileInView={{ opacity: 1, rotateY: 0 }}
+                            whileHover={{ perspective: 1000, rotateX: 2, rotateY: -2 }}
                             viewport={{ once: true }}
-                            className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-zinc-900 aspect-video shadow-2xl"
+                            className="relative rounded-[2.5rem] overflow-hidden border border-zinc-200 bg-white aspect-video shadow-2xl transition-transform duration-500 ease-out"
                         >
-                            {/* Map UI Elements */}
+                            {/* Escáner visual que recorre el mapa */}
+                            <motion.div 
+                                animate={{ top: ["-100%", "200%"] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                className="absolute left-0 w-full h-20 bg-gradient-to-b from-transparent via-[#6FE844]/20 to-transparent z-10 pointer-events-none"
+                            />
+
                             <div className="absolute top-6 left-6 z-20 flex gap-2">
-                                <div className="px-4 py-2 bg-black/60 backdrop-blur-md rounded-xl border border-white/10 flex items-center text-xs text-white">
-                                    <Search className="w-3 h-3 mr-2" />
-                                    Buscar organización...
-                                </div>
-                                <div className="w-10 h-10 bg-black/60 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-center">
-                                    <Filter className="w-4 h-4 text-white" />
+                                <div className="px-4 py-2 bg-white/90 backdrop-blur-md rounded-xl border border-zinc-200 flex items-center text-xs text-zinc-500 shadow-sm">
+                                    <Search className="w-3 h-3 mr-2 text-[#6FE844]" />
+                                    Mapeando ecosistema...
                                 </div>
                             </div>
 
-                            <div className="absolute bottom-6 right-6 z-20">
-                                <div className="flex flex-col gap-2">
-                                    <div className="w-10 h-10 bg-white border border-black/5 rounded-xl flex items-center justify-center text-black font-bold">+</div>
-                                    <div className="w-10 h-10 bg-white border border-black/5 rounded-xl flex items-center justify-center text-black font-bold">−</div>
-                                </div>
-                            </div>
-
-                            {/* Fake Map Content */}
-                            <div className="absolute inset-0 bg-[#111] grid grid-cols-12 grid-rows-12 opacity-30">
+                            {/* Grilla del Mapa */}
+                            <div className="absolute inset-0 bg-zinc-50 grid grid-cols-12 grid-rows-12 opacity-40">
                                 {Array.from({ length: 144 }).map((_, i) => (
-                                    <div key={i} className="border-[0.5px] border-white/5" />
+                                    <div key={i} className="border-[0.5px] border-zinc-200" />
                                 ))}
                             </div>
 
-                            {/* Animated Pointers */}
+                            {/* Puntos interactivos con pulso */}
                             {[
-                                { t: '20%', l: '30%', c: 'bg-primary' },
-                                { t: '45%', l: '60%', c: 'bg-emerald-500' },
-                                { t: '70%', l: '25%', c: 'bg-amber-500' },
-                                { t: '40%', l: '15%', c: 'bg-primary' },
-                                { t: '55%', l: '80%', c: 'bg-blue-400' },
+                                { t: '20%', l: '30%' }, { t: '45%', l: '60%' },
+                                { t: '70%', l: '25%' }, { t: '40%', l: '15%' },
+                                { t: '55%', l: '80%' }
                             ].map((p, i) => (
                                 <motion.div
                                     key={i}
-                                    animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
-                                    transition={{ duration: 2 + i, repeat: Infinity }}
-                                    style={{ top: p.t, left: p.l }}
-                                    className={`absolute w-3 h-3 rounded-full ${p.c} blur-[2px] z-10`}
+                                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                                    transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
+                                    style={{ top: p.t, left: p.l, backgroundColor: lodoGreen }}
+                                    className="absolute w-3 h-3 rounded-full z-10 shadow-[0_0_15px_rgba(111,232,68,0.6)]"
                                 />
                             ))}
 
-                            {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-zinc-200/50 to-transparent" />
                         </motion.div>
-
-                        {/* Decor */}
-                        <div className="absolute -z-10 -bottom-8 -left-8 w-64 h-64 bg-primary/10 rounded-full blur-[80px]" />
+                        
+                        <div className="absolute -z-10 -bottom-8 -left-8 w-64 h-64 bg-[#6FE844]/10 rounded-full blur-[80px]" />
                     </div>
 
-                    {/* Stats Content */}
+                    {/* Contenido de Stats */}
                     <div className="flex-1 order-1 lg:order-2">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Información estratégica en tiempo real</h2>
-                        <p className="text-zinc-400 text-lg mb-12 leading-relaxed">
-                            Accedé al panel interactivo más completo del sector. Identificá tendencias, clusters emergentes y oportunidades de colaboración con datos validados de nuestra base de datos dinámica.
-                        </p>
-
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#59595B] mb-8 font-montserrat">
+                            Información estratégica en <span className="text-[#6FE844]">tiempo real</span>
+                        </h2>
+                        
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             {statsConfig.map((stat, i) => (
-                                <div key={i} className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
-                                        <stat.icon className="w-6 h-6 text-primary" />
+                                <motion.div 
+                                    key={i} 
+                                    className="flex items-start gap-4 group cursor-default"
+                                    whileHover={{ x: 10 }}
+                                >
+                                    {/* Icono con Inversión de Color en Hover */}
+                                    <div 
+                                        className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 border border-[#6FE844]/20 bg-white group-hover:bg-[#6FE844] group-hover:border-transparent group-hover:shadow-lg"
+                                        style={{ color: lodoGreen }}
+                                    >
+                                        <stat.icon className="w-7 h-7 transition-colors duration-300 group-hover:text-white" />
                                     </div>
+
                                     <div>
-                                        <div className="text-3xl font-bold text-white mb-1">
+                                        <div className="text-3xl font-bold text-[#59595B] mb-1">
                                             {loading ? (
-                                                <div className="h-8 w-16 bg-white/5 animate-pulse rounded-lg" />
+                                                <div className="h-8 w-16 bg-zinc-200 animate-pulse rounded-lg" />
                                             ) : (
-                                                <>+<AnimatedCounter value={stat.value} /></>
+                                                <span className="tabular-nums font-montserrat">
+                                                    +<AnimatedCounter value={stat.value} />
+                                                </span>
                                             )}
                                         </div>
-                                        <div className="text-sm text-zinc-500 font-medium uppercase tracking-wider">{stat.label}</div>
+                                        <div className="text-xs text-zinc-400 font-black uppercase tracking-[0.2em]">{stat.label}</div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -170,4 +160,4 @@ const Stats = () => {
     );
 };
 
-export default Stats;
+export default React.memo(Stats);
