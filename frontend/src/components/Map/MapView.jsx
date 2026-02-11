@@ -110,7 +110,20 @@ function ClusterVisibilityController({ threshold = 5, onChange }) {
     return null;
 }
 
+function CountryTooltipVisibilityController({ threshold = 5, onChange }) {
+    const map = useMapEvents({
+        zoomend: () => onChange(map.getZoom() < threshold),
+    });
+
+    useEffect(() => {
+        onChange(map.getZoom() < threshold);
+    }, [map, threshold, onChange]);
+
+    return null;
+}
+
 const CHOROPLETH_COLORS = ['#8fcc8c', '#64c163', '#3eb246', '#2a9535', '#1c7226'];
+const COUNTRY_TOOLTIP_ZOOM_THRESHOLD = 5;
 
 const COUNTRY_ALIASES = {
     'argentina': 'argentina',
@@ -257,6 +270,7 @@ export default function MapView({ organizations, onBboxChange, onMarkerClick, ce
     const defaultZoom = 3;
     const [worldGeo, setWorldGeo] = useState(null);
     const [showClusters, setShowClusters] = useState(defaultZoom >= 5);
+    const [showCountryTooltips, setShowCountryTooltips] = useState(defaultZoom < COUNTRY_TOOLTIP_ZOOM_THRESHOLD);
     const [debouncedOrganizations, setDebouncedOrganizations] = useState(organizations);
     const countsByCountryRef = useRef(new Map());
 
@@ -331,6 +345,8 @@ export default function MapView({ organizations, onBboxChange, onMarkerClick, ce
     };
 
     const onEachCountry = (feature, layer) => {
+        if (!showCountryTooltips) return;
+
         const countryName = feature?.properties?.name || 'Sin nombre';
         const initialCount = getCountryCount(feature, countsByCountryRef.current);
         layer.bindTooltip(`<strong>${countryName}</strong><br/>Startups: ${initialCount}`, {
@@ -415,6 +431,10 @@ export default function MapView({ organizations, onBboxChange, onMarkerClick, ce
 
                 <MapEvents onBboxChange={onBboxChange} />
                 <ClusterVisibilityController threshold={5} onChange={setShowClusters} />
+                <CountryTooltipVisibilityController
+                    threshold={COUNTRY_TOOLTIP_ZOOM_THRESHOLD}
+                    onChange={setShowCountryTooltips}
+                />
                 <ResizeMap />
 
                 {centeredLocation && <FlyToLocation lat={centeredLocation.lat} lng={centeredLocation.lng} />}
@@ -422,6 +442,7 @@ export default function MapView({ organizations, onBboxChange, onMarkerClick, ce
                 {worldGeo && (
                     <Pane name="countries" style={{ zIndex: 350 }}>
                         <GeoJSON
+                            key={`countries-tooltips-${showCountryTooltips ? 'on' : 'off'}`}
                             data={worldGeo}
                             style={countryStyle}
                             onEachFeature={onEachCountry}
