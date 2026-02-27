@@ -34,9 +34,28 @@ func NewNominatimClient(userAgent string) *NominatimClient {
 }
 
 func (c *NominatimClient) Geocode(city, region, country string) (float64, float64, error) {
-	query := fmt.Sprintf("%s, %s, %s", city, region, country)
-	if region == "" {
-		query = fmt.Sprintf("%s, %s", city, country)
+	// Dynamically build the search query based on available location data
+	var parts []string
+	if city != "" {
+		parts = append(parts, city)
+	}
+	if region != "" {
+		parts = append(parts, region)
+	}
+	if country != "" {
+		parts = append(parts, country)
+	}
+
+	if len(parts) == 0 {
+		return 0, 0, fmt.Errorf("se requiere al menos un parámetro de ubicación para geolocalizar")
+	}
+
+	query := ""
+	for i, part := range parts {
+		if i > 0 {
+			query += ", "
+		}
+		query += part
 	}
 
 	// 1. Check cache

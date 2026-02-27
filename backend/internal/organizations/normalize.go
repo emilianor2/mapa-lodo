@@ -11,9 +11,9 @@ func Normalize(org *Organization) error {
 	org.ID = strings.TrimSpace(org.ID)
 	org.Name = strings.TrimSpace(org.Name)
 	org.Vertical = strings.TrimSpace(org.Vertical)
-	org.Country = strings.TrimSpace(org.Country)
-	org.Region = strings.TrimSpace(org.Region)
-	org.City = strings.TrimSpace(org.City)
+	org.Country = normalizeOptional(org.Country)
+	org.Region = normalizeOptional(org.Region)
+	org.City = normalizeOptional(org.City)
 	org.OrganizationType = strings.TrimSpace(org.OrganizationType)
 	org.OutcomeStatus = strings.TrimSpace(org.OutcomeStatus)
 
@@ -51,7 +51,7 @@ func Normalize(org *Organization) error {
 
 	// 5. Validar año de fundación (Founded)
 	if org.Founded != nil {
-		currentYear := 2026 
+		currentYear := 2026
 		if *org.Founded < 1850 || *org.Founded > currentYear {
 			return fmt.Errorf("el año de fundación (%d) no es válido", *org.Founded)
 		}
@@ -67,9 +67,16 @@ func Normalize(org *Organization) error {
 // ValidateForPublish realiza el checklist corporativo antes de permitir el paso a PUBLISHED.
 // Esta es la función que service.go necesita encontrar.
 func ValidateForPublish(org *Organization) error {
-	if org.Name == "" || org.Vertical == "" || org.Country == "" ||
-		org.Region == "" || org.City == "" || org.OrganizationType == "" {
-		return fmt.Errorf("faltan campos geográficos o de categorización obligatorios")
+	if org.Name == "" || org.Vertical == "" || org.OrganizationType == "" {
+		return fmt.Errorf("faltan campos de identidad o categorización obligatorios")
+	}
+
+	hasLocation := (org.Country != nil && *org.Country != "") ||
+		(org.Region != nil && *org.Region != "") ||
+		(org.City != nil && *org.City != "")
+
+	if !hasLocation {
+		return fmt.Errorf("se requiere al menos un dato de ubicación (País, Provincia o Ciudad) para publicar")
 	}
 
 	if org.Solucion == nil || len(*org.Solucion) < 20 {
@@ -100,19 +107,29 @@ func ValidateForPublish(org *Organization) error {
 
 // Helpers para normalización
 func normalizeOptional(s *string) *string {
-	if s == nil { return nil }
+	if s == nil {
+		return nil
+	}
 	trimmed := strings.TrimSpace(*s)
-	if trimmed == "" { return nil }
+	if trimmed == "" {
+		return nil
+	}
 	return &trimmed
 }
 
 func cleanSlice(items []string) []string {
-	if items == nil { return nil }
+	if items == nil {
+		return nil
+	}
 	cleaned := make([]string, 0)
 	for _, item := range items {
 		trimmed := strings.TrimSpace(item)
-		if trimmed != "" { cleaned = append(cleaned, trimmed) }
+		if trimmed != "" {
+			cleaned = append(cleaned, trimmed)
+		}
 	}
-	if len(cleaned) == 0 { return nil }
+	if len(cleaned) == 0 {
+		return nil
+	}
 	return cleaned
 }

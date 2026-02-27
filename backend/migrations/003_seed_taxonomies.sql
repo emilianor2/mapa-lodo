@@ -65,6 +65,7 @@ INSERT INTO taxonomies (category, value, label, sort_order) VALUES
 ('badges', 'climate_positive', 'Climate-positive', 60),
 ('badges', 'b_corp', 'B Corp', 70),
 ('badges', 'women_led', 'Liderado por Mujeres', 80),
+('badges', 'none', 'Ninguna', 90),
 
 -- 6. TIPO DE ORGANIZACIÓN
 ('organizationtype', 'startup', 'Startup', 10),

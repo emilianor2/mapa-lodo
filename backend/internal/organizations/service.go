@@ -2,11 +2,11 @@ package organizations
 
 import (
 	"backend/internal/audit"
-	"backend/internal/geocoding" 
+	"backend/internal/geocoding"
 	"backend/internal/taxonomies"
 	"fmt"
 	"log"
-	"strings" 
+	"strings"
 	"sync"
 	"time"
 
@@ -17,7 +17,7 @@ type Service struct {
 	repo      *Repository
 	auditRepo *audit.Repository
 	taxRepo   taxonomies.Repository
-	geocoder  *geocoding.NominatimClient 
+	geocoder  *geocoding.NominatimClient
 
 	taxCache      map[string]map[string]bool
 	taxCacheTime  time.Time
@@ -57,8 +57,21 @@ func (s *Service) Create(org *Organization) error {
 		return err
 	}
 
-	if org.City != "" || org.Region != "" || org.Country != "" {
-		lat, lng, err := s.geocoder.Geocode(org.City, org.Region, org.Country)
+	if (org.City != nil && *org.City != "") || (org.Region != nil && *org.Region != "") || (org.Country != nil && *org.Country != "") {
+		city := ""
+		if org.City != nil {
+			city = *org.City
+		}
+		region := ""
+		if org.Region != nil {
+			region = *org.Region
+		}
+		country := ""
+		if org.Country != nil {
+			country = *org.Country
+		}
+
+		lat, lng, err := s.geocoder.Geocode(city, region, country)
 		if err == nil {
 			org.Lat = &lat
 			org.Lng = &lng
@@ -81,8 +94,25 @@ func (s *Service) Update(org *Organization) error {
 		return err
 	}
 
-	if org.City != existing.City || org.Region != existing.Region || org.Country != existing.Country {
-		lat, lng, err := s.geocoder.Geocode(org.City, org.Region, org.Country)
+	cityChanged := (org.City == nil && existing.City != nil) || (org.City != nil && existing.City == nil) || (org.City != nil && existing.City != nil && *org.City != *existing.City)
+	regionChanged := (org.Region == nil && existing.Region != nil) || (org.Region != nil && existing.Region == nil) || (org.Region != nil && existing.Region != nil && *org.Region != *existing.Region)
+	countryChanged := (org.Country == nil && existing.Country != nil) || (org.Country != nil && existing.Country == nil) || (org.Country != nil && existing.Country != nil && *org.Country != *existing.Country)
+
+	if cityChanged || regionChanged || countryChanged {
+		city := ""
+		if org.City != nil {
+			city = *org.City
+		}
+		region := ""
+		if org.Region != nil {
+			region = *org.Region
+		}
+		country := ""
+		if org.Country != nil {
+			country = *org.Country
+		}
+
+		lat, lng, err := s.geocoder.Geocode(city, region, country)
 		if err == nil {
 			org.Lat = &lat
 			org.Lng = &lng
@@ -215,7 +245,7 @@ func (s *Service) ValidateTaxonomies(org *Organization) error {
 		found := false
 		for taxValue := range grouped["estadioactual"] {
 			if flexibleMatch(*org.EstadioActual, taxValue) {
-				*org.EstadioActual = taxValue 
+				*org.EstadioActual = taxValue
 				found = true
 				break
 			}

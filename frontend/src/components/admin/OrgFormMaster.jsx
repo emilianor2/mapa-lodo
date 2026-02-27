@@ -216,6 +216,9 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
         // Preparamos el payload alineado al struct de Go
         const payload = {
             ...form,
+            country: form.country?.trim() || null,
+            region: form.region?.trim() || null,
+            city: form.city?.trim() || null,
             socialMedia: socialMediaMap,
             founders: cleanFounders,
             founded: form.founded ? parseInt(form.founded) : null,
@@ -246,18 +249,18 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             {/* Aplicamos la paleta oscura #050505 del HomePage al modal */}
-            <DialogContent className="sm:max-w-[850px] h-[90vh] p-0 flex flex-col overflow-hidden border-none shadow-2xl bg-[#050505] text-white">
-                <DialogHeader className="p-8 bg-gradient-to-br from-[#111111] via-[#0a0a0a] to-[#050505] border-b border-white/5 relative">
+            <DialogContent className="sm:max-w-[850px] h-[90vh] p-0 flex flex-col overflow-hidden border-none shadow-2xl bg-background text-slate-900">
+                <DialogHeader className="p-8 bg-slate-50 border-b border-slate-200 relative">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 z-0 pointer-events-none"></div>
                     <div className="flex items-center gap-4 relative z-10">
                         <div className="bg-primary/20 text-primary p-3 rounded-2xl border border-primary/20">
                             {editingOrg ? <Edit className="h-6 w-6" /> : <Plus className="h-6 w-6" />}
                         </div>
                         <div>
-                            <DialogTitle className="text-2xl font-black tracking-tight text-white">
+                            <DialogTitle className="text-2xl font-black tracking-tight text-slate-900">
                                 {editingOrg ? `EDITAR ${form.name}` : 'NUEVA ORGANIZACIÓN'}
                             </DialogTitle>
-                            <DialogDescription className="font-medium opacity-60 text-slate-300">
+                            <DialogDescription className="font-medium opacity-60 text-slate-500">
                                 {editingOrg ? 'Actualiza los campos del relevamiento.' : 'Registra una nueva entidad (ID y Geo generados automáticamente).'}
                             </DialogDescription>
                         </div>
@@ -275,8 +278,8 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                     <h3 className="text-xs font-bold uppercase tracking-widest">Identidad</h3>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Nombre de la Organización *</Label>
-                                    <Input name="name" value={form.name} onChange={handleChange} required placeholder="Nombre oficial" className="bg-[#111] border-white/10 text-white h-11 focus:border-primary/50 focus:ring-1 focus:ring-primary/50" />
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Nombre de la Organización *</Label>
+                                    <Input name="name" value={form.name} onChange={handleChange} required placeholder="Nombre oficial" className="bg-background border-slate-200 text-slate-900 h-11 focus:border-primary/50 focus:ring-1 focus:ring-primary/50" />
                                 </div>
                             </div>
                             <div className="space-y-4">
@@ -285,8 +288,8 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                     <h3 className="text-xs font-bold uppercase tracking-widest">Propuesta de Valor</h3>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Solución / Lo que hacen *</Label>
-                                    <textarea name="solucion" value={form.solucion} onChange={handleChange} required className="w-full h-[80px] rounded-xl border border-white/10 bg-[#111] p-4 text-sm outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 text-white" placeholder="Describe brevemente el proyecto..." />
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Solución / Lo que hacen *</Label>
+                                    <textarea name="solucion" value={form.solucion} onChange={handleChange} required className="w-full h-[80px] rounded-xl border border-slate-200 bg-background p-4 text-sm outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 text-slate-900" placeholder="Describe brevemente el proyecto..." />
                                 </div>
                             </div>
                         </section>
@@ -297,40 +300,40 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                         <section className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Vertical *</Label>
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Vertical *</Label>
                                     <Select value={form.vertical} onValueChange={(v) => handleSelect('vertical', v)}>
-                                        <SelectTrigger className="bg-[#111] border-white/10 text-white h-11"><SelectValue placeholder="Seleccionar..." /></SelectTrigger>
-                                        <SelectContent className="bg-[#111] border-white/10 text-white">
-                                            {taxonomies.vertical?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-white/5">{t.label}</SelectItem>)}
+                                        <SelectTrigger className="bg-background border-slate-200 text-slate-900 h-11"><SelectValue placeholder="Seleccionar..." /></SelectTrigger>
+                                        <SelectContent className="bg-background border-slate-200 text-slate-900">
+                                            {taxonomies.vertical?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-slate-100">{t.label}</SelectItem>)}
                                         </SelectContent>
                                     </Select>
                                 </div>
                                 <div className={`space-y-2 transition-opacity ${form.vertical === 'otra' ? 'opacity-40 pointer-events-none' : ''}`}>
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Sub-Vertical</Label>
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Sub-Vertical</Label>
                                     <Select value={form.subVertical} onValueChange={(v) => handleSelect('subVertical', v)} disabled={form.vertical === 'otra'}>
-                                        <SelectTrigger className="bg-[#111] border-white/10 text-white h-11"><SelectValue placeholder="Opcional..." /></SelectTrigger>
-                                        <SelectContent className="bg-[#111] border-white/10 text-white">
+                                        <SelectTrigger className="bg-background border-slate-200 text-slate-900 h-11"><SelectValue placeholder="Opcional..." /></SelectTrigger>
+                                        <SelectContent className="bg-background border-slate-200 text-slate-900">
                                             {getSubVerticalsForVertical(form.vertical, taxonomies.subvertical).map(t => (
-                                                <SelectItem key={t.id} value={t.value} className="hover:bg-white/5">{t.label}</SelectItem>
+                                                <SelectItem key={t.id} value={t.value} className="hover:bg-slate-100">{t.label}</SelectItem>
                                             ))}
                                         </SelectContent>
                                     </Select>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Madurez (Stage)</Label>
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Madurez (Stage)</Label>
                                     <Select value={form.estadioActual} onValueChange={(v) => handleSelect('estadioActual', v)}>
-                                        <SelectTrigger className="bg-[#111] border-white/10 text-white h-11"><SelectValue placeholder="Seleccionar..." /></SelectTrigger>
-                                        <SelectContent className="bg-[#111] border-white/10 text-white">
-                                            {taxonomies.estadioactual?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-white/5">{t.label}</SelectItem>)}
+                                        <SelectTrigger className="bg-background border-slate-200 text-slate-900 h-11"><SelectValue placeholder="Seleccionar..." /></SelectTrigger>
+                                        <SelectContent className="bg-background border-slate-200 text-slate-900">
+                                            {taxonomies.estadioactual?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-slate-100">{t.label}</SelectItem>)}
                                         </SelectContent>
                                     </Select>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Tipo de Org *</Label>
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Tipo de Org *</Label>
                                     <Select value={form.organizationType} onValueChange={(v) => handleSelect('organizationType', v)}>
-                                        <SelectTrigger className="bg-[#111] border-white/10 text-white h-11"><SelectValue placeholder="Seleccionar..." /></SelectTrigger>
-                                        <SelectContent className="bg-[#111] border-white/10 text-white">
-                                            {taxonomies.organizationtype?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-white/5">{t.label}</SelectItem>)}
+                                        <SelectTrigger className="bg-background border-slate-200 text-slate-900 h-11"><SelectValue placeholder="Seleccionar..." /></SelectTrigger>
+                                        <SelectContent className="bg-background border-slate-200 text-slate-900">
+                                            {taxonomies.organizationtype?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-slate-100">{t.label}</SelectItem>)}
                                         </SelectContent>
                                     </Select>
                                 </div>
@@ -345,31 +348,31 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                         onChange={handleChange}
                                         required
                                         placeholder="Escribe de qué trata el proyecto..."
-                                        className="bg-[#050505] border-primary/30 text-white"
+                                        className="bg-background border-primary/30 text-slate-900"
                                     />
                                 </div>
                             )}
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Estado Salida</Label>
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Estado Salida</Label>
                                     <Select value={form.outcomeStatus} onValueChange={(v) => handleSelect('outcomeStatus', v)}>
-                                        <SelectTrigger className="bg-[#111] border-white/10 text-white h-11"><SelectValue placeholder="Activa, Adquirida..." /></SelectTrigger>
-                                        <SelectContent className="bg-[#111] border-white/10 text-white">
+                                        <SelectTrigger className="bg-background border-slate-200 text-slate-900 h-11"><SelectValue placeholder="Activa, Adquirida..." /></SelectTrigger>
+                                        <SelectContent className="bg-background border-slate-200 text-slate-900">
                                             {/* Fallback si no hay taxonomía outcome_status */}
-                                            {taxonomies.outcomestatus?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-white/5">{t.label}</SelectItem>) || (
+                                            {taxonomies.outcomestatus?.map(t => <SelectItem key={t.id} value={t.value} className="hover:bg-slate-100">{t.label}</SelectItem>) || (
                                                 <>
-                                                    <SelectItem value="active" className="hover:bg-white/5">Activa</SelectItem>
-                                                    <SelectItem value="acquired" className="hover:bg-white/5">Adquirida</SelectItem>
-                                                    <SelectItem value="closed" className="hover:bg-white/5">Cerrada</SelectItem>
+                                                    <SelectItem value="active" className="hover:bg-slate-100">Activa</SelectItem>
+                                                    <SelectItem value="acquired" className="hover:bg-slate-100">Adquirida</SelectItem>
+                                                    <SelectItem value="closed" className="hover:bg-slate-100">Cerrada</SelectItem>
                                                 </>
                                             )}
                                         </SelectContent>
                                     </Select>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Año de Fundación</Label>
-                                    <Input type="number" name="founded" value={form.founded} onChange={handleChange} placeholder="Ej. 2018" className="bg-[#111] border-white/10 text-white h-11" />
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Año de Fundación</Label>
+                                    <Input type="number" name="founded" value={form.founded} onChange={handleChange} placeholder="Ej. 2018" className="bg-background border-slate-200 text-slate-900 h-11" />
                                 </div>
                             </div>
                         </section>
@@ -381,19 +384,19 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                             <h3 className="text-xs font-bold uppercase tracking-widest text-primary">Insignias & Fundadores</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-4">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Insignias / Badges</Label>
-                                    <div className="flex flex-col gap-3 p-4 bg-[#111] border border-white/10 rounded-xl">
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Insignias / Badges</Label>
+                                    <div className="flex flex-col gap-3 p-4 bg-background border border-slate-200 rounded-xl">
 
                                         {/* Opción Manual: Ninguna */}
-                                        <div className="flex items-center space-x-2 pb-2 mb-2 border-b border-white/5">
+                                        <div className="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-200">
                                             <input
                                                 type="checkbox"
                                                 id="badge-none"
                                                 checked={(form.badges || []).includes('none')}
                                                 onChange={() => handleToggleBadge('none')}
-                                                className="h-4 w-4 rounded border-white/20 bg-black/50 text-primary border focus:ring-primary cursor-pointer accent-primary"
+                                                className="h-4 w-4 rounded border-slate-200 bg-white text-primary border focus:ring-primary cursor-pointer accent-primary"
                                             />
-                                            <label htmlFor="badge-none" className="text-sm font-medium leading-none cursor-pointer text-slate-300">
+                                            <label htmlFor="badge-none" className="text-sm font-medium leading-none cursor-pointer text-slate-500">
                                                 Ninguna
                                             </label>
                                         </div>
@@ -407,9 +410,9 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                                         checked={(form.badges || []).includes(t.value)}
                                                         onChange={() => handleToggleBadge(t.value)}
                                                         disabled={(form.badges || []).includes('none')}
-                                                        className="h-4 w-4 rounded border-white/20 bg-black/50 text-primary border focus:ring-primary cursor-pointer accent-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                                                        className="h-4 w-4 rounded border-slate-200 bg-white text-primary border focus:ring-primary cursor-pointer accent-primary disabled:opacity-50 disabled:cursor-not-allowed"
                                                     />
-                                                    <label htmlFor={`badge-${t.id}`} className={`text-sm font-medium leading-none cursor-pointer text-slate-300 ${(form.badges || []).includes('none') ? 'opacity-50' : ''}`}>
+                                                    <label htmlFor={`badge-${t.id}`} className={`text-sm font-medium leading-none cursor-pointer text-slate-500 ${(form.badges || []).includes('none') ? 'opacity-50' : ''}`}>
                                                         {t.label}
                                                     </label>
                                                 </div>
@@ -419,14 +422,14 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                         )}
 
                                         {/* Input Manual para Otro / Custom */}
-                                        <div className="pt-2 mt-2 border-t border-white/5">
-                                            <Label className="text-[10px] uppercase opacity-50 block mb-2 text-slate-300">Agregar Insignia Personalizada</Label>
+                                        <div className="pt-2 mt-2 border-t border-slate-200">
+                                            <Label className="text-[10px] uppercase opacity-50 block mb-2 text-slate-500">Agregar Insignia Personalizada</Label>
                                             <div className="flex gap-2">
                                                 <Input
                                                     value={newBadge}
                                                     onChange={(e) => setNewBadge(e.target.value)}
                                                     placeholder="Ej: Premio local..."
-                                                    className="bg-[#050505] border-white/10 text-white h-9 text-sm"
+                                                    className="bg-background border-slate-200 text-slate-900 h-9 text-sm"
                                                     disabled={(form.badges || []).includes('none')}
                                                 />
                                                 <Button
@@ -457,7 +460,7 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                 </div>
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between">
-                                        <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Fundadores / Equipo</Label>
+                                        <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Fundadores / Equipo</Label>
                                         <Button type="button" variant="link" size="sm" onClick={handleAddFounder} className="h-auto p-0 text-primary hover:text-primary/80">
                                             + Agregar Creador
                                         </Button>
@@ -469,7 +472,7 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                                     value={founder}
                                                     onChange={(e) => handleUpdateFounder(index, e.target.value)}
                                                     placeholder="Nombre Completo"
-                                                    className="flex-1 bg-[#111] border-white/10 text-white h-11 pr-10 focus:border-primary/50"
+                                                    className="flex-1 bg-background border-slate-200 text-slate-900 h-11 pr-10 focus:border-primary/50"
                                                 />
                                                 <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveFounder(index)} className="absolute right-0 top-0 h-11 w-11 text-rose-500 hover:bg-rose-500/10 hover:text-rose-400 cursor-pointer">
                                                     <X className="h-4 w-4" />
@@ -477,7 +480,7 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                             </div>
                                         ))}
                                         {foundersList.length === 0 && (
-                                            <div className="text-sm text-slate-500 italic bg-[#111] p-4 border border-dashed border-white/10 rounded-xl text-center">
+                                            <div className="text-sm text-slate-500 italic bg-background p-4 border border-dashed border-slate-200 rounded-xl text-center">
                                                 Sin fundadores agregados.
                                             </div>
                                         )}
@@ -492,9 +495,9 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                         <section className="space-y-4">
                             <h3 className="text-xs font-bold uppercase tracking-widest text-primary">Geografía</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <Input name="country" value={form.country} onChange={handleChange} required placeholder="País" className="bg-[#111] border-white/10 text-white h-11 focus:border-primary/50" />
-                                <Input name="region" value={form.region} onChange={handleChange} required placeholder="Provincia" className="bg-[#111] border-white/10 text-white h-11 focus:border-primary/50" />
-                                <Input name="city" value={form.city} onChange={handleChange} required placeholder="Ciudad" className="bg-[#111] border-white/10 text-white h-11 focus:border-primary/50" />
+                                <Input name="country" value={form.country} onChange={handleChange} placeholder="País" className="bg-background border-slate-200 text-slate-900 h-11 focus:border-primary/50" />
+                                <Input name="region" value={form.region} onChange={handleChange} placeholder="Provincia" className="bg-background border-slate-200 text-slate-900 h-11 focus:border-primary/50" />
+                                <Input name="city" value={form.city} onChange={handleChange} placeholder="Ciudad" className="bg-background border-slate-200 text-slate-900 h-11 focus:border-primary/50" />
                             </div>
                         </section>
 
@@ -503,15 +506,15 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                         {/* SECCIÓN 5: CONTACTO Y REDES */}
                         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="space-y-4">
-                                <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Canales Directos</Label>
+                                <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Canales Directos</Label>
                                 <div className="space-y-3">
-                                    <div className="relative"><Globe className="absolute left-3 top-3 h-4 w-4 text-slate-400" /><Input name="website" value={form.website} onChange={handleChange} placeholder="Sitio Web" className="pl-10 h-11 bg-[#111] border-white/10 text-white focus:border-primary/50" /></div>
-                                    <div className="relative"><Mail className="absolute left-3 top-3 h-4 w-4 text-slate-400" /><Input name="mail" value={form.mail} onChange={handleChange} placeholder="Email de contacto" className="pl-10 h-11 bg-[#111] border-white/10 text-white focus:border-primary/50" /></div>
+                                    <div className="relative"><Globe className="absolute left-3 top-3 h-4 w-4 text-slate-400" /><Input name="website" value={form.website} onChange={handleChange} placeholder="Sitio Web" className="pl-10 h-11 bg-background border-slate-200 text-slate-900 focus:border-primary/50" /></div>
+                                    <div className="relative"><Mail className="absolute left-3 top-3 h-4 w-4 text-slate-400" /><Input name="mail" value={form.mail} onChange={handleChange} placeholder="Email de contacto" className="pl-10 h-11 bg-background border-slate-200 text-slate-900 focus:border-primary/50" /></div>
                                 </div>
                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-center justify-between">
-                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-300">Redes Sociales Dinámicas</Label>
+                                    <Label className="text-[11px] font-bold uppercase opacity-60 text-slate-500">Redes Sociales Dinámicas</Label>
                                     <Button type="button" variant="link" size="sm" onClick={handleAddSocialMedia} className="h-auto p-0 text-primary hover:text-primary/80">
                                         + Agregar Red
                                     </Button>
@@ -520,23 +523,23 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                     {socialMediaList.map((item, index) => (
                                         <div key={index} className="flex gap-2">
                                             <Select value={item.network} onValueChange={(val) => handleUpdateSocialMedia(index, 'network', val)}>
-                                                <SelectTrigger className="w-[130px] bg-[#111] border-white/10 text-white h-11 focus:border-primary/50">
+                                                <SelectTrigger className="w-[130px] bg-background border-slate-200 text-slate-900 h-11 focus:border-primary/50">
                                                     <SelectValue placeholder="Red" />
                                                 </SelectTrigger>
-                                                <SelectContent className="bg-[#111] border-white/10 text-white">
-                                                    <SelectItem value="linkedin" className="hover:bg-white/5">LinkedIn</SelectItem>
-                                                    <SelectItem value="instagram" className="hover:bg-white/5">Instagram</SelectItem>
-                                                    <SelectItem value="x" className="hover:bg-white/5">X (Twitter)</SelectItem>
-                                                    <SelectItem value="facebook" className="hover:bg-white/5">Facebook</SelectItem>
-                                                    <SelectItem value="youtube" className="hover:bg-white/5">YouTube</SelectItem>
-                                                    <SelectItem value="tiktok" className="hover:bg-white/5">TikTok</SelectItem>
+                                                <SelectContent className="bg-background border-slate-200 text-slate-900">
+                                                    <SelectItem value="linkedin" className="hover:bg-slate-100">LinkedIn</SelectItem>
+                                                    <SelectItem value="instagram" className="hover:bg-slate-100">Instagram</SelectItem>
+                                                    <SelectItem value="x" className="hover:bg-slate-100">X (Twitter)</SelectItem>
+                                                    <SelectItem value="facebook" className="hover:bg-slate-100">Facebook</SelectItem>
+                                                    <SelectItem value="youtube" className="hover:bg-slate-100">YouTube</SelectItem>
+                                                    <SelectItem value="tiktok" className="hover:bg-slate-100">TikTok</SelectItem>
                                                 </SelectContent>
                                             </Select>
                                             <Input
                                                 value={item.url}
                                                 onChange={(e) => handleUpdateSocialMedia(index, 'url', e.target.value)}
                                                 placeholder="URL del perfil"
-                                                className="flex-1 bg-[#111] border-white/10 text-white h-11 focus:border-primary/50"
+                                                className="flex-1 bg-background border-slate-200 text-slate-900 h-11 focus:border-primary/50"
                                             />
                                             <Button type="button" variant="ghost" size="icon" onClick={() => handleRemoveSocialMedia(index)} className="h-11 w-11 text-rose-500 hover:bg-rose-500/10 hover:text-rose-400 shrink-0">
                                                 <X className="h-4 w-4" />
@@ -544,7 +547,7 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                                         </div>
                                     ))}
                                     {socialMediaList.length === 0 && (
-                                        <div className="text-sm text-slate-500 italic bg-[#111] p-4 border border-dashed border-white/10 rounded-xl text-center">
+                                        <div className="text-sm text-slate-500 italic bg-background p-4 border border-dashed border-slate-200 rounded-xl text-center">
                                             Sin redes agregadas. Haz clic en '+ Agregar Red'.
                                         </div>
                                     )}
@@ -555,9 +558,9 @@ export default function OrgFormMaster({ isOpen, onClose, onCreated, editingOrg }
                     </form>
                 </ScrollArea>
 
-                <DialogFooter className="p-8 border-t border-white/5 bg-[#0a0a0a]">
-                    <Button variant="ghost" onClick={onClose} disabled={loading} className="font-bold text-slate-300 hover:text-white hover:bg-white/5">Cancelar</Button>
-                    <Button form="org-master-form" type="submit" disabled={loading} className="px-10 h-12 rounded-xl font-black uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 bg-primary hover:bg-primary/90 text-black">
+                <DialogFooter className="p-8 border-t border-slate-200 bg-slate-100">
+                    <Button variant="ghost" onClick={onClose} disabled={loading} className="font-bold text-slate-500 hover:text-slate-900 hover:bg-slate-100">Cancelar</Button>
+                    <Button form="org-master-form" type="submit" disabled={loading} className="px-10 h-12 rounded-xl font-black uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 bg-primary hover:bg-primary/90 text-[#58595b]">
                         {loading ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" />}
                         {editingOrg ? 'Guardar Cambios' : 'Registrar Startup'}
                     </Button>
