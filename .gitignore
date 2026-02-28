@@ -32,3 +32,16 @@ backend/vendor/
 
 # Analysis
 analysis_scripts/
+
+# Seguridad: No subir la llave de Google
+cargadb/service_account.json
+
+# Datos: No subir archivos de Excel o CSV
+cargadb/excels/1_sucios/*
+cargadb/excels/2_limpios/*
+cargadb/excels/3_usados/*
+
+# Permitir que Git rastree las carpetas aunque estén vacías
+!cargadb/excels/1_sucios/.gitkeep
+!cargadb/excels/2_limpios/.gitkeep
+!cargadb/excels/3_usados/.gitkeep

@@ -17,6 +17,8 @@ CREATE TABLE IF NOT EXISTS organizations (
     founded INT NULL,                   -- Año de constitución
     organization_type VARCHAR(64) NOT NULL,
     outcome_status VARCHAR(64) NOT NULL,
+    business_model VARCHAR(64) NULL,
+    badges JSON NULL,
     notes TEXT NULL,
     status ENUM('DRAFT', 'IN_REVIEW', 'PUBLISHED', 'ARCHIVED') DEFAULT 'DRAFT',
     lat DECIMAL(10, 7) NULL,
