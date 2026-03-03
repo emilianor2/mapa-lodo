@@ -7,7 +7,7 @@ async function fetchWithSignal(url, options = {}) {
     const response = await fetch(url, options);
     const contentType = response.headers.get('content-type') || '';
     const text = await response.text();
-    
+
     if (!response.ok) {
         const message = text || `HTTP error! status: ${response.status}`;
         const error = new Error(message);
@@ -15,7 +15,7 @@ async function fetchWithSignal(url, options = {}) {
         error.body = text;
         throw error;
     }
-    
+
     if (response.status === 204) return null;
     if (!text) return null;
     if (contentType.includes('application/json')) {
@@ -38,7 +38,7 @@ function cleanParams(params) {
 
     Object.keys(params).forEach(key => {
         let value = params[key];
-        
+
         if (value !== '' && value !== null && value !== undefined) {
             // Si la llave está en el mapa, usamos la nueva, sino la original
             const finalKey = translationMap[key] || key;
@@ -83,6 +83,12 @@ export const adminFetchOrganizations = async (params = {}) => {
     });
 };
 
+export const adminFetchOrganizationById = async (id) => {
+    return fetchWithSignal(`${API_URL}/organizations/${id}`, {
+        headers: getAuthHeader()
+    });
+};
+
 export const adminCreateOrganization = async (data) => {
     const { id, ...payload } = data; // Extraemos el id para no enviarlo en el POST
     return fetchWithSignal(`${API_URL}/organizations`, {
@@ -91,7 +97,7 @@ export const adminCreateOrganization = async (data) => {
             'Content-Type': 'application/json',
             ...getAuthHeader()
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(payload)
     });
 };
 

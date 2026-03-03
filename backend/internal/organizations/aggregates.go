@@ -12,6 +12,8 @@ type AggregatesResponse struct {
 	Verticals         []AggregateItem `json:"verticals"`    // Antes SectorsPrimary
 	SubVerticals      []AggregateItem `json:"subVerticals"` // Antes SectorsSecondary
 	OrganizationTypes []AggregateItem `json:"organizationTypes"`
-	Estadios          []AggregateItem `json:"estadios"`    // Antes Stages
+	Estadios          []AggregateItem `json:"estadios"` // Antes Stages
 	OutcomeStatuses   []AggregateItem `json:"outcomeStatuses"`
+	Regions           []AggregateItem `json:"regions"`
+	Cities            []AggregateItem `json:"cities"`
 }

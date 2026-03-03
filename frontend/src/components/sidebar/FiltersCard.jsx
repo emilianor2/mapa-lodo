@@ -8,13 +8,13 @@ import { ScrollArea } from '../ui/scroll-area';
 
 export default function FiltersCard({ filters, onFilterChange, aggregates, onReset }) {
     return (
-        <Card className="shadow-sm border-none bg-background rounded-3xl flex-shrink-0 w-full md:w-[320px] flex flex-col overflow-hidden">
-            <CardHeader className="p-6 pb-2 flex flex-row items-center justify-between space-y-0">
-                <div className="flex items-center gap-2.5">
-                    <div className="p-2 bg-primary/10 rounded-xl">
-                        <Filter className="h-4 w-4 text-primary" />
+        <Card className="shadow-2xl border-none bg-white rounded-[2.5rem] flex-shrink-0 w-full md:w-[350px] flex flex-col overflow-hidden">
+            <CardHeader className="p-8 pb-4 flex flex-row items-center justify-between space-y-0">
+                <div className="flex items-center gap-4">
+                    <div className="p-2.5 bg-[#6FEA4415] rounded-2xl shadow-inner">
+                        <Filter className="h-5 w-5" style={{ color: '#6FEA44' }} />
                     </div>
-                    <CardTitle className="text-lg font-bold tracking-tight">Filtros</CardTitle>
+                    <CardTitle className="text-2xl font-black tracking-tighter" style={{ color: '#59595B' }}>Filtros</CardTitle>
                 </div>
             </CardHeader>
 
@@ -35,15 +35,16 @@ export default function FiltersCard({ filters, onFilterChange, aggregates, onRes
                         compact
                     />
 
-                    <div className="mt-8 pt-6 border-t">
+                    <div className="mt-10 pt-8 border-t" style={{ borderColor: '#59595B08' }}>
                         <Button
-                            variant="outline"
+                            variant="ghost"
                             size="sm"
                             onClick={onReset}
-                            className="w-full h-10 text-muted-foreground hover:text-primary hover:bg-primary/5 gap-2 transition-all rounded-xl border-dashed"
+                            className="w-full h-12 hover:bg-[#59595B05] gap-3 transition-all rounded-2xl font-black uppercase text-[10px] tracking-[0.2em]"
+                            style={{ color: '#59595B60' }}
                         >
-                            <RotateCcw className="h-4 w-4" />
-                            <span className="text-sm font-semibold">Limpiar filtros</span>
+                            <RotateCcw className="h-4 w-4" style={{ color: '#6FEA44' }} />
+                            <span>Reiniciar</span>
                         </Button>
                     </div>
                 </CardContent>

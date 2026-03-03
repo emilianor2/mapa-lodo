@@ -57,21 +57,8 @@ func (s *Service) Create(org *Organization) error {
 		return err
 	}
 
-	if (org.City != nil && *org.City != "") || (org.Region != nil && *org.Region != "") || (org.Country != nil && *org.Country != "") {
-		city := ""
-		if org.City != nil {
-			city = *org.City
-		}
-		region := ""
-		if org.Region != nil {
-			region = *org.Region
-		}
-		country := ""
-		if org.Country != nil {
-			country = *org.Country
-		}
-
-		lat, lng, err := s.geocoder.Geocode(city, region, country)
+	if org.City != "" || org.Region != "" || org.Country != "" {
+		lat, lng, err := s.geocoder.Geocode(org.City, org.Region, org.Country)
 		if err == nil {
 			org.Lat = &lat
 			org.Lng = &lng
@@ -94,25 +81,8 @@ func (s *Service) Update(org *Organization) error {
 		return err
 	}
 
-	cityChanged := (org.City == nil && existing.City != nil) || (org.City != nil && existing.City == nil) || (org.City != nil && existing.City != nil && *org.City != *existing.City)
-	regionChanged := (org.Region == nil && existing.Region != nil) || (org.Region != nil && existing.Region == nil) || (org.Region != nil && existing.Region != nil && *org.Region != *existing.Region)
-	countryChanged := (org.Country == nil && existing.Country != nil) || (org.Country != nil && existing.Country == nil) || (org.Country != nil && existing.Country != nil && *org.Country != *existing.Country)
-
-	if cityChanged || regionChanged || countryChanged {
-		city := ""
-		if org.City != nil {
-			city = *org.City
-		}
-		region := ""
-		if org.Region != nil {
-			region = *org.Region
-		}
-		country := ""
-		if org.Country != nil {
-			country = *org.Country
-		}
-
-		lat, lng, err := s.geocoder.Geocode(city, region, country)
+	if org.City != existing.City || org.Region != existing.Region || org.Country != existing.Country {
+		lat, lng, err := s.geocoder.Geocode(org.City, org.Region, org.Country)
 		if err == nil {
 			org.Lat = &lat
 			org.Lng = &lng
@@ -255,18 +225,13 @@ func (s *Service) ValidateTaxonomies(org *Organization) error {
 		}
 	}
 
-	// 4. Validar Modelo de Negocio (Llave SQL: 'businessmodel')
+	// 4. Validar Modelo de Negocio (Llave SQL: 'businessmodel') - Flexible
 	if org.BusinessModel != nil && *org.BusinessModel != "" {
-		found := false
 		for taxValue := range grouped["businessmodel"] {
 			if flexibleMatch(*org.BusinessModel, taxValue) {
 				*org.BusinessModel = taxValue
-				found = true
 				break
 			}
-		}
-		if !found {
-			return fmt.Errorf("businessModel inválido: %s", *org.BusinessModel)
 		}
 	}
 
@@ -275,18 +240,17 @@ func (s *Service) ValidateTaxonomies(org *Organization) error {
 		return fmt.Errorf("tipo de organización inválido: %s", org.OrganizationType)
 	}
 
-	// 6. Validar Badges (Llave SQL: 'badges')
+	// 6. Validar Badges (Llave SQL: 'badges') - Flexible: Si no está en taxonomía, se permite igual
 	if len(org.Badges) > 0 {
-		for _, b := range org.Badges {
-			found := false
+		for i, b := range org.Badges {
+			if strings.EqualFold(b, "none") {
+				continue
+			}
 			for taxValue := range grouped["badges"] {
 				if flexibleMatch(b, taxValue) {
-					found = true
+					org.Badges[i] = taxValue // Normalizar
 					break
 				}
-			}
-			if !found {
-				return fmt.Errorf("badge inválido detectado: %s", b)
 			}
 		}
 	}

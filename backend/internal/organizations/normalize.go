@@ -11,9 +11,9 @@ func Normalize(org *Organization) error {
 	org.ID = strings.TrimSpace(org.ID)
 	org.Name = strings.TrimSpace(org.Name)
 	org.Vertical = strings.TrimSpace(org.Vertical)
-	org.Country = normalizeOptional(org.Country)
-	org.Region = normalizeOptional(org.Region)
-	org.City = normalizeOptional(org.City)
+	org.Country = strings.TrimSpace(org.Country)
+	org.Region = strings.TrimSpace(org.Region)
+	org.City = strings.TrimSpace(org.City)
 	org.OrganizationType = strings.TrimSpace(org.OrganizationType)
 	org.OutcomeStatus = strings.TrimSpace(org.OutcomeStatus)
 
@@ -67,16 +67,8 @@ func Normalize(org *Organization) error {
 // ValidateForPublish realiza el checklist corporativo antes de permitir el paso a PUBLISHED.
 // Esta es la función que service.go necesita encontrar.
 func ValidateForPublish(org *Organization) error {
-	if org.Name == "" || org.Vertical == "" || org.OrganizationType == "" {
-		return fmt.Errorf("faltan campos de identidad o categorización obligatorios")
-	}
-
-	hasLocation := (org.Country != nil && *org.Country != "") ||
-		(org.Region != nil && *org.Region != "") ||
-		(org.City != nil && *org.City != "")
-
-	if !hasLocation {
-		return fmt.Errorf("se requiere al menos un dato de ubicación (País, Provincia o Ciudad) para publicar")
+	if org.Name == "" || org.Vertical == "" || org.Country == "" || org.OrganizationType == "" {
+		return fmt.Errorf("faltan campos geográficos (país) o de categorización obligatorios")
 	}
 
 	if org.Solucion == nil || len(*org.Solucion) < 20 {

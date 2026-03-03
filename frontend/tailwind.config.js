@@ -41,6 +41,12 @@ export default {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
+                // Marca LODO
+                lodo: {
+                    green: "#6FEA44",
+                    dark: "#59595B",
+                    light: "#f4f4f5",
+                },
             },
             borderRadius: {
                 lg: "var(--radius)",

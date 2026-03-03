@@ -13,7 +13,7 @@ import { Button } from '../components/ui/button';
 import { adminFetchOrganizations as listOrganizations } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
-const CHART_COLORS = ['#2f8f39', '#42ab49', '#63cc66', '#8fcc8c', '#bdecb8', '#d9f5d6'];
+const CHART_COLORS = ['#6FEA44', '#5ED23A', '#4DC130', '#3DB126', '#2DA01D', '#1D8F14'];
 
 function normalize(value, fallback = 'Sin dato') {
     if (value === null || value === undefined) return fallback;
@@ -41,10 +41,10 @@ function HorizontalBars({ title, data, icon: Icon }) {
     const maxValue = data.length > 0 ? Math.max(...data.map((d) => d.value)) : 1;
 
     return (
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="mb-4 flex items-center gap-2">
-                <Icon className="h-4 w-4 text-primary" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-700">{title}</h3>
+        <div className="rounded-[2rem] border bg-white p-6 shadow-sm" style={{ borderColor: '#59595B10' }}>
+            <div className="mb-6 flex items-center gap-3">
+                <Icon className="h-5 w-5" style={{ color: '#6FEA44' }} />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: '#59595B' }}>{title}</h3>
             </div>
 
             <div className="space-y-3">
@@ -80,10 +80,10 @@ function DonutChart({ title, data }) {
     let accumulator = 0;
 
     return (
-        <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="mb-4 flex items-center gap-2">
-                <PieChart className="h-4 w-4 text-primary" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-700">{title}</h3>
+        <div className="rounded-[2rem] border bg-white p-6 shadow-sm" style={{ borderColor: '#59595B10' }}>
+            <div className="mb-6 flex items-center gap-3">
+                <PieChart className="h-5 w-5" style={{ color: '#6FEA44' }} />
+                <h3 className="text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: '#59595B' }}>{title}</h3>
             </div>
 
             <div className="flex flex-col gap-4 md:flex-row md:items-center">
@@ -119,8 +119,8 @@ function DonutChart({ title, data }) {
                         })}
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <span className="text-3xl font-black text-slate-900">{total}</span>
-                        <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Startups</span>
+                        <span className="text-4xl font-black" style={{ color: '#59595B' }}>{total}</span>
+                        <span className="text-[9px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Startups</span>
                     </div>
                 </div>
 
@@ -190,10 +190,10 @@ export default function AdminStatsPage() {
     if (authLoading) {
         return (
             <AppShell>
-                <div className="flex h-full items-center justify-center bg-slate-50">
+                <div className="flex h-full items-center justify-center" style={{ backgroundColor: '#f4f4f5' }}>
                     <div className="text-center">
-                        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-primary" />
-                        <p className="text-slate-500">Verificando acceso...</p>
+                        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2" style={{ borderColor: '#6FEA44' }} />
+                        <p style={{ color: '#59595B' }}>Verificando acceso...</p>
                     </div>
                 </div>
             </AppShell>
@@ -203,20 +203,20 @@ export default function AdminStatsPage() {
     if (!isAdmin) {
         return (
             <AppShell>
-                <div className="flex h-full items-center justify-center bg-slate-50">
-                    <div className="max-w-md p-8 text-center">
-                        <div className="mx-auto mb-6 w-fit rounded-full bg-rose-100 p-4">
-                            <ShieldX className="h-12 w-12 text-rose-600" />
+                <div className="flex h-full items-center justify-center" style={{ backgroundColor: '#f4f4f5' }}>
+                    <div className="max-w-md p-12 text-center bg-white rounded-[2.5rem] shadow-xl border" style={{ borderColor: '#59595B10' }}>
+                        <div className="mx-auto mb-10 w-fit rounded-full p-5" style={{ backgroundColor: '#59595B08' }}>
+                            <ShieldX className="h-12 w-12" style={{ color: '#59595B' }} />
                         </div>
-                        <h2 className="mb-2 text-2xl font-bold text-slate-900">Acceso Denegado</h2>
-                        <p className="mb-6 text-slate-500">
+                        <h2 className="mb-4 text-3xl font-black tracking-tighter" style={{ color: '#59595B' }}>Acceso Denegado</h2>
+                        <p className="mb-10 font-bold uppercase tracking-widest text-[10px] leading-relaxed opacity-60" style={{ color: '#59595B' }}>
                             Esta vista es solo para administradores.
                             <br />
-                            <span className="text-sm">Conectado como: {user?.email}</span>
+                            <span className="text-[10px]">Conectado como: {user?.email}</span>
                         </p>
-                        <div className="flex justify-center gap-3">
-                            <Button variant="outline" onClick={() => navigate('/map')}>Volver al mapa</Button>
-                            <Button variant="outline" onClick={() => navigate('/')}>Inicio</Button>
+                        <div className="flex justify-center gap-4">
+                            <Button variant="ghost" onClick={() => navigate('/map')} className="font-black uppercase text-[10px] tracking-widest px-6" style={{ color: '#59595B' }}>Mapa</Button>
+                            <Button onClick={() => navigate('/')} className="font-black uppercase text-[10px] tracking-widest px-8 rounded-xl shadow-lg" style={{ backgroundColor: '#6FEA44', color: '#000', boxShadow: '0 8px 20px #6FEA4440' }}>Inicio</Button>
                         </div>
                     </div>
                 </div>
@@ -226,14 +226,14 @@ export default function AdminStatsPage() {
 
     return (
         <AppShell>
-            <div className="min-h-full bg-slate-50/60 p-6 md:p-8">
-                <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="min-h-full p-10 md:p-12" style={{ backgroundColor: '#f4f4f5' }}>
+                <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                     <div>
-                        <div className="mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary/80">
-                            <BarChart3 className="h-3.5 w-3.5" />
+                        <div className="mb-3 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] opacity-60" style={{ color: '#59595B' }}>
+                            <BarChart3 className="h-3.5 w-3.5" style={{ color: '#6FEA44' }} />
                             Admin Stats
                         </div>
-                        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+                        <h1 className="text-4xl font-black tracking-tighter" style={{ color: '#59595B' }}>
                             Estadisticas del Ecosistema
                         </h1>
                     </div>
@@ -249,25 +249,25 @@ export default function AdminStatsPage() {
                     </div>
                 ) : (
                     <>
-                        <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                            <div className="rounded-2xl border bg-white p-5 shadow-sm">
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Total</p>
-                                <p className="mt-2 text-3xl font-black text-slate-900">{stats.total}</p>
+                        <div className="mb-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
+                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Total</p>
+                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.total}</p>
                             </div>
-                            <div className="rounded-2xl border bg-white p-5 shadow-sm">
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Con Coordenadas</p>
-                                <p className="mt-2 text-3xl font-black text-slate-900">{stats.mappable}</p>
-                                <p className="text-xs font-semibold text-slate-500">{stats.mappablePct}% del total</p>
+                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
+                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Con Coordenadas</p>
+                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.mappable}</p>
+                                <p className="text-[10px] font-black mt-2" style={{ color: '#6FEA44' }}>{stats.mappablePct}% del total</p>
                             </div>
-                            <div className="rounded-2xl border bg-white p-5 shadow-sm">
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Publicadas</p>
-                                <p className="mt-2 text-3xl font-black text-slate-900">{stats.published}</p>
-                                <p className="text-xs font-semibold text-slate-500">{stats.publishedPct}% del total</p>
+                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
+                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Publicadas</p>
+                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.published}</p>
+                                <p className="text-[10px] font-black mt-2" style={{ color: '#6FEA44' }}>{stats.publishedPct}% del total</p>
                             </div>
-                            <div className="rounded-2xl border bg-white p-5 shadow-sm">
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Cobertura Geografica</p>
-                                <p className="mt-2 text-3xl font-black text-slate-900">{stats.topCountries.length}</p>
-                                <p className="text-xs font-semibold text-slate-500">Paises con actividad</p>
+                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
+                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Paises</p>
+                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.topCountries.length}</p>
+                                <p className="text-[10px] font-black mt-2 opacity-40" style={{ color: '#59595B' }}>Actividad detectada</p>
                             </div>
                         </div>
 

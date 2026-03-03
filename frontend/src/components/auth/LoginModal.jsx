@@ -13,6 +13,11 @@ import { LogIn, UserPlus, Loader2, Mail, Lock, User } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function LoginModal({ isOpen, onClose }) {
+    // Colores de marca LODO
+    const lodoGreen = "#6FEA44";
+    const lodoDark = "#59595B";
+    const lodoLight = "#f4f4f5";
+
     const { login, register } = useAuth();
     const [isRegister, setIsRegister] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -50,17 +55,17 @@ export default function LoginModal({ isOpen, onClose }) {
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent className="sm:max-w-md" style={{ backgroundColor: lodoLight }}>
                 <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-center flex items-center justify-center gap-2">
+                    <DialogTitle className="text-2xl font-black text-center flex items-center justify-center gap-2" style={{ color: lodoDark }}>
                         {isRegister ? (
                             <>
-                                <UserPlus className="h-6 w-6 text-primary" />
+                                <UserPlus className="h-6 w-6" style={{ color: lodoGreen }} />
                                 Crear Cuenta
                             </>
                         ) : (
                             <>
-                                <LogIn className="h-6 w-6 text-primary" />
+                                <LogIn className="h-6 w-6" style={{ color: lodoGreen }} />
                                 Iniciar Sesión
                             </>
                         )}
@@ -70,8 +75,8 @@ export default function LoginModal({ isOpen, onClose }) {
                 <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                     {isRegister && (
                         <div className="space-y-2">
-                            <Label htmlFor="name" className="flex items-center gap-2">
-                                <User className="h-4 w-4 text-muted-foreground" />
+                            <Label htmlFor="name" className="flex items-center gap-2" style={{ color: lodoDark }}>
+                                <User className="h-4 w-4 opacity-70" />
                                 Nombre
                             </Label>
                             <Input
@@ -81,14 +86,15 @@ export default function LoginModal({ isOpen, onClose }) {
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 required={isRegister}
-                                className="h-11"
+                                className="h-11 bg-white border-slate-200 focus:ring-offset-0"
+                                style={{ focusVisibleRing: lodoGreen }}
                             />
                         </div>
                     )}
 
                     <div className="space-y-2">
-                        <Label htmlFor="email" className="flex items-center gap-2">
-                            <Mail className="h-4 w-4 text-muted-foreground" />
+                        <Label htmlFor="email" className="flex items-center gap-2" style={{ color: lodoDark }}>
+                            <Mail className="h-4 w-4 opacity-70" />
                             Email
                         </Label>
                         <Input
@@ -98,13 +104,13 @@ export default function LoginModal({ isOpen, onClose }) {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required
-                            className="h-11"
+                            className="h-11 bg-white border-slate-200 focus:ring-offset-0"
                         />
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="password" className="flex items-center gap-2">
-                            <Lock className="h-4 w-4 text-muted-foreground" />
+                        <Label htmlFor="password" className="flex items-center gap-2" style={{ color: lodoDark }}>
+                            <Lock className="h-4 w-4 opacity-70" />
                             Contraseña
                         </Label>
                         <Input
@@ -115,14 +121,19 @@ export default function LoginModal({ isOpen, onClose }) {
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                             required
                             minLength={6}
-                            className="h-11"
+                            className="h-11 bg-white border-slate-200 focus:ring-offset-0"
                         />
                     </div>
 
                     <Button
                         type="submit"
-                        className="w-full h-11 font-bold"
+                        className="w-full h-11 font-black uppercase tracking-widest shadow-lg transition-transform active:scale-95"
                         disabled={loading}
+                        style={{
+                            backgroundColor: lodoGreen,
+                            color: "#000000",
+                            boxShadow: `${lodoGreen}33 0px 8px 24px`
+                        }}
                     >
                         {loading ? (
                             <Loader2 className="h-4 w-4 animate-spin mr-2" />
@@ -139,17 +150,16 @@ export default function LoginModal({ isOpen, onClose }) {
                     <button
                         type="button"
                         onClick={toggleMode}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="text-sm transition-colors"
+                        style={{ color: lodoDark }}
                     >
                         {isRegister ? (
-                            <>¿Ya tienes cuenta? <span className="font-semibold text-primary">Inicia sesión</span></>
+                            <>¿Ya tienes cuenta? <span className="font-bold" style={{ color: lodoGreen }}>Inicia sesión</span></>
                         ) : (
-                            <>¿No tienes cuenta? <span className="font-semibold text-primary">Regístrate</span></>
+                            <>¿No tienes cuenta? <span className="font-bold" style={{ color: lodoGreen }}>Regístrate</span></>
                         )}
                     </button>
                 </div>
-
-                {/* Demo credentials removed */}
             </DialogContent>
         </Dialog>
     );

@@ -17,11 +17,11 @@ type Organization struct {
 	ID               string             `json:"id"`
 	Name             string             `json:"name"`
 	Website          *string            `json:"website,omitempty"`
-	Vertical         string             `json:"vertical"`              // Ej: agtech, biotech_bioinputs
-	SubVertical      *string            `json:"subVertical,omitempty"` // Ej: digital_ag, crop_genomics
-	Country          *string            `json:"country,omitempty"`
-	Region           *string            `json:"region,omitempty"`
-	City             *string            `json:"city,omitempty"`
+	Vertical         string             `json:"vertical"`             // Ej: agtech, biotech_bioinputs
+	SubVertical      *string            `json:"subVertical,omitempty"`  // Ej: digital_ag, crop_genomics
+	Country          string             `json:"country"`
+	Region           string             `json:"region"`
+	City             string             `json:"city"`
 	LogoURL          *string            `json:"logoUrl,omitempty"`
 	EstadioActual    *string            `json:"estadioActual,omitempty"` // Etapa de Madurez
 	Solucion         *string            `json:"solucion,omitempty"`      // Antes Description
@@ -47,7 +47,7 @@ type OrganizationSummary struct {
 	ID       string   `json:"id"`
 	Name     string   `json:"name"`
 	Vertical string   `json:"vertical"`
-	Country  *string  `json:"country,omitempty"`
+	Country  string   `json:"country"`
 	Lat      *float64 `json:"lat,omitempty"`
 	Lng      *float64 `json:"lng,omitempty"`
 	Status   string   `json:"status"`

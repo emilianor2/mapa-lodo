@@ -1,149 +1,92 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Map, Settings, Search, Menu, Home, BarChart3 } from 'lucide-react';
+import { Map, Home, Settings, X, Menu, BarChart3 } from 'lucide-react';
 import { Button } from '../ui/button';
-import { Input } from '../ui/input';
+import AppHeader from './AppHeader';
 
 export default function AppShell({ children, onSearchChange, searchValue, resultsCount }) {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
-    const { isAdmin, isAuthenticated } = useAuth();
-    const isMapPage = location.pathname.startsWith('/map');
-    const isAdminPage = location.pathname.startsWith('/admin');
-    const isContactPage = location.pathname.startsWith('/contacto');
-    const useUnifiedHeader = isMapPage || isAdminPage;
-    const showSearch = !isAdmin && onSearchChange !== undefined;
-    const actionButtonClass = 'hidden sm:flex text-white/90 hover:text-[#6FEA44] hover:bg-white/10 transition-colors border border-transparent';
-    const activeActionButtonClass = 'hidden sm:flex text-white bg-white/15 hover:bg-white/20 border border-white/20';
-
     const navigate = useNavigate();
+    const { isAdmin } = useAuth();
+
+    const colors = {
+        green: "#6FEA44",
+        dark: "#59595B"
+    };
+
+    const isMapPage = location.pathname.startsWith('/map');
 
     return (
-        <div className="flex flex-col h-screen bg-background overflow-hidden">
-            {/* Header */}
-            <header
-                className={`sticky top-0 z-[2200] w-full ${
-                    useUnifiedHeader
-                        ? 'border-b border-white/15 bg-[#59595B]/95 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.24)]'
-                        : 'border-b bg-background/100 backdrop-blur-sm shadow-sm'
-                }`}
-            >
+        <div className="flex flex-col h-screen w-full overflow-hidden" style={{ backgroundColor: colors.dark }}>
+
+            <AppHeader
+                onSearchChange={onSearchChange}
+                searchValue={searchValue}
+                resultsCount={resultsCount}
+            />
+
+            <main className="flex-1 relative overflow-hidden flex flex-col">
                 <div
-                    className={`mx-auto flex items-center justify-between px-4 ${
-                        useUnifiedHeader
-                            ? 'h-16 w-full text-white'
-                            : isContactPage
-                                ? 'h-16'
-                                : 'h-10'
-                    }`}
-                >
-                    {/* Logo */}
-                    <Link to="/" className="flex items-center gap-3 group transition-all duration-300 active:scale-95">
-                        <img
-                            src="/lodo.png"
-                            alt="LODO"
-                            className={`w-auto object-contain transition-transform duration-300 ${
-                                useUnifiedHeader ? 'h-12 group-hover:scale-[1.02]' : 'h-10 group-hover:scale-[1.04]'
-                            }`}
-                        />
-                    </Link>
+                    className="absolute inset-0 pointer-events-none opacity-10"
+                    style={{ background: `radial-gradient(circle at 50% 0%, ${colors.green}, transparent 70%)` }}
+                />
 
-                    {/* Search (visible on map page) */}
-                    {showSearch && (
-                        <div className={`flex-1 max-w-xl hidden md:block ${useUnifiedHeader ? 'mx-8' : 'mx-12'}`}>
-                            <div className="relative group">
-                                <Search
-                                    className={`absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 transition-colors ${
-                                        useUnifiedHeader
-                                            ? 'text-white/55 group-focus-within:text-[#6FEA44]'
-                                            : 'text-muted-foreground group-focus-within:text-primary'
-                                    }`}
-                                />
-                                <Input
-                                    type="search"
-                                    placeholder="Buscar por nombre, etiquetas, sector..."
-                                    className={`pl-10 h-10 transition-all duration-200 ${
-                                        useUnifiedHeader
-                                            ? 'border-white/15 bg-white/10 text-white placeholder:text-white/50 focus:border-[#6FEA44] focus:bg-white/15'
-                                            : 'bg-muted/50 border-transparent focus:bg-background'
-                                    }`}
-                                    value={searchValue || ''}
-                                    onChange={(e) => onSearchChange(e.target.value)}
-                                />
-                            </div>
+                <div className={`relative z-10 flex-1 ${isMapPage ? 'overflow-hidden' : 'overflow-y-auto'}`}>
+                    {children}
+                </div>
+            </main>
+
+            {/* Menú Lateral Móvil */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-[3000] lg:hidden animate-in fade-in">
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setIsMobileMenuOpen(false)} />
+                    <aside className="absolute right-0 top-0 h-full w-[300px] p-8 flex flex-col gap-8 animate-in slide-in-from-right" style={{ backgroundColor: colors.dark }}>
+                        <div className="flex justify-between items-center border-b border-white/10 pb-4">
+                            <img src="/lodo.png" className="h-8" alt="LODO" />
+                            <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="text-white">
+                                <X />
+                            </Button>
                         </div>
-                    )}
-
-                    {/* Right section */}
-                    <div className="flex items-center gap-3">
-                        {!isMapPage && (
-                            <Link to="/map">
-                                <Button variant="ghost" size="sm" className={actionButtonClass}>
-                                    <Map className="h-4 w-4 mr-2" />
-                                    Ver Mapa
-                                </Button>
-                            </Link>
-                        )}
-                        {location.pathname !== '/' && (
-                            <Link to="/">
-                                <Button variant="ghost" size="sm" className={actionButtonClass}>
-                                    <Home className="h-4 w-4 mr-2" />
-                                    Volver al Inicio
-                                </Button>
-                            </Link>
-                        )}
-                        {/* Add Company button for non-admin users on map page */}
-                        {!isAdmin && isAuthenticated && location.pathname.startsWith('/map') && (
+                        <nav className="flex flex-col gap-4">
                             <Button
                                 variant="ghost"
-                                size="sm"
-                                className={actionButtonClass}
-                                onClick={() => navigate('/contacto')}
+                                className="justify-start font-black text-white hover:bg-[#6FEA44] hover:text-[#59595B]"
+                                onClick={() => { navigate('/map'); setIsMobileMenuOpen(false); }}
                             >
-                                <Map className="h-4 w-4 mr-2" />
-                                Agregar Empresa
+                                <Map className="mr-4" /> MAPA
                             </Button>
-                        )}
-                        {isAdmin && (
-                            <>
-                                <Link to="/admin/stats">
+                            {isAdmin && (
+                                <>
                                     <Button
                                         variant="ghost"
-                                        size="sm"
-                                        className={location.pathname.startsWith('/admin/stats') ? activeActionButtonClass : actionButtonClass}
+                                        className="justify-start font-black text-white hover:bg-[#6FEA44] hover:text-[#59595B]"
+                                        onClick={() => { navigate('/admin/stats'); setIsMobileMenuOpen(false); }}
                                     >
-                                        <BarChart3 className="h-4 w-4 mr-2" />
-                                        Estadisticas
+                                        <BarChart3 className="mr-4" /> ESTADÍSTICAS
                                     </Button>
-                                </Link>
-                                <Link to="/admin">
                                     <Button
                                         variant="ghost"
-                                        size="sm"
-                                        className={location.pathname === '/admin' ? activeActionButtonClass : actionButtonClass}
+                                        className="justify-start font-black text-white hover:bg-[#6FEA44] hover:text-[#59595B]"
+                                        onClick={() => { navigate('/admin'); setIsMobileMenuOpen(false); }}
                                     >
-                                        <Settings className="h-4 w-4 mr-2" />
-                                        Admin
+                                        <Settings className="mr-4" /> ADMINISTRADOR
                                     </Button>
-                                </Link>
-                            </>
-                        )}
-                        {/* Mobile menu (simulated) */}
-                        <Button variant="ghost" size="icon" className={useUnifiedHeader ? 'md:hidden text-white/90 hover:text-[#6FEA44] hover:bg-white/10' : 'md:hidden'}>
-                            <Menu className="h-5 w-5" />
-                        </Button>
-                    </div>
+                                </>
+                            )}
+                        </nav>
+                    </aside>
                 </div>
-            </header>
+            )}
 
-            {/* Main Content */}
-            <main
-                className={`flex-1 relative ${
-                    isMapPage ? 'overflow-hidden' : 'overflow-y-auto'
-                }`}
+            <Button
+                className="lg:hidden fixed bottom-6 right-6 z-[2100] shadow-2xl rounded-full h-14 w-14 border border-white/10"
+                style={{ backgroundColor: colors.green, color: colors.dark }}
+                onClick={() => setIsMobileMenuOpen(true)}
             >
-                {children}
-            </main>
+                <Menu />
+            </Button>
         </div>
     );
 }

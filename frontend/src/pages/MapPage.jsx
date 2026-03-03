@@ -28,9 +28,11 @@ export default function MapPage() {
         const initialVertical = searchParams.get('vertical') || searchParams.get('filter') || '';
         return {
             country: '',
-            vertical: initialVertical, // Cambiado de sectorPrimary
+            region: '',
+            city: '',
+            vertical: initialVertical,
             organizationType: '',
-            estadioActual: '',        // Cambiado de stage
+            estadioActual: '',
             outcomeStatus: '',
             q: '',
             onlyMappable: false
@@ -40,7 +42,7 @@ export default function MapPage() {
     const [bbox, setBbox] = useState(null);
     const debouncedFilters = useDebounce(filters, 400);
     const [organizations, setOrganizations] = useState([]);
-    
+
     // El hook useFacets ya fue actualizado para manejar 'vertical' y 'estadioActual'
     const { facets: aggregates, loading: facetsLoading } = useFacets(debouncedFilters);
 
@@ -104,6 +106,8 @@ export default function MapPage() {
     const handleResetFilters = () => {
         setFilters({
             country: '',
+            region: '',
+            city: '',
             vertical: '',
             organizationType: '',
             estadioActual: '',
@@ -132,6 +136,7 @@ export default function MapPage() {
                 searchQuery={filters.q}
                 onSearchChange={(val) => handleFilterChange('q', val)}
                 isDetailModalOpen={!!selectedOrgId}
+                style={{ backgroundColor: '#f4f4f5' }}
             >
                 <MapView
                     organizations={organizations}

@@ -114,7 +114,7 @@ func (h *Handler) Delete(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "ID requerido para eliminar", http.StatusBadRequest)
 		return
 	}
-
+	
 	force := r.URL.Query().Get("force") == "true"
 
 	if err := h.Service.Delete(id, force); err != nil {
@@ -217,20 +217,7 @@ func (h *Handler) Geocode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	city := ""
-	if org.City != nil {
-		city = *org.City
-	}
-	region := ""
-	if org.Region != nil {
-		region = *org.Region
-	}
-	country := ""
-	if org.Country != nil {
-		country = *org.Country
-	}
-
-	lat, lng, err := h.Geocoder.Geocode(city, region, country)
+	lat, lng, err := h.Geocoder.Geocode(org.City, org.Region, org.Country)
 	if err != nil {
 		http.Error(w, "Geocoding error: "+err.Error(), http.StatusBadGateway)
 		return
@@ -278,14 +265,14 @@ func (h *Handler) PatchCoordinates(w http.ResponseWriter, r *http.Request) {
 
 func extractID(path string) string {
 	parts := strings.Split(strings.Trim(path, "/"), "/")
-
+	
 	// Buscamos dinámicamente el segmento después de "organizations"
 	for i, p := range parts {
 		if p == "organizations" && i+1 < len(parts) {
 			id := parts[i+1]
 			// Validamos que no sea una palabra clave de acción
 			reserved := map[string]bool{
-				"review": true, "publish": true, "archive": true,
+				"review": true, "publish": true, "archive": true, 
 				"geocode": true, "coordinates": true, "aggregates": true,
 			}
 			if reserved[id] {

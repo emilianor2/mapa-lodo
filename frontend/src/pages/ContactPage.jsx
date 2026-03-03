@@ -90,10 +90,10 @@ export default function ContactPage() {
 
     return (
         <AppShell>
-            <div className="min-h-screen flex items-start justify-center p-6 py-10 overflow-y-auto">
-                <div className="w-full max-w-3xl bg-background/80 p-8 rounded-2xl shadow-lg">
-                    <h1 className="text-2xl font-bold mb-4">Agregar Empresa / Contacto</h1>
-                    <p className="text-sm text-muted-foreground mb-6">Completa el formulario y se enviará directamente a LODO.</p>
+            <div className="min-h-screen flex items-start justify-center p-6 py-12" style={{ backgroundColor: '#f4f4f5' }}>
+                <div className="w-full max-w-4xl bg-white p-12 rounded-[2.5rem] shadow-xl border" style={{ borderColor: '#59595B10' }}>
+                    <h1 className="text-4xl font-black mb-2 tracking-tighter" style={{ color: '#59595B' }}>Agregar Empresa</h1>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-10 opacity-60" style={{ color: '#59595B' }}>Completa el formulario y se enviará directamente a LODO.</p>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -160,11 +160,11 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="text-sm text-muted-foreground">Al enviar se enviará directamente la información a LODO.</div>
+                        <div className="text-[10px] font-black uppercase tracking-widest opacity-40 pt-4" style={{ color: '#59595B' }}>Al enviar se enviará directamente la información a LODO.</div>
 
-                        <div className="flex items-center gap-3 pt-2">
-                            <Button variant="ghost" onClick={() => navigate(-1)} disabled={loading}>Cancelar</Button>
-                            <Button type="submit" className="bg-primary text-primary-foreground" disabled={loading}>{loading ? 'Enviando...' : 'Enviar'}</Button>
+                        <div className="flex items-center gap-4 pt-6">
+                            <Button variant="ghost" type="button" onClick={() => navigate(-1)} disabled={loading} className="font-black uppercase text-[10px] tracking-widest px-8 h-12" style={{ color: '#59595B60' }}>Cancelar</Button>
+                            <Button type="submit" className="font-black uppercase text-[10px] tracking-widest px-10 h-12 rounded-xl shadow-lg transition-all active:scale-95" style={{ backgroundColor: '#6FEA44', color: '#000', shadowColor: '#6FEA4440' }} disabled={loading}>{loading ? 'Enviando...' : 'Enviar Solicitud'}</Button>
                         </div>
                     </form>
                 </div>

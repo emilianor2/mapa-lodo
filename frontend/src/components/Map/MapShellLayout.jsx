@@ -32,7 +32,7 @@ export default function MapShellLayout({
     };
 
     return (
-        <div className="relative w-full h-full overflow-hidden bg-background">
+        <div className="relative w-full h-full overflow-hidden" style={{ backgroundColor: '#f4f4f5' }}>
             {/* Floating UI Overlay - Hidden when detail modal is open */}
             {!isDetailModalOpen && (
                 <FloatingControls

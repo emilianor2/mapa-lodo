@@ -8,9 +8,11 @@ import { fetchAggregates } from '../services/api';
 export function useFacets(filters) {
     const [facets, setFacets] = useState({
         countries: [],
-        verticals: [],         // Antes sectorsPrimary
+        regions: [],
+        cities: [],
+        verticals: [],
         organizationTypes: [],
-        estadios: [],          // Antes stages
+        estadios: [],
         outcomeStatuses: []
     });
     const [loading, setLoading] = useState(true);
@@ -46,8 +48,10 @@ export function useFacets(filters) {
                  * Ejecutamos las llamadas en paralelo.
                  * Nota: Usamos los nombres de parámetros que espera el backend (vertical, estadioActual, etc.)
                  */
-                const [resCountry, resVertical, resType, resEstadio, resStatus] = await Promise.all([
+                const [resCountry, resRegion, resCity, resVertical, resType, resEstadio, resStatus] = await Promise.all([
                     fetchAggregates(getParamsExcluding('country'), signal),
+                    fetchAggregates(getParamsExcluding('region'), signal),
+                    fetchAggregates(getParamsExcluding('city'), signal),
                     fetchAggregates(getParamsExcluding('vertical'), signal),
                     fetchAggregates(getParamsExcluding('organizationType'), signal),
                     fetchAggregates(getParamsExcluding('estadioActual'), signal),
@@ -57,6 +61,8 @@ export function useFacets(filters) {
                 if (!signal.aborted) {
                     setFacets({
                         countries: resCountry.countries || [],
+                        regions: resRegion.regions || [],
+                        cities: resCity.cities || [],
                         verticals: resVertical.verticals || [],
                         organizationTypes: resType.organizationTypes || [],
                         estadios: resEstadio.estadios || [],

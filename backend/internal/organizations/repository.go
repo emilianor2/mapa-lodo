@@ -19,8 +19,8 @@ func NewRepository(db *sql.DB) *Repository {
 const orgSelectColumns = `
 	id, name, website, vertical, sub_vertical, country, region, city,
 	logo_url, estadio_actual, solucion, mail, social_media, contact_phone,
-	founders, founded, organization_type, outcome_status, notes, status,
-	lat, lng, created_at, updated_at
+	founders, founded, organization_type, outcome_status, business_model, badges,
+	notes, status, lat, lng, created_at, updated_at
 `
 
 // --- MÉTODOS DE PERSISTENCIA CORE ---
@@ -30,14 +30,14 @@ func (r *Repository) Create(org *Organization) error {
 		INSERT INTO organizations (
 			id, name, website, vertical, sub_vertical, country, region, city,
 			logo_url, estadio_actual, solucion, mail, social_media, contact_phone,
-			founders, founded, organization_type, outcome_status, notes, status,
-			lat, lng
-		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+			founders, founded, organization_type, outcome_status, business_model, badges,
+			notes, status, lat, lng
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		org.ID, org.Name, org.Website, org.Vertical, org.SubVertical,
 		org.Country, org.Region, org.City, org.LogoURL, org.EstadioActual,
 		org.Solucion, org.Mail, toJSON(org.SocialMedia), org.ContactPhone,
 		toJSON(org.Founders), org.Founded, org.OrganizationType, org.OutcomeStatus,
-		org.Notes, org.Status, org.Lat, org.Lng,
+		org.BusinessModel, toJSON(org.Badges), org.Notes, org.Status, org.Lat, org.Lng,
 	)
 	return err
 }
@@ -49,15 +49,16 @@ func (r *Repository) Update(org *Organization) error {
 			country = ?, region = ?, city = ?, logo_url = ?, 
 			estadio_actual = ?, solucion = ?, mail = ?, social_media = ?, 
 			contact_phone = ?, founders = ?, founded = ?, 
-			organization_type = ?, outcome_status = ?, notes = ?,
-			lat = ?, lng = ?, updated_at = CURRENT_TIMESTAMP
+			organization_type = ?, outcome_status = ?, business_model = ?, 
+			badges = ?, notes = ?, lat = ?, lng = ?, 
+			updated_at = CURRENT_TIMESTAMP
 		WHERE id = ?`,
 		org.Name, org.Website, org.Vertical, org.SubVertical,
 		org.Country, org.Region, org.City, org.LogoURL,
 		org.EstadioActual, org.Solucion, org.Mail, toJSON(org.SocialMedia),
 		org.ContactPhone, toJSON(org.Founders), org.Founded,
-		org.OrganizationType, org.OutcomeStatus, org.Notes,
-		org.Lat, org.Lng, org.ID,
+		org.OrganizationType, org.OutcomeStatus, org.BusinessModel,
+		toJSON(org.Badges), org.Notes, org.Lat, org.Lng, org.ID,
 	)
 	return err
 }
@@ -95,7 +96,7 @@ func (r *Repository) FindAll() ([]Organization, error) {
 
 func (r *Repository) FindFiltered(params map[string]string) ([]Organization, error) {
 	query := `SELECT ` + orgSelectColumns + ` FROM organizations WHERE 1=1`
-	
+
 	whereSQL, args := r.buildWhereClause(params)
 	query += whereSQL + " ORDER BY updated_at DESC"
 
@@ -148,6 +149,8 @@ func (r *Repository) GetAggregates(params map[string]string) (*AggregatesRespons
 	resp.OrganizationTypes, err = r.fetchAggregation("organization_type", false, whereSQL, args)
 	resp.Estadios, err = r.fetchAggregation("estadio_actual", true, whereSQL, args)
 	resp.OutcomeStatuses, err = r.fetchAggregation("outcome_status", false, whereSQL, args)
+	resp.Regions, err = r.fetchAggregation("region", true, whereSQL, args)
+	resp.Cities, err = r.fetchAggregation("city", true, whereSQL, args)
 
 	if err != nil {
 		return nil, err
@@ -157,16 +160,16 @@ func (r *Repository) GetAggregates(params map[string]string) (*AggregatesRespons
 
 // --- HELPERS INTERNOS ---
 
-func (r *Repository) scanOrg(scanner interface { Scan(dest ...any) error }) (*Organization, error) {
+func (r *Repository) scanOrg(scanner interface{ Scan(dest ...any) error }) (*Organization, error) {
 	var org Organization
-	var socialJ, foundersJ *string
+	var socialJ, foundersJ, badgesJ *string
 
 	err := scanner.Scan(
 		&org.ID, &org.Name, &org.Website, &org.Vertical, &org.SubVertical,
 		&org.Country, &org.Region, &org.City, &org.LogoURL, &org.EstadioActual,
 		&org.Solucion, &org.Mail, &socialJ, &org.ContactPhone, &foundersJ,
-		&org.Founded, &org.OrganizationType, &org.OutcomeStatus, &org.Notes,
-		&org.Status, &org.Lat, &org.Lng, &org.CreatedAt, &org.UpdatedAt,
+		&org.Founded, &org.OrganizationType, &org.OutcomeStatus, &org.BusinessModel,
+		&badgesJ, &org.Notes, &org.Status, &org.Lat, &org.Lng, &org.CreatedAt, &org.UpdatedAt,
 	)
 	if err != nil {
 		return nil, err
@@ -174,6 +177,7 @@ func (r *Repository) scanOrg(scanner interface { Scan(dest ...any) error }) (*Or
 
 	fromJSON(socialJ, &org.SocialMedia)
 	fromJSON(foundersJ, &org.Founders)
+	fromJSON(badgesJ, &org.Badges)
 
 	return &org, nil
 }
@@ -197,6 +201,14 @@ func (r *Repository) buildWhereClause(params map[string]string) (string, []inter
 	if estadio := params["estadioActual"]; estadio != "" {
 		query += " AND estadio_actual = ?"
 		args = append(args, estadio)
+	}
+	if region := params["region"]; region != "" {
+		query += " AND region = ?"
+		args = append(args, region)
+	}
+	if city := params["city"]; city != "" {
+		query += " AND city = ?"
+		args = append(args, city)
 	}
 	if q := params["q"]; q != "" {
 		query += " AND (name LIKE ? OR solucion LIKE ? OR city LIKE ? OR country LIKE ?)"

@@ -8,26 +8,13 @@ import FiltersPanel from '../Filters/FiltersPanel';
 import ResultsList from '../Results/ResultsList';
 import ActiveChips from '../Filters/ActiveChips';
 import { Input } from '../ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 
 export default function MapDrawer({
-    isOpen,
-    onClose,
-    activeTab,
-    onTabChange,
-    filters,
-    onFilterChange,
-    aggregates,
-    onResetFilters,
-    organizations,
-    onSelectOrg,
-    loadingResults,
-    loadingFacets,
-    searchQuery,
-    onSearchChange
+    isOpen, onClose, activeTab, onTabChange, filters, onFilterChange,
+    aggregates, onResetFilters, organizations, onSelectOrg,
+    loadingResults, loadingFacets, searchQuery, onSearchChange
 }) {
 
-    // Prevent body scroll when drawer is open on mobile
     useEffect(() => {
         if (isOpen && window.innerWidth < 1024) {
             document.body.style.overflow = 'hidden';
@@ -37,138 +24,132 @@ export default function MapDrawer({
         return () => { document.body.style.overflow = ''; };
     }, [isOpen]);
 
+    const lodoDark = "#59595B";
+    const lodoGreen = "#6FEA44";
+    const hasActiveFilters = Object.values(filters).some(v => v !== null && v !== '');
+
+    // Esta función maneja el clic en "Ver Resultados" dentro del panel
+    const handleApplyFilters = () => {
+        onTabChange('results'); // Cambia a la pestaña de resultados automáticamente
+    };
+
     return (
         <>
-            {/* Overlay */}
             <div
                 className={cn(
-                    "fixed inset-0 bg-black/60 backdrop-blur-sm z-[2000] transition-opacity duration-300",
+                    "fixed inset-0 bg-black/40 backdrop-blur-sm z-[2000] transition-opacity duration-300",
                     isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                 )}
                 onClick={onClose}
             />
 
-            {/* Sidebar / Modal */}
             <aside
                 className={cn(
-                    "fixed z-[2100] bg-background shadow-2xl flex flex-col overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
-                    // Center positioning for all screens (Modal style)
-                    "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] md:w-[480px] h-[85vh] rounded-[2.5rem] border",
-                    // Open States (Scale & Opacity)
+                    "fixed z-[2100] shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]",
+                    "left-1/2 -translate-x-1/2 w-[95vw] md:w-[480px] h-[82vh] rounded-[2.5rem] border lodo-font",
                     isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
                 )}
+                style={{
+                    backgroundColor: '#f4f4f5',
+                    borderColor: 'rgba(89, 89, 91, 0.1)',
+                    top: 'calc(50% + 32px)',
+                    transform: 'translate(-50%, -50%)'
+                }}
             >
-                {/* 1. STICKY HEADER (Fixed Height) */}
-                <div className="flex-shrink-0 bg-background z-20">
-                    <div className="flex items-center justify-between p-4 pb-2">
+                {/* 1. CABECERA COMPACTA */}
+                <div className="flex-shrink-0" style={{ backgroundColor: '#f4f4f5' }}>
+                    <div className="flex items-center justify-between p-6 pb-2">
                         <div>
-                            <h2 className="text-2xl font-black tracking-tighter text-foreground leading-none">Explorar</h2>
-                            <p className="text-[9px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-1.5 opacity-60">
-                                {activeTab === 'filters' ? 'Configurar filtros' : `${organizations.length} Startups encontradas`}
-                            </p>
+                            <h2 className="text-2xl font-bold tracking-tighter leading-none" style={{ color: lodoDark }}>Explorar</h2>
+                            <div className="flex items-center gap-2 mt-2">
+                                <p className="text-[9px] font-bold uppercase tracking-widest opacity-50" style={{ color: lodoDark }}>
+                                    {activeTab === 'filters' ? 'CONFIGURAR FILTROS' : `${organizations.length} RESULTADOS`}
+                                </p>
+                                {hasActiveFilters && (
+                                    <div className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ backgroundColor: lodoGreen }} />
+                                )}
+                            </div>
                         </div>
-                        <Button
-                            variant="secondary"
-                            size="icon"
-                            onClick={onClose}
-                            className="rounded-lg h-9 w-9 hover:rotate-90 transition-transform duration-300 bg-muted/50"
-                        >
-                            <X className="h-4 w-4" />
+                        <Button variant="ghost" size="icon" onClick={onClose} className="rounded-full h-8 w-8 hover:bg-black/5" style={{ color: lodoDark }}>
+                            <X size={16} />
                         </Button>
                     </div>
 
-                    <div className="px-4 py-2.5">
-                        <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
-                            <TabsList className="w-full h-10 bg-muted/40 p-1 rounded-xl border border-border/40">
-                                <TabsTrigger
-                                    value="filters"
-                                    className="flex-1 rounded-lg font-black text-[10px] uppercase tracking-widest gap-2 data-[state=active]:bg-background data-[state=active]:shadow-lg transition-all h-full"
+                    <div className="px-6 py-3">
+                        {/* TAB LIST CON BURBUJA DESLIZANTE */}
+                        <div className="relative w-full h-11 p-1 rounded-full border-2 bg-transparent overflow-hidden" style={{ borderColor: lodoDark }}>
+                            <div
+                                className="absolute inset-y-1 rounded-full transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                                style={{
+                                    backgroundColor: lodoDark,
+                                    width: 'calc(50% - 4px)',
+                                    left: activeTab === 'filters' ? '4px' : 'calc(50% + 0px)',
+                                    zIndex: 0
+                                }}
+                            />
+                            <div className="relative z-10 flex h-full">
+                                <button
+                                    onClick={() => onTabChange('filters')}
+                                    className="flex-1 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest transition-colors duration-300"
+                                    style={{ color: activeTab === 'filters' ? '#fff' : lodoDark }}
                                 >
-                                    <Filter className="h-4 w-4" />
-                                    Filtros
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="results"
-                                    className="flex-1 rounded-lg font-black text-[10px] uppercase tracking-widest gap-2 data-[state=active]:bg-background data-[state=active]:shadow-lg transition-all h-full"
+                                    <Filter size={14} /> Filtros
+                                </button>
+                                <button
+                                    onClick={() => onTabChange('results')}
+                                    className="flex-1 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest transition-colors duration-300"
+                                    style={{ color: activeTab === 'results' ? '#fff' : lodoDark }}
                                 >
-                                    <List className="h-4 w-4" />
-                                    Resultados
-                                </TabsTrigger>
-                            </TabsList>
-                        </Tabs>
-
-                        <div className="mt-2 min-h-[28px] flex items-center">
-                            <ActiveChips filters={filters} onRemove={onFilterChange} />
+                                    <List size={14} /> Resultados
+                                </button>
+                            </div>
                         </div>
 
-                        {activeTab === "results" && (
-                            <div className="mt-[-30px]">
-                                <div className="relative group">
-                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
-                                    <Input
-                                        placeholder="Buscar entre resultados..."
-                                        value={searchQuery}
-                                        onChange={(e) => onSearchChange(e.target.value)}
-                                        className="pl-9 h-8 bg-muted/30 border border-border/40 focus-visible:ring-2 focus-visible:ring-primary/20 shadow-sm rounded-xl font-bold text-[12px]"
-                                    />
-                                </div>
-                            </div>
-                        )}
+                        <div className="mt-4 min-h-[24px]">
+                            <ActiveChips filters={filters} onRemove={onFilterChange} />
+                        </div>
                     </div>
                 </div>
 
-                {/* 2. BODY CONTENT (Large Scrollable Area) */}
+                {/* 2. CONTENIDO */}
                 <div className="flex-1 min-h-0 overflow-hidden relative">
-                    <Tabs value={activeTab} className="h-full">
-                        <TabsContent value="filters" className="m-0 h-full outline-none">
-                            <ScrollArea className="h-full">
-                                <div className="px-8 pb-32 pt-2">
-                                    <FiltersPanel
-                                        filters={filters}
-                                        onFilterChange={onFilterChange}
-                                        aggregates={aggregates}
-                                        loading={loadingFacets}
+                    {activeTab === 'filters' ? (
+                        <ScrollArea className="h-full">
+                            <div className="px-6 pb-24 pt-2">
+                                <FiltersPanel
+                                    filters={filters}
+                                    onFilterChange={onFilterChange}
+                                    aggregates={aggregates}
+                                    loading={loadingFacets}
+                                    onApply={handleApplyFilters} // Ahora gatilla el cambio de pestaña
+                                    onReset={onResetFilters}     // Conectado correctamente al reset del padre
+                                    resultsCount={organizations.length}
+                                />
+                            </div>
+                        </ScrollArea>
+                    ) : (
+                        <div className="h-full flex flex-col">
+                            <div className="px-6 pt-2 pb-4">
+                                <div className="relative">
+                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 opacity-30" style={{ color: lodoDark }} />
+                                    <Input
+                                        placeholder="Buscar organización..."
+                                        value={searchQuery}
+                                        onChange={(e) => onSearchChange(e.target.value)}
+                                        className="pl-10 h-11 border-none shadow-sm rounded-xl text-xs font-medium bg-white focus-visible:ring-1 focus-visible:ring-[#6FEA44]"
                                     />
-
-                                    <div className="mt-8 pt-6 border-t border-border/40 flex flex-col gap-3">
-                                        <Button
-                                            onClick={() => onTabChange("results")}
-                                            className="w-full h-11 rounded-lg font-black uppercase tracking-widest shadow-md shadow-primary/15 text-[11px] active:scale-95 transition-all"
-                                        >
-                                            Ver {organizations.length} Resultados
-                                        </Button>
-                                        <Button
-                                            variant="ghost"
-                                            onClick={onResetFilters}
-                                            className="w-full h-10 rounded-xl text-muted-foreground font-bold hover:text-primary transition-all gap-2 text-sm"
-                                        >
-                                            <RotateCcw className="h-4 w-4" />
-                                            Limpiar todos los filtros
-                                        </Button>
-                                    </div>
                                 </div>
-                            </ScrollArea>
-                        </TabsContent>
-
-                        <TabsContent value="results" className="m-0 h-full outline-none flex flex-col">
-                            <ScrollArea className="flex-1 bg-muted/5 border-t border-border/30">
+                            </div>
+                            <ScrollArea className="flex-1 border-t" style={{ backgroundColor: 'rgba(89, 89, 91, 0.02)', borderColor: 'rgba(89, 89, 91, 0.05)' }}>
                                 <ResultsList
                                     organizations={organizations}
-                                    onSelect={(org) => {
-                                        onSelectOrg(org);
-                                        onClose(); // Always close the drawer when selecting an org
-                                    }}
+                                    onSelect={(org) => { onSelectOrg(org); onClose(); }}
                                     loading={loadingResults}
                                     hideHeader
                                 />
-                                {organizations.length === 0 && !loadingResults && (
-                                    <div className="p-12 text-center font-bold text-muted-foreground uppercase tracking-widest opacity-40">
-                                        Sin resultados
-                                    </div>
-                                )}
                             </ScrollArea>
-                        </TabsContent>
-                    </Tabs>
+                        </div>
+                    )}
                 </div>
             </aside>
         </>

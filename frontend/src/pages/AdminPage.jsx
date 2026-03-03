@@ -81,10 +81,10 @@ export default function AdminPage() {
     if (authLoading) {
         return (
             <AppShell>
-                <div className="flex items-center justify-center h-full bg-slate-50">
+                <div className="flex items-center justify-center h-full" style={{ backgroundColor: '#f4f4f5' }}>
                     <div className="text-center">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-                        <p className="text-slate-500">Verificando acceso...</p>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4" style={{ borderColor: '#6FEA44' }}></div>
+                        <p style={{ color: '#59595B' }}>Verificando acceso...</p>
                     </div>
                 </div>
             </AppShell>
@@ -94,22 +94,22 @@ export default function AdminPage() {
     if (!isAdmin) {
         return (
             <AppShell>
-                <div className="flex items-center justify-center h-full bg-slate-50">
-                    <div className="text-center max-w-md p-8">
-                        <div className="bg-rose-100 p-4 rounded-full w-fit mx-auto mb-6">
-                            <ShieldX className="h-12 w-12 text-rose-600" />
+                <div className="flex items-center justify-center h-full" style={{ backgroundColor: '#f4f4f5' }}>
+                    <div className="text-center max-w-md p-10 bg-white rounded-[2.5rem] shadow-xl border" style={{ borderColor: '#59595B10' }}>
+                        <div className="p-5 rounded-full w-fit mx-auto mb-8" style={{ backgroundColor: '#59595B08' }}>
+                            <ShieldX className="h-12 w-12" style={{ color: '#59595B' }} />
                         </div>
-                        <h2 className="text-2xl font-bold text-slate-900 mb-2">Acceso Denegado</h2>
-                        <p className="text-slate-500 mb-6">
+                        <h2 className="text-3xl font-black text-slate-900 mb-4 tracking-tighter" style={{ color: '#59595B' }}>Acceso Denegado</h2>
+                        <p className="text-sm font-bold mb-8 uppercase tracking-widest leading-relaxed opacity-60" style={{ color: '#59595B' }}>
                             No tienes permisos de administrador para acceder a esta sección.
                             <br />
-                            <span className="text-sm">Conectado como: {user?.email}</span>
+                            <span className="text-[10px]">Conectado como: {user?.email}</span>
                         </p>
-                        <div className="flex gap-3 justify-center">
-                            <Button variant="outline" onClick={() => navigate('/')}>
-                                Volver al Inicio
+                        <div className="flex gap-4 justify-center">
+                            <Button variant="ghost" onClick={() => navigate('/')} className="font-black uppercase text-[10px] tracking-widest px-6" style={{ color: '#59595B' }}>
+                                Inicio
                             </Button>
-                            <Button variant="outline" onClick={() => navigate('/map')}>
+                            <Button onClick={() => navigate('/map')} className="font-black uppercase text-[10px] tracking-widest px-8 rounded-xl shadow-lg" style={{ backgroundColor: '#6FEA44', color: '#000', boxShadow: '0 8px 20px #6FEA4440' }}>
                                 Ver Mapa
                             </Button>
                         </div>
@@ -121,34 +121,35 @@ export default function AdminPage() {
 
     return (
         <AppShell>
-            <div className="flex flex-col min-h-full bg-slate-50/50">
-                <div className="bg-background border-b px-8 py-6 shadow-sm">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+            <div className="flex flex-col min-h-full" style={{ backgroundColor: '#f4f4f5' }}>
+                <div className="border-b px-10 py-8 shadow-sm" style={{ backgroundColor: '#f4f4f5', borderColor: '#59595B10' }}>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
                         <div>
-                            <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest mb-1.5 opacity-80">
-                                <LayoutDashboard className="h-3.5 w-3.5" />
+                            <div className="flex items-center gap-2 font-black text-[10px] uppercase tracking-[0.2em] mb-3 opacity-60" style={{ color: '#59595B' }}>
+                                <LayoutDashboard className="h-3.5 w-3.5" style={{ color: '#6FEA44' }} />
                                 Admin Panel
                             </div>
-                            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
-                                <Database className="h-6 w-6 text-slate-400" />
-                                Gestión de Organizaciones
+                            <h1 className="text-4xl font-black tracking-tighter flex items-center gap-4" style={{ color: '#59595B' }}>
+                                <Database className="h-8 w-8 opacity-20" />
+                                Organizaciones
                             </h1>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-4">
                             <Button
-                                variant="outline"
+                                variant="ghost"
                                 size="sm"
                                 onClick={() => refreshData()}
                                 disabled={loading}
-                                className="bg-background border-slate-200"
+                                className="font-black uppercase text-[10px] tracking-widest px-5 h-11 transition-all rounded-xl"
+                                style={{ backgroundColor: '#59595B08', color: '#59595B' }}
                             >
                                 <RefreshCcw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
                                 Actualizar
                             </Button>
-                            <Button onClick={handleCreate} className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg shadow-primary/20 rounded-xl px-6 h-11 transition-all active:scale-95">
-                                <Plus className="h-5 w-5 mr-2" />
-                                Nueva Organización
+                            <Button onClick={handleCreate} className="font-black uppercase text-[10px] tracking-widest shadow-xl rounded-xl px-8 h-12 transition-all active:scale-95" style={{ backgroundColor: '#6FEA44', color: '#000', boxShadow: '0 10px 30px #6FEA4430' }}>
+                                <Plus className="h-5 w-5 mr-3" />
+                                Nueva Org
                             </Button>
                         </div>
                     </div>
