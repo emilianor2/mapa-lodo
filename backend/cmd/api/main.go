@@ -77,6 +77,7 @@ func main() {
 	publicMux.HandleFunc("/auth/register", authHandler.Register)
 	publicMux.HandleFunc("/auth/me", authHandler.Me)
 	publicMux.HandleFunc("/auth/logout", authHandler.Logout)
+	publicMux.HandleFunc("/auth/change-password", authHandler.ChangePassword)
 
 	adminMux := http.NewServeMux()
 	adminMux.HandleFunc("/organizations", func(w http.ResponseWriter, r *http.Request) {

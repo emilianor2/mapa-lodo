@@ -9,7 +9,7 @@ import LoginModal from '../auth/LoginModal';
 export default function AppHeader({ onSearchChange, searchValue, resultsCount }) {
     const location = useLocation();
     const navigate = useNavigate();
-    const { user, isAuthenticated, isAdmin, logout } = useAuth();
+    const { user, isAuthenticated, isAdmin, logout, profilePhoto } = useAuth();
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [localSearch, setLocalSearch] = useState(searchValue || '');
 
@@ -25,6 +25,10 @@ export default function AppHeader({ onSearchChange, searchValue, resultsCount })
         }, 300);
         return () => clearTimeout(handler);
     }, [localSearch, onSearchChange]);
+
+    useEffect(() => {
+        setLocalSearch(searchValue || '');
+    }, [searchValue]);
 
     // Clase para unificar tipografía y hover: Blanco -> Gris Oscuro sobre Verde Lodo
     const navBtnClass = `lodo-font flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-300 font-semibold uppercase text-[10px] tracking-[0.1em] text-white hover:bg-[#6FEA44] hover:text-[#59595B] group`;
@@ -105,15 +109,27 @@ export default function AppHeader({ onSearchChange, searchValue, resultsCount })
 
                         {isAuthenticated ? (
                             <div className="flex items-center gap-4">
-                                <div className="hidden lg:flex flex-col items-end">
+                                <button
+                                    type="button"
+                                    onClick={() => navigate(isAdmin ? '/admin/profile' : '/map')}
+                                    className="hidden lg:flex flex-col items-end text-right transition-opacity hover:opacity-80"
+                                >
                                     <span className="text-[10px] font-bold text-white uppercase leading-none">{user?.name}</span>
                                     <span className="text-[8px] font-medium text-[#6FEA44] uppercase tracking-widest">
-                                        {isAdmin ? 'Administrador' : 'Usuario'}
+                                        {isAdmin ? 'Perfil' : 'Usuario'}
                                     </span>
-                                </div>
-                                <div className="h-8 w-8 rounded-full flex items-center justify-center bg-[#6FEA44] text-[#59595B] font-extrabold text-[11px] shadow-inner transition-transform hover:scale-110">
-                                    {user?.name?.charAt(0).toUpperCase()}
-                                </div>
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => navigate(isAdmin ? '/admin/profile' : '/map')}
+                                    className="h-8 w-8 rounded-full flex items-center justify-center bg-[#6FEA44] text-[#59595B] font-extrabold text-[11px] shadow-inner transition-transform hover:scale-110 overflow-hidden"
+                                >
+                                    {profilePhoto ? (
+                                        <img src={profilePhoto} alt="Perfil" className="h-full w-full object-cover" />
+                                    ) : (
+                                        user?.name?.charAt(0).toUpperCase()
+                                    )}
+                                </button>
                                 <button onClick={logout} className="text-white hover:text-rose-400 transition-colors ml-1 active:scale-95">
                                     <LogOut className="h-4 w-4" />
                                 </button>

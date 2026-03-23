@@ -225,6 +225,10 @@ func (r *Repository) buildWhereClause(params map[string]string) (string, []inter
 		query += " AND vertical = ?"
 		args = append(args, vertical)
 	}
+	if subVertical := params["subVertical"]; subVertical != "" {
+		query += " AND sub_vertical = ?"
+		args = append(args, subVertical)
+	}
 	if country := params["country"]; country != "" {
 		query += " AND JSON_UNQUOTE(JSON_EXTRACT(location,'$.country')) = ?"
 		args = append(args, country)
@@ -232,6 +236,14 @@ func (r *Repository) buildWhereClause(params map[string]string) (string, []inter
 	if estadio := params["estadioActual"]; estadio != "" {
 		query += " AND estadio_actual = ?"
 		args = append(args, estadio)
+	}
+	if organizationType := params["organizationType"]; organizationType != "" {
+		query += " AND organization_type = ?"
+		args = append(args, organizationType)
+	}
+	if outcomeStatus := params["outcomeStatus"]; outcomeStatus != "" {
+		query += " AND outcome_status = ?"
+		args = append(args, outcomeStatus)
 	}
 	if region := params["region"]; region != "" {
 		query += " AND JSON_UNQUOTE(JSON_EXTRACT(location,'$.region')) = ?"

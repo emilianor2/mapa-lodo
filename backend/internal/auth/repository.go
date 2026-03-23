@@ -63,6 +63,15 @@ func (r *Repository) Create(user *User) error {
 	return nil
 }
 
+func (r *Repository) UpdatePassword(userID, passwordHash string) error {
+	_, err := r.db.Exec(
+		`UPDATE users SET password_hash = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?`,
+		passwordHash,
+		userID,
+	)
+	return err
+}
+
 func isDuplicateKeyError(err error) bool {
 	return err != nil && (contains(err.Error(), "Duplicate entry") || contains(err.Error(), "UNIQUE constraint"))
 }

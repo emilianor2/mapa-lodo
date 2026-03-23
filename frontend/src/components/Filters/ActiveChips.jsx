@@ -1,9 +1,7 @@
 import React from 'react';
 import { X, Trash2 } from 'lucide-react';
-import { Badge } from '../ui/badge';
 
 export default function ActiveChips({ filters, onRemove }) {
-    // Filtramos las llaves que no queremos mostrar como chips (búsqueda de texto o flags)
     const activeFilters = Object.entries(filters).filter(([key, value]) => {
         if (key === 'q' || key === 'onlyMappable') return false;
         return value !== '' && value !== null && value !== undefined;
@@ -11,24 +9,22 @@ export default function ActiveChips({ filters, onRemove }) {
 
     if (activeFilters.length === 0) return null;
 
-    // Función de formateo para limpiar guiones bajos (ej: SCALE_UP -> SCALE UP)
     const formatLabel = (label) => {
         if (!label) return '';
         return label.replace(/_/g, ' ');
     };
 
-    // Diccionario de traducción de keys técnicas a etiquetas amigables
     const labelMap = {
-        country: 'País',
+        country: 'Pais',
         region: 'Provincia',
         city: 'Ciudad',
-        vertical: 'Vertical',      // Sincronizado con Backend
+        vertical: 'Vertical',
+        subVertical: 'Sub Vertical',
         organizationType: 'Tipo',
-        estadioActual: 'Etapa',    // Sincronizado con Backend
+        estadioActual: 'Etapa',
         outcomeStatus: 'Estado'
     };
 
-    // Función para limpiar todos los filtros visibles en los chips
     const handleClearAll = () => {
         activeFilters.forEach(([key]) => {
             onRemove(key, '');
@@ -51,23 +47,25 @@ export default function ActiveChips({ filters, onRemove }) {
                         </span>
                     </div>
 
-                    {/* Punto con animación de gradiente (Gris claro <-> Verde) */}
-                    <div className="h-1.5 w-1.5 rounded-full animate-pulse duration-[2500ms] bg-[#6FEA44]"
+                    <div
+                        className="h-1.5 w-1.5 rounded-full animate-pulse duration-[2500ms] bg-[#6FEA44]"
                         style={{
                             animationName: 'pulse-color',
                             animationIterationCount: 'infinite'
                         }}
                     />
 
-                    {/* Estilos inyectados para la animación de color específica */}
-                    <style dangerouslySetInnerHTML={{
-                        __html: `
+                    <style
+                        dangerouslySetInnerHTML={{
+                            __html: `
                         @keyframes pulse-color {
-                            0% { background-color: #e5e7eb; } /* Gris claro (gray-200) */
-                            50% { background-color: #6FEA44; } /* Tu verde */
+                            0% { background-color: #e5e7eb; }
+                            50% { background-color: #6FEA44; }
                             100% { background-color: #e5e7eb; }
                         }
-                    `}} />
+                    `
+                        }}
+                    />
 
                     <button
                         onClick={() => onRemove(key, '')}
@@ -78,7 +76,6 @@ export default function ActiveChips({ filters, onRemove }) {
                 </div>
             ))}
 
-            {/* Botón para limpiar todos los filtros */}
             {activeFilters.length > 1 && (
                 <button
                     onClick={handleClearAll}

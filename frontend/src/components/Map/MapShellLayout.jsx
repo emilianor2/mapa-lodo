@@ -16,6 +16,7 @@ export default function MapShellLayout({
     loadingFacets,
     searchQuery,
     onSearchChange,
+    resultsResetKey,
     isDetailModalOpen = false
 }) {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -68,6 +69,7 @@ export default function MapShellLayout({
                 loadingFacets={loadingFacets}
                 searchQuery={searchQuery}
                 onSearchChange={onSearchChange}
+                resultsResetKey={resultsResetKey}
             />
         </div>
     );
