@@ -210,11 +210,10 @@ func (h *Handler) Aggregates(w http.ResponseWriter, r *http.Request) {
 // --- GEOPOSICIONAMIENTO ---
 
 func (h *Handler) Geocode(w http.ResponseWriter, r *http.Request) {
-	id := strings.TrimPrefix(r.URL.Path, "/public/organizations/geocode/")
+	id := extractActionID(r.URL.Path, "geocode")
 	if id == "" {
-		id = strings.TrimPrefix(r.URL.Path, "/organizations/geocode/")
+		id = extractID(r.URL.Path)
 	}
-	id = strings.TrimPrefix(id, "/") // Ensure no leading slash
 
 	if id == "" {
 		http.Error(w, "ID missing", http.StatusBadRequest)

@@ -1,22 +1,39 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 const AuthContext = createContext(null);
 
+function getProfilePhotoKey(userId) {
+    return userId ? `lodo_profile_photo_${userId}` : null;
+}
+
+function loadStoredProfilePhoto(userId) {
+    const key = getProfilePhotoKey(userId);
+    return key ? localStorage.getItem(key) : null;
+}
+
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(() => localStorage.getItem('auth_token'));
+    const [profilePhoto, setProfilePhoto] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // Helper interno para limpiar sesión
     const clearAuth = () => {
         localStorage.removeItem('auth_token');
         setToken(null);
         setUser(null);
+        setProfilePhoto(null);
     };
 
-    // Verificar token al cargar la aplicación
+    useEffect(() => {
+        if (!user?.id) {
+            setProfilePhoto(null);
+            return;
+        }
+        setProfilePhoto(loadStoredProfilePhoto(user.id));
+    }, [user?.id]);
+
     useEffect(() => {
         const verifyToken = async () => {
             if (!token) {
@@ -33,7 +50,6 @@ export function AuthProvider({ children }) {
                     const userData = await response.json();
                     setUser(userData);
                 } else {
-                    // Si el token expiró o es inválido, limpiamos
                     clearAuth();
                 }
             } catch (error) {
@@ -85,9 +101,40 @@ export function AuthProvider({ children }) {
         return data.user;
     };
 
+    const changePassword = async (currentPassword, newPassword) => {
+        const response = await fetch(`${API_URL}/auth/change-password`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify({ currentPassword, newPassword })
+        });
+
+        if (!response.ok) {
+            const error = await response.text();
+            throw new Error(error || 'No se pudo cambiar la contraseña');
+        }
+
+        return true;
+    };
+
+    const saveProfilePhoto = (imageDataUrl) => {
+        if (!user?.id) return;
+        const key = getProfilePhotoKey(user.id);
+        localStorage.setItem(key, imageDataUrl);
+        setProfilePhoto(imageDataUrl);
+    };
+
+    const removeProfilePhoto = () => {
+        if (!user?.id) return;
+        const key = getProfilePhotoKey(user.id);
+        localStorage.removeItem(key);
+        setProfilePhoto(null);
+    };
+
     const logout = async () => {
         try {
-            // Intentamos avisar al backend
             await fetch(`${API_URL}/auth/logout`, {
                 method: 'POST',
                 headers: { Authorization: `Bearer ${token}` }
@@ -95,23 +142,26 @@ export function AuthProvider({ children }) {
         } catch (error) {
             console.error('Error during logout request:', error);
         } finally {
-            // SIEMPRE limpiamos localmente sin importar si la red falló
             clearAuth();
         }
     };
 
     const isAdmin = user?.role === 'admin';
 
-    const value = {
+    const value = useMemo(() => ({
         user,
         token,
+        profilePhoto,
         loading,
         isAuthenticated: !!user,
         isAdmin,
         login,
         register,
+        changePassword,
+        saveProfilePhoto,
+        removeProfilePhoto,
         logout
-    };
+    }), [user, token, profilePhoto, loading, isAdmin]);
 
     return (
         <AuthContext.Provider value={value}>

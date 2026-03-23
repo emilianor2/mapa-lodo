@@ -27,7 +27,7 @@ const greenIcon = new L.Icon({
 });
 
 // Este componente controla la lógica de los puntos y el calor sin romper React
-const MapEngine = ({ organizations, viewMode }) => {
+const MapEngine = ({ organizations, viewMode, onMarkerClick }) => {
     const map = useMap();
     const layerRef = useRef(null);
 
@@ -65,6 +65,11 @@ const MapEngine = ({ organizations, viewMode }) => {
             organizations.forEach(org => {
                 if (org.lat && org.lng) {
                     const m = L.marker([org.lat, org.lng], { icon: greenIcon });
+                    m.on('click', () => {
+                        if (onMarkerClick) {
+                            onMarkerClick(org.id);
+                        }
+                    });
                     m.bindPopup(`
                         <div style="text-align: center;">
                             <b style="color: ${LODO_TEXT_GRAY}">${org.name}</b><br>
@@ -79,16 +84,18 @@ const MapEngine = ({ organizations, viewMode }) => {
             // MODO CALOR EN VERDE LODO
             const heatData = organizations
                 .filter(o => o.lat && o.lng)
-                .map(o => [o.lat, o.lng, 1.1]); // Peso mayor para mayor visibilidad general
+                .map(o => [o.lat, o.lng, 1.8]); // Más peso para que el calor se note desde el arranque
 
             layerRef.current = L.heatLayer(heatData, {
-                radius: 35,      // Radio mayor para un "brillo" más notable
-                blur: 20,
-                max: 2.5,        // Saturación más rápida para que 100 startups se vean intensas
+                radius: 46,
+                blur: 30,
+                minOpacity: 0.32,
+                max: 1.3,        // Satura antes para que los hotspots realmente resalten
                 gradient: {
-                    0.2: '#6FEA44', // Verde LODO base
-                    0.6: '#4ade23', // Verde medio
-                    1.0: '#23a100'  // Verde máximo
+                    0.15: '#bfff9c',
+                    0.35: '#6FEA44',
+                    0.65: '#36c61d',
+                    1.0: '#138a00'
                 }
             });
         }
@@ -98,7 +105,7 @@ const MapEngine = ({ organizations, viewMode }) => {
         return () => {
             if (layerRef.current) map.removeLayer(layerRef.current);
         };
-    }, [map, organizations, viewMode]);
+    }, [map, organizations, viewMode, onMarkerClick]);
 
     return null;
 };
@@ -114,8 +121,8 @@ const ZoomHandler = ({ onZoomChange }) => {
     return null;
 };
 
-export default function MapView({ organizations }) {
-    const [viewMode, setViewMode] = useState('heat');
+export default function MapView({ organizations, onMarkerClick }) {
+    const [viewMode, setViewMode] = useState('points');
     const [currentZoom, setCurrentZoom] = useState(2.5);
     const validOrgs = organizations || [];
 
@@ -182,7 +189,7 @@ export default function MapView({ organizations }) {
                     attribution="&copy; Google Maps"
                 />
 
-                <MapEngine organizations={validOrgs} viewMode={viewMode} />
+                <MapEngine organizations={validOrgs} viewMode={viewMode} onMarkerClick={onMarkerClick} />
 
                 <ZoomControl position="bottomright" />
             </MapContainer>

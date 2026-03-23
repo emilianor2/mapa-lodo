@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"net/http"
 	"strings"
 	"sync"
@@ -144,28 +145,8 @@ func (h *Handler) Me(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-
-	// Get token from header
-	authHeader := r.Header.Get("Authorization")
-	if authHeader == "" {
-		http.Error(w, "Unauthorized", http.StatusUnauthorized)
-		return
-	}
-
-	parts := strings.Split(authHeader, " ")
-	if len(parts) != 2 || strings.ToLower(parts[0]) != "bearer" {
-		http.Error(w, "Unauthorized", http.StatusUnauthorized)
-		return
-	}
-
-	token := parts[1]
-
-	// Find user by token
-	tokenStore.RLock()
-	user, exists := tokenStore.tokens[token]
-	tokenStore.RUnlock()
-
-	if !exists {
+	user, _, err := currentUserFromRequest(r)
+	if err != nil {
 		http.Error(w, "Unauthorized", http.StatusUnauthorized)
 		return
 	}
@@ -173,6 +154,72 @@ func (h *Handler) Me(w http.ResponseWriter, r *http.Request) {
 	// Return user info
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(user)
+}
+
+func (h *Handler) ChangePassword(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	sessionUser, token, err := currentUserFromRequest(r)
+	if err != nil {
+		http.Error(w, "Unauthorized", http.StatusUnauthorized)
+		return
+	}
+
+	var req ChangePasswordRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	if req.CurrentPassword == "" || req.NewPassword == "" {
+		http.Error(w, "Current and new password are required", http.StatusBadRequest)
+		return
+	}
+
+	if len(req.NewPassword) < 6 {
+		http.Error(w, "Password must be at least 6 characters", http.StatusBadRequest)
+		return
+	}
+
+	user, err := h.repo.FindByID(sessionUser.ID)
+	if err != nil {
+		http.Error(w, "User not found", http.StatusNotFound)
+		return
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(req.CurrentPassword)); err != nil {
+		http.Error(w, "Current password is incorrect", http.StatusUnauthorized)
+		return
+	}
+
+	if req.CurrentPassword == req.NewPassword {
+		http.Error(w, "New password must be different", http.StatusBadRequest)
+		return
+	}
+
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.NewPassword), bcrypt.DefaultCost)
+	if err != nil {
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+
+	if err := h.repo.UpdatePassword(user.ID, string(hashedPassword)); err != nil {
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
+	}
+
+	user.PasswordHash = string(hashedPassword)
+	user.UpdatedAt = time.Now()
+
+	tokenStore.Lock()
+	tokenStore.tokens[token] = user
+	tokenStore.Unlock()
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(`{"message":"Password updated successfully"}`))
 }
 
 func (h *Handler) Logout(w http.ResponseWriter, r *http.Request) {
@@ -202,6 +249,30 @@ func GetUserFromToken(token string) *User {
 	tokenStore.RLock()
 	defer tokenStore.RUnlock()
 	return tokenStore.tokens[token]
+}
+
+func currentUserFromRequest(r *http.Request) (*User, string, error) {
+	authHeader := r.Header.Get("Authorization")
+	if authHeader == "" {
+		return nil, "", errors.New("missing authorization header")
+	}
+
+	parts := strings.Split(authHeader, " ")
+	if len(parts) != 2 || strings.ToLower(parts[0]) != "bearer" {
+		return nil, "", errors.New("invalid authorization header")
+	}
+
+	token := parts[1]
+
+	tokenStore.RLock()
+	user, exists := tokenStore.tokens[token]
+	tokenStore.RUnlock()
+
+	if !exists {
+		return nil, "", errors.New("invalid token")
+	}
+
+	return user, token, nil
 }
 
 func generateToken() string {

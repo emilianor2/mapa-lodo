@@ -3,6 +3,38 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const getAuthToken = () => localStorage.getItem('auth_token');
 const ADMIN_TOKEN = import.meta.env.VITE_ADMIN_TOKEN;
 
+function fixMojibakeString(value) {
+    if (typeof value !== 'string') return value;
+
+    const suspicious = /[ÃÂâ€™â€œâ€â€¢]/;
+    let text = value;
+
+    for (let i = 0; i < 3; i += 1) {
+        if (!suspicious.test(text)) break;
+        try {
+            text = decodeURIComponent(escape(text));
+        } catch {
+            break;
+        }
+    }
+
+    return text;
+}
+
+function normalizeApiPayload(value) {
+    if (Array.isArray(value)) {
+        return value.map(normalizeApiPayload);
+    }
+
+    if (value && typeof value === 'object') {
+        return Object.fromEntries(
+            Object.entries(value).map(([key, innerValue]) => [key, normalizeApiPayload(innerValue)])
+        );
+    }
+
+    return fixMojibakeString(value);
+}
+
 async function fetchWithSignal(url, options = {}) {
     const response = await fetch(url, options);
     const contentType = response.headers.get('content-type') || '';
@@ -19,9 +51,9 @@ async function fetchWithSignal(url, options = {}) {
     if (response.status === 204) return null;
     if (!text) return null;
     if (contentType.includes('application/json')) {
-        return JSON.parse(text);
+        return normalizeApiPayload(JSON.parse(text));
     }
-    return text;
+    return fixMojibakeString(text);
 }
 
 /**

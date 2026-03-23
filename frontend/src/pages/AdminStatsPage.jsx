@@ -14,30 +14,71 @@ import { adminFetchOrganizations as listOrganizations } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 
 const CHART_COLORS = ['#6FEA44', '#5ED23A', '#4DC130', '#3DB126', '#2DA01D', '#1D8F14'];
+const MISSING_VALUES = new Set(['', 'S/D', 'N/D', 'SIN DATO', 'UNKNOWN', 'NO FIGURA']);
 
-function normalize(value, fallback = 'Sin dato') {
-    if (value === null || value === undefined) return fallback;
-    const text = String(value).trim();
-    return text === '' ? fallback : text;
+function normalizeText(value) {
+    if (value === null || value === undefined) return '';
+    return String(value).trim();
 }
 
-function countBy(items, selector) {
+function isMissingValue(value) {
+    const text = normalizeText(value);
+    if (!text) return true;
+    return MISSING_VALUES.has(text.toUpperCase());
+}
+
+function displayValue(value, fallback = 'Sin dato') {
+    const text = normalizeText(value);
+    return isMissingValue(text) ? fallback : text;
+}
+
+function formatPct(value, total) {
+    if (!total) return '0%';
+    const pct = (value / total) * 100;
+    return `${pct.toFixed(1)}%`;
+}
+
+function getCountry(org) {
+    return org.location?.country || '';
+}
+
+function getVertical(org) {
+    return org.vertical || '';
+}
+
+function getStage(org) {
+    return org.estadioActual || '';
+}
+
+function getType(org) {
+    return org.organizationType || '';
+}
+
+function countBy(items, selector, { excludeMissing = false } = {}) {
     const counts = new Map();
+
     for (const item of items) {
-        const key = normalize(selector(item));
+        const rawValue = selector(item);
+        if (excludeMissing && isMissingValue(rawValue)) continue;
+
+        const key = displayValue(rawValue);
         counts.set(key, (counts.get(key) || 0) + 1);
     }
+
     return counts;
 }
 
 function topEntries(countMap, limit = 8) {
     return [...countMap.entries()]
-        .sort((a, b) => b[1] - a[1])
+        .sort((a, b) => {
+            if (b[1] !== a[1]) return b[1] - a[1];
+            return a[0].localeCompare(b[0], 'es', { sensitivity: 'base' });
+        })
         .slice(0, limit)
         .map(([label, value]) => ({ label, value }));
 }
 
-function HorizontalBars({ title, data, icon: Icon }) {
+function HorizontalBars({ title, data, icon: Icon, emptyText = 'Sin datos' }) {
     const maxValue = data.length > 0 ? Math.max(...data.map((d) => d.value)) : 1;
 
     return (
@@ -48,7 +89,7 @@ function HorizontalBars({ title, data, icon: Icon }) {
             </div>
 
             <div className="space-y-3">
-                {data.length === 0 && <p className="text-sm text-slate-500">Sin datos</p>}
+                {data.length === 0 && <p className="text-sm text-slate-500">{emptyText}</p>}
                 {data.map((item, idx) => (
                     <div key={item.label} className="space-y-1">
                         <div className="flex items-center justify-between gap-2 text-xs">
@@ -120,7 +161,7 @@ function DonutChart({ title, data }) {
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <span className="text-4xl font-black" style={{ color: '#59595B' }}>{total}</span>
-                        <span className="text-[9px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Startups</span>
+                        <span className="text-[9px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Organizaciones</span>
                     </div>
                 </div>
 
@@ -139,6 +180,18 @@ function DonutChart({ title, data }) {
                     ))}
                 </div>
             </div>
+        </div>
+    );
+}
+
+function StatCard({ label, value, helper, helperColor = '#59595B70' }) {
+    return (
+        <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
+            <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>{label}</p>
+            <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{value}</p>
+            {helper && (
+                <p className="mt-2 text-[10px] font-black" style={{ color: helperColor }}>{helper}</p>
+            )}
         </div>
     );
 }
@@ -169,17 +222,25 @@ export default function AdminStatsPage() {
     const stats = useMemo(() => {
         const total = organizations.length;
         const mappable = organizations.filter((o) => o.lat && o.lng).length;
-        const published = organizations.filter((o) => normalize(o.status) === 'PUBLISHED').length;
-        const topCountries = topEntries(countBy(organizations, (o) => o.country), 10);
-        const topSectors = topEntries(countBy(organizations, (o) => o.sectorPrimary), 8);
-        const byStage = topEntries(countBy(organizations, (o) => o.stage), 6);
-        const byType = topEntries(countBy(organizations, (o) => o.organizationType), 6);
+        const published = organizations.filter((o) => normalizeText(o.status).toUpperCase() === 'PUBLISHED').length;
+
+        const countriesWithData = organizations.filter((o) => !isMissingValue(getCountry(o)));
+        const uniqueCountries = new Set(countriesWithData.map((o) => displayValue(getCountry(o))));
+        const withoutCountry = organizations.filter((o) => isMissingValue(getCountry(o))).length;
+
+        const topCountries = topEntries(countBy(organizations, getCountry, { excludeMissing: true }), 10);
+        const topSectors = topEntries(countBy(organizations, getVertical, { excludeMissing: true }), 8);
+        const byStage = topEntries(countBy(organizations, getStage, { excludeMissing: true }), 6);
+        const byType = topEntries(countBy(organizations, getType, { excludeMissing: true }), 6);
+
         return {
             total,
             mappable,
             published,
-            mappablePct: total > 0 ? Math.round((mappable / total) * 100) : 0,
-            publishedPct: total > 0 ? Math.round((published / total) * 100) : 0,
+            mappablePct: formatPct(mappable, total),
+            publishedPct: formatPct(published, total),
+            uniqueCountries: uniqueCountries.size,
+            withoutCountry,
             topCountries,
             topSectors,
             byStage,
@@ -250,32 +311,21 @@ export default function AdminStatsPage() {
                 ) : (
                     <>
                         <div className="mb-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
-                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Total</p>
-                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.total}</p>
-                            </div>
-                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
-                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Con Coordenadas</p>
-                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.mappable}</p>
-                                <p className="text-[10px] font-black mt-2" style={{ color: '#6FEA44' }}>{stats.mappablePct}% del total</p>
-                            </div>
-                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
-                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Publicadas</p>
-                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.published}</p>
-                                <p className="text-[10px] font-black mt-2" style={{ color: '#6FEA44' }}>{stats.publishedPct}% del total</p>
-                            </div>
-                            <div className="rounded-[2rem] border bg-white p-6 shadow-sm transition-all hover:shadow-md" style={{ borderColor: '#59595B10' }}>
-                                <p className="text-[10px] font-black uppercase tracking-widest opacity-40" style={{ color: '#59595B' }}>Paises</p>
-                                <p className="mt-2 text-4xl font-black" style={{ color: '#59595B' }}>{stats.topCountries.length}</p>
-                                <p className="text-[10px] font-black mt-2 opacity-40" style={{ color: '#59595B' }}>Actividad detectada</p>
-                            </div>
+                            <StatCard label="Total" value={stats.total} />
+                            <StatCard label="Con Coordenadas" value={stats.mappable} helper={`${stats.mappablePct} del total`} helperColor="#6FEA44" />
+                            <StatCard label="Publicadas" value={stats.published} helper={`${stats.publishedPct} del total`} helperColor="#6FEA44" />
+                            <StatCard
+                                label="Paises"
+                                value={stats.uniqueCountries}
+                                helper={stats.withoutCountry > 0 ? `${stats.withoutCountry} sin dato` : 'Cobertura completa'}
+                            />
                         </div>
 
                         <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
-                            <HorizontalBars title="Top Paises" data={stats.topCountries} icon={Globe2} />
-                            <HorizontalBars title="Top Sectores" data={stats.topSectors} icon={Layers3} />
+                            <HorizontalBars title="Top Paises" data={stats.topCountries} icon={Globe2} emptyText="No hay paises con dato suficiente" />
+                            <HorizontalBars title="Top Sectores" data={stats.topSectors} icon={Layers3} emptyText="No hay verticales cargadas" />
                             <DonutChart title="Distribucion por Etapa" data={stats.byStage} />
-                            <HorizontalBars title="Tipos de Organizacion" data={stats.byType} icon={MapPinned} />
+                            <HorizontalBars title="Tipos de Organizacion" data={stats.byType} icon={MapPinned} emptyText="No hay tipos cargados" />
                         </div>
                     </>
                 )}
