@@ -1,5 +1,5 @@
 ﻿raw_value,normalized_value,count
-S/D,S/D,1822
+S/D,S/D,1820
 Tel Aviv,S/D,331
 Israel,S/D,62
 CA,S/D,54
@@ -72,7 +72,6 @@ OK,Oklahoma,2
 Omer,S/D,2
 Petach Tikva,S/D,2
 Plada St 11,S/D,2
-SP,S/D,2
 TEL AVIV,S/D,2
 Tel aviv,S/D,2
 Tirat Karmel,S/D,2
@@ -223,6 +222,7 @@ Rosario,S/D,1
 Rosh,S/D,1
 Rosh Ha'ain,S/D,1
 Río Cuarto,S/D,1
+SP,S/D,1
 Santa Fe,S/D,1
 Sapir,S/D,1
 Schocken Street,S/D,1

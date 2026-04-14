@@ -189,3 +189,20 @@ export const adminPatchCoordinates = async (id, coords) => {
         body: JSON.stringify(coords)
     });
 };
+
+export const adminPreviewDriveImport = async () => {
+    return fetchWithSignal(`${API_URL}/organizations/import/drive/preview`, {
+        headers: getAuthHeader()
+    });
+};
+
+export const adminCommitDriveImport = async (entries) => {
+    return fetchWithSignal(`${API_URL}/organizations/import/drive/commit`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            ...getAuthHeader()
+        },
+        body: JSON.stringify({ entries })
+    });
+};

@@ -1,5 +1,5 @@
 ﻿raw_value,normalized_value,count
-S/D,S/D,1255
+S/D,S/D,1254
 Israel,Israel,966
 Estados Unidos,Estados Unidos,265
 Reino Unido,Reino Unido,78
@@ -30,7 +30,6 @@ Kuwait,Kuwait,3
 Nigeria,Nigeria,3
 Portugal,Portugal,3
 Vietnam,Vietnam,3
-Argentina / Brasil,S/D,2
 Bulgaria,Bulgaria,2
 Colombia,Colombia,2
 Estados Unidos.,Estados Unidos,2
@@ -42,11 +41,11 @@ Kenya,Kenya,2
 Mexico,México,2
 Polonia,Polonia,2
 Slovenia,Slovenia,2
+Argentina / Brasil,S/D,1
 Azerbaijan,Azerbaijan,1
 Baréin,Baréin,1
 Brazil,Brasil,1
 Czechia,República Checa,1
-D Brasil,Brasil,1
 Egipto,Egipto,1
 Emiratos Árabes Unidos,Emiratos Árabes Unidos,1
 Indonesia,Indonesia,1

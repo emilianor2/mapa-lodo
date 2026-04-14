@@ -85,8 +85,7 @@ def publish_geocoded():
         "USE lodo_db; "
         "UPDATE organizations "
         "SET status='PUBLISHED' "
-        "WHERE lat IS NOT NULL AND lng IS NOT NULL "
-        "AND website IS NOT NULL AND website <> '';"
+        "WHERE lat IS NOT NULL AND lng IS NOT NULL;"
     )
     cmd = [
         "docker",
@@ -105,7 +104,7 @@ def main():
     parser = argparse.ArgumentParser(description="Geocodifica organizaciones usando el endpoint del backend.")
     parser.add_argument("--limit", type=int, default=None, help="Cantidad máxima de registros a procesar.")
     parser.add_argument("--delay", type=float, default=1.1, help="Pausa entre requests a Nominatim.")
-    parser.add_argument("--publish", action="store_true", help="Publica las organizaciones que queden con coordenadas y website.")
+    parser.add_argument("--publish", action="store_true", help="Publica las organizaciones que queden con coordenadas.")
     args = parser.parse_args()
 
     if not CSV_PATH.exists():
@@ -140,7 +139,7 @@ def main():
 
     if args.publish:
         publish_geocoded()
-        print("Se publicaron los registros con coordenadas y website.")
+        print("Se publicaron los registros con coordenadas.")
 
 
 if __name__ == "__main__":

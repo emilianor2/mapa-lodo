@@ -1,16 +1,16 @@
 ﻿raw_value,normalized_value,count
-S/D,S/D,1509
+S/D,S/D,1508
 San Francisco,San Francisco,30
 Londres,Londres,24
 New York,New York,16
 Buenos Aires,Buenos Aires,11
 Cambridge,Cambridge,9
 Aberdeen,Aberdeen,8
-São Paulo,São Paulo,8
 Tel Aviv,Tel Aviv,8
 Boston,Boston,7
 Delhi,Delhi,7
 Ha,S/D,7
+São Paulo,São Paulo,7
 Toronto,Toronto,7
 Berlín,Berlín,6
 Houston,Houston,6
@@ -704,7 +704,6 @@ Caesarea Maritima,Caesarea Maritima,1
 California,California,1
 Camden,Camden,1
 Campbell,Campbell,1
-Capital Federal,Capital Federal,1
 Charlotte,Charlotte,1
 Chicago,Chicago,1
 China,S/D,1
