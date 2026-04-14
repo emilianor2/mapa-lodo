@@ -3,20 +3,14 @@ import threading
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-from pipeline_excel_sync import (
-    CLEAN_CSV,
-    EXISTING_CHANGES_CSV,
-    NEW_REVIEW_CSV,
-    run_load,
-    run_pipeline,
-)
+from pipeline_excel_sync import CLEAN_CSV, NEW_REVIEW_CSV, run_load, run_pipeline
 
 
 class ExcelSyncApp:
     def __init__(self, root):
         self.root = root
         self.root.title("LODO - Gestor de Excel")
-        self.root.geometry("980x600")
+        self.root.geometry("820x560")
         self.root.configure(bg="#f4f4f5")
 
         self.source_path = tk.StringVar()
@@ -26,7 +20,6 @@ class ExcelSyncApp:
             "new_candidate_rows": tk.StringVar(value="-"),
             "existing_candidate_rows": tk.StringVar(value="-"),
             "review_queue_count": tk.StringVar(value="-"),
-            "changed_existing_rows": tk.StringVar(value="-"),
             "unique_countries_count": tk.StringVar(value="-"),
         }
         self.current_summary = None
@@ -37,18 +30,12 @@ class ExcelSyncApp:
         wrapper = tk.Frame(self.root, bg="#f4f4f5", padx=24, pady=24)
         wrapper.pack(fill="both", expand=True)
 
-        title = tk.Label(
-            wrapper,
-            text="Gestor de carga de Excel",
-            font=("Montserrat", 24, "bold"),
-            bg="#f4f4f5",
-            fg="#59595B",
-        )
+        title = tk.Label(wrapper, text="Gestor de carga de Excel", font=("Montserrat", 24, "bold"), bg="#f4f4f5", fg="#59595B")
         title.pack(anchor="w")
 
         subtitle = tk.Label(
             wrapper,
-            text="Procesa el Excel, revisa nuevas y modificadas, y sube solo lo que decidís.",
+            text="Procesa el Excel y sube solo startups nuevas. Las existentes no se modifican.",
             font=("Montserrat", 10, "bold"),
             bg="#f4f4f5",
             fg="#59595B",
@@ -58,14 +45,7 @@ class ExcelSyncApp:
         picker_frame = tk.Frame(wrapper, bg="#f4f4f5")
         picker_frame.pack(fill="x")
 
-        path_entry = tk.Entry(
-            picker_frame,
-            textvariable=self.source_path,
-            font=("Segoe UI", 10),
-            relief="flat",
-            bg="white",
-            fg="#59595B",
-        )
+        path_entry = tk.Entry(picker_frame, textvariable=self.source_path, font=("Segoe UI", 10), relief="flat", bg="white", fg="#59595B")
         path_entry.pack(side="left", fill="x", expand=True, ipady=10)
 
         browse_button = tk.Button(
@@ -97,7 +77,7 @@ class ExcelSyncApp:
         )
         self.process_button.pack(side="left")
 
-        self.open_new_review_button = tk.Button(
+        self.open_review_button = tk.Button(
             actions_frame,
             text="Abrir revisión de nuevas",
             command=lambda: self.open_file(NEW_REVIEW_CSV),
@@ -109,21 +89,7 @@ class ExcelSyncApp:
             padx=16,
             pady=10,
         )
-        self.open_new_review_button.pack(side="left", padx=(12, 0))
-
-        self.open_changed_review_button = tk.Button(
-            actions_frame,
-            text="Abrir revisión de modificadas",
-            command=lambda: self.open_file(EXISTING_CHANGES_CSV),
-            state="disabled",
-            bg="white",
-            fg="#59595B",
-            relief="flat",
-            font=("Montserrat", 10, "bold"),
-            padx=16,
-            pady=10,
-        )
-        self.open_changed_review_button.pack(side="left", padx=(12, 0))
+        self.open_review_button.pack(side="left", padx=(12, 0))
 
         self.open_clean_button = tk.Button(
             actions_frame,
@@ -147,7 +113,6 @@ class ExcelSyncApp:
             ("Nuevas", "new_candidate_rows"),
             ("Ya existentes", "existing_candidate_rows"),
             ("Nuevas a revisar", "review_queue_count"),
-            ("Existentes con cambios", "changed_existing_rows"),
             ("Países", "unique_countries_count"),
         ]
 
@@ -155,22 +120,13 @@ class ExcelSyncApp:
             card = tk.Frame(stats_frame, bg="white", padx=16, pady=14)
             card.grid(row=0, column=index, padx=6, sticky="nsew")
             stats_frame.grid_columnconfigure(index, weight=1)
-
             tk.Label(card, text=label, bg="white", fg="#59595B", font=("Montserrat", 9, "bold")).pack(anchor="w")
             tk.Label(card, textvariable=self.summary_vars[key], bg="white", fg="#59595B", font=("Montserrat", 20, "bold")).pack(anchor="w", pady=(8, 0))
 
         status_box = tk.Frame(wrapper, bg="white", padx=16, pady=14)
         status_box.pack(fill="x")
         tk.Label(status_box, text="Estado", bg="white", fg="#59595B", font=("Montserrat", 9, "bold")).pack(anchor="w")
-        tk.Label(
-            status_box,
-            textvariable=self.status_text,
-            bg="white",
-            fg="#59595B",
-            font=("Segoe UI", 10),
-            justify="left",
-            wraplength=900,
-        ).pack(anchor="w", pady=(8, 0))
+        tk.Label(status_box, textvariable=self.status_text, bg="white", fg="#59595B", font=("Segoe UI", 10), justify="left", wraplength=760).pack(anchor="w", pady=(8, 0))
 
         upload_frame = tk.Frame(wrapper, bg="#f4f4f5")
         upload_frame.pack(fill="x", pady=(18, 0))
@@ -189,44 +145,20 @@ class ExcelSyncApp:
         )
         self.upload_new_button.pack(side="left")
 
-        self.update_existing_button = tk.Button(
-            upload_frame,
-            text="3. Actualizar existentes revisadas",
-            command=self.update_existing,
-            state="disabled",
-            bg="#59595B",
-            fg="white",
-            relief="flat",
-            font=("Montserrat", 10, "bold"),
-            padx=16,
-            pady=10,
-        )
-        self.update_existing_button.pack(side="left", padx=(12, 0))
-
     def set_busy(self, busy, status_message=None):
         state = "disabled" if busy else "normal"
         self.process_button.config(state=state)
-        self.open_new_review_button.config(state="disabled" if busy or self.current_summary is None else "normal")
-        self.open_changed_review_button.config(state="disabled" if busy or self.current_summary is None else "normal")
+        self.open_review_button.config(state="disabled" if busy or self.current_summary is None else "normal")
         self.open_clean_button.config(state="disabled" if busy or self.current_summary is None else "normal")
-
         can_upload_new = bool(self.current_summary and self.current_summary.get("new_candidate_rows", 0) > 0 and not busy)
-        can_update_existing = bool(self.current_summary and self.current_summary.get("changed_existing_rows", 0) > 0 and not busy)
-
         self.upload_new_button.config(state="normal" if can_upload_new else "disabled")
-        self.update_existing_button.config(state="normal" if can_update_existing else "disabled")
-
         if status_message:
             self.status_text.set(status_message)
 
     def select_file(self):
         path = filedialog.askopenfilename(
             title="Elegir Excel o CSV",
-            filetypes=[
-                ("Archivos Excel", "*.xlsx *.xlsm *.xls"),
-                ("CSV", "*.csv"),
-                ("Todos", "*.*"),
-            ],
+            filetypes=[("Archivos Excel", "*.xlsx *.xlsm *.xls"), ("CSV", "*.csv"), ("Todos", "*.*")],
         )
         if path:
             self.source_path.set(path)
@@ -236,19 +168,17 @@ class ExcelSyncApp:
         if not path:
             messagebox.showwarning("Falta archivo", "Elegí un Excel o CSV antes de procesar.")
             return
-
         if not os.path.exists(path):
             messagebox.showerror("Archivo no encontrado", "La ruta seleccionada no existe.")
             return
 
-        self.set_busy(True, "Procesando archivo y comparando contra la base actual...")
+        self.set_busy(True, "Procesando archivo y detectando solo startups nuevas...")
         threading.Thread(target=self._run_process, args=(path,), daemon=True).start()
 
     def _run_process(self, path):
         try:
             result = run_pipeline(source_path=path, extract=False)
-            summary = result["summary"]
-            self.root.after(0, lambda: self.on_process_success(summary))
+            self.root.after(0, lambda: self.on_process_success(result["summary"]))
         except Exception as error:
             self.root.after(0, lambda: self.on_process_error(error))
 
@@ -260,10 +190,9 @@ class ExcelSyncApp:
         self.set_busy(
             False,
             (
-                f"Listo. {summary['new_candidate_rows']} nuevas, "
-                f"{summary['changed_existing_rows']} existentes con cambios y "
-                f"{summary['review_queue_count']} nuevas marcadas para revisar. "
-                "Si editás los CSV de revisión y los guardás, esos mismos archivos son los que se suben."
+                f"Listo. {summary['new_candidate_rows']} nuevas y "
+                f"{summary['existing_candidate_rows']} ya existentes. "
+                "Las startups existentes no se modifican. Si editás el CSV de revisión de nuevas y lo guardás, ese mismo archivo es el que se sube."
             ),
         )
 
@@ -281,7 +210,7 @@ class ExcelSyncApp:
             "Confirmar subida de nuevas",
             (
                 "Se va a subir exactamente el archivo de revisión de nuevas.\n\n"
-                "Si lo editaste y lo guardaste, esos cambios son los que se van a cargar.\n\n"
+                "Las startups existentes no se tocan ni se actualizan.\n\n"
                 "¿Querés continuar?"
             ),
         ):
@@ -292,33 +221,8 @@ class ExcelSyncApp:
 
     def _run_upload_only_new(self):
         try:
-            run_load(NEW_REVIEW_CSV, truncate=False, mode="insert")
+            run_load(NEW_REVIEW_CSV, truncate=False)
             self.root.after(0, lambda: self.on_upload_success("Se subió el archivo revisado de startups nuevas."))
-        except Exception as error:
-            self.root.after(0, lambda: self.on_upload_error(error))
-
-    def update_existing(self):
-        if not self.current_summary or self.current_summary.get("changed_existing_rows", 0) <= 0:
-            messagebox.showinfo("Sin cambios", "No hay startups existentes con cambios para actualizar.")
-            return
-
-        if not messagebox.askyesno(
-            "Confirmar actualización",
-            (
-                "Se va a actualizar exactamente el archivo de revisión de existentes modificadas.\n\n"
-                "Si lo editaste y lo guardaste, esos cambios son los que se van a aplicar en la base.\n\n"
-                "¿Querés continuar?"
-            ),
-        ):
-            return
-
-        self.set_busy(True, "Actualizando startups existentes revisadas en MariaDB...")
-        threading.Thread(target=self._run_update_existing, daemon=True).start()
-
-    def _run_update_existing(self):
-        try:
-            run_load(EXISTING_CHANGES_CSV, truncate=False, mode="update")
-            self.root.after(0, lambda: self.on_upload_success("Se actualizaron las startups existentes revisadas."))
         except Exception as error:
             self.root.after(0, lambda: self.on_upload_error(error))
 
@@ -344,7 +248,6 @@ def main():
         style.theme_use("clam")
     except Exception:
         pass
-
     ExcelSyncApp(root)
     root.mainloop()
 

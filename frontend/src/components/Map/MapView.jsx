@@ -121,7 +121,21 @@ const ZoomHandler = ({ onZoomChange }) => {
     return null;
 };
 
-export default function MapView({ organizations, onMarkerClick }) {
+const CenteredLocationHandler = ({ centeredLocation }) => {
+    const map = useMap();
+
+    useEffect(() => {
+        if (!centeredLocation?.lat || !centeredLocation?.lng) return;
+        map.flyTo([centeredLocation.lat, centeredLocation.lng], 6, {
+            animate: true,
+            duration: 1.2
+        });
+    }, [map, centeredLocation]);
+
+    return null;
+};
+
+export default function MapView({ organizations, onMarkerClick, centeredLocation }) {
     const [viewMode, setViewMode] = useState('points');
     const [currentZoom, setCurrentZoom] = useState(2.5);
     const validOrgs = organizations || [];
@@ -180,6 +194,7 @@ export default function MapView({ organizations, onMarkerClick }) {
                 zoomControl={false}
             >
                 <ZoomHandler onZoomChange={setCurrentZoom} />
+                <CenteredLocationHandler centeredLocation={centeredLocation} />
 
                 <TileLayer
                     key={currentZoom > 3 ? 'labels' : 'clean'}

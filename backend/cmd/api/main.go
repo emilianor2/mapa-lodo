@@ -80,6 +80,8 @@ func main() {
 	publicMux.HandleFunc("/auth/change-password", authHandler.ChangePassword)
 
 	adminMux := http.NewServeMux()
+	adminMux.HandleFunc("/organizations/import/drive/preview", orgHandler.PreviewDriveImport)
+	adminMux.HandleFunc("/organizations/import/drive/commit", orgHandler.CommitDriveImport)
 	adminMux.HandleFunc("/organizations", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
 			orgHandler.List(w, r)

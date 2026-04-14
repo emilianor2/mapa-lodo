@@ -1107,5 +1107,3 @@ NodeSquad,Israel,Israel,Ramat Gan,S/D,Jabotinsky 7,S/D,"region_removed_or_unreso
 Tutorialize,Israel,Israel,Holon,S/D,35 HaMaapilim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
 Infinity Augmented Reality,Israel,Israel,Petah Tikva,S/D,Mota Gur Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
 Giraffic Technologies,Israel,Israel,Tel,S/D,1 Kaf Gimel Yordei HaSira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
-AgroNova Test,D Brasil,Brasil,SP,S/D,São Paulo,São Paulo,region_removed_or_unresolved
-BioLoop Inventada,Argentina / Brasil,S/D,S/D,S/D,Capital Federal,Capital Federal,"country_lost_during_normalization, country_contains_multiple_values"

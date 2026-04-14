@@ -1,6 +1,7 @@
 import argparse
 import csv
 import json
+import pandas as pd
 import shutil
 import subprocess
 import sys
@@ -12,7 +13,7 @@ from urllib.parse import urlparse
 
 from extractor import extraer_startup_data
 from location_utils import MISSING_LOCATION_VALUE, clean_location_value, looks_like_address, slugify
-from transformer import transformar_datos
+from transformer import normalize_dataframe_columns, transformar_datos
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -23,7 +24,7 @@ BASELINE_CLEAN_CSV = OUTPUT_DIR / "_baseline_startups_limpias.csv"
 CLEAN_CSV = OUTPUT_DIR / "startups_limpias_final.csv"
 NEW_ONLY_CSV = OUTPUT_DIR / "startups_nuevas_para_subir.csv"
 NEW_REVIEW_CSV = OUTPUT_DIR / "startups_nuevas_para_revisar.csv"
-EXISTING_CHANGES_CSV = OUTPUT_DIR / "startups_existentes_con_cambios.csv"
+INVALID_SOURCE_ROWS_CSV = OUTPUT_DIR / "filas_invalidas_origen.csv"
 AUDIT_SUMMARY = OUTPUT_DIR / "load_audit_summary.json"
 REVIEW_QUEUE = OUTPUT_DIR / "location_review_queue.csv"
 COUNTRY_MATRIX = OUTPUT_DIR / "country_normalization_matrix.csv"
@@ -35,26 +36,6 @@ DATABASE = "lodo_db"
 DB_USER = "root"
 DB_PASSWORD = "root_password"
 SOURCE_SHEET_EXPORT_URL = "https://docs.google.com/spreadsheets/d/1PrRrKP-Nz8lHZOkVhvln2sP6sACod2KxN6SpHQooS6s/export?format=xlsx&gid=1025562372"
-COMPARE_FIELDS = [
-    "name",
-    "website",
-    "vertical",
-    "sub_vertical",
-    "location",
-    "logo_url",
-    "estadio_actual",
-    "solucion",
-    "mail",
-    "social_media",
-    "contact_phone",
-    "founders",
-    "founded",
-    "organization_type",
-    "outcome_status",
-    "business_model",
-    "badges",
-    "notes",
-]
 
 
 def default_staged_source_path(source_path):
@@ -93,9 +74,20 @@ def load_baseline_rows():
     return read_clean_rows(BASELINE_CLEAN_CSV)
 
 
+def read_source_dataframe(source_path):
+    if str(source_path).lower().endswith(".csv"):
+        return normalize_dataframe_columns(pd.read_csv(source_path, encoding="utf-8"))
+    return normalize_dataframe_columns(pd.read_excel(source_path))
+
+
 def has_value(value):
     cleaned = clean_location_value(value)
     return cleaned is not None and slugify(cleaned) not in {"s d", "n d", "sin dato", "sin datos"}
+
+
+def has_required_name(row):
+    value = row.get("name")
+    return value is not None and str(value).strip() != ""
 
 
 def detect_review_reasons(row):
@@ -155,6 +147,43 @@ def build_review_queue(rows):
         })
 
     return queue
+
+
+def build_invalid_source_rows_report(source_path):
+    dataframe = read_source_dataframe(source_path)
+    invalid_rows = []
+
+    for index, row in dataframe.iterrows():
+        name = row.get("name")
+        if name is not None and str(name).strip() != "":
+            continue
+
+        invalid_rows.append({
+            "source_row_number": index + 2,
+            "name": row.get("name", ""),
+            "website": row.get("website", ""),
+            "vertical": row.get("vertical", ""),
+            "sub_vertical": row.get("sub vertical", ""),
+            "country_source": row.get("country_source", ""),
+            "city_region_source": row.get("city_region_source", ""),
+            "solucion_source": row.get("solucion_source", ""),
+        })
+
+    write_csv(
+        INVALID_SOURCE_ROWS_CSV,
+        invalid_rows,
+        [
+            "source_row_number",
+            "name",
+            "website",
+            "vertical",
+            "sub_vertical",
+            "country_source",
+            "city_region_source",
+            "solucion_source",
+        ],
+    )
+    return invalid_rows
 
 
 def build_new_review_rows(new_rows):
@@ -240,31 +269,6 @@ def normalize_identity(name, website):
         slugify(repair_text(name)),
         normalize_website(website),
     )
-
-
-def normalize_field_value(field, value):
-    if value is None:
-        return ""
-
-    text = str(value).strip()
-    if text.lower() in {"", "null", "none", "nan"}:
-        return ""
-
-    if field == "name":
-        return normalize_identity(text, "")[0]
-    if field == "website":
-        return normalize_identity("", text)[1]
-    if field in {"location", "social_media", "founders", "badges"}:
-        try:
-            return json.dumps(json.loads(text), ensure_ascii=False, sort_keys=True)
-        except Exception:
-            return text
-    if field == "founded":
-        try:
-            return str(int(float(text)))
-        except Exception:
-            return text
-    return text
 
 
 def fetch_existing_records():
@@ -365,43 +369,6 @@ def find_existing_match(row, existing_indexes):
     return None, None
 
 
-def detect_changed_fields(row, existing_record):
-    changed_fields = []
-    for field in COMPARE_FIELDS:
-        incoming_value = normalize_field_value(field, row.get(field))
-        existing_value = normalize_field_value(field, existing_record.get(field))
-        if incoming_value != existing_value:
-            changed_fields.append(field)
-    return changed_fields
-
-
-def build_existing_changes_rows(existing_rows, baseline_indexes, db_indexes):
-    changed_rows = []
-
-    for row in existing_rows:
-        baseline_record, match_basis = find_existing_match(row, baseline_indexes)
-        if not baseline_record:
-            continue
-
-        changed_fields = detect_changed_fields(row, baseline_record)
-        if not changed_fields:
-            continue
-
-        db_record, _ = find_existing_match(row, db_indexes)
-        if not db_record:
-            continue
-
-        changed_rows.append({
-            **row,
-            "existing_id": db_record.get("id", ""),
-            "match_basis": match_basis,
-            "changed_fields": ", ".join(changed_fields),
-            "review_reasons": ", ".join(detect_review_reasons(row)),
-        })
-
-    return changed_rows
-
-
 def split_rows_by_existence(rows, existing_indexes):
     if not existing_indexes:
         return rows, []
@@ -426,7 +393,7 @@ def fetch_existing_identities():
     }
 
 
-def build_summary(rows, review_queue, new_rows, existing_rows, new_review_rows, changed_existing_rows):
+def build_summary(rows, review_queue, new_rows, existing_rows, new_review_rows):
     total_rows = len(rows)
     with_country = sum(1 for row in rows if row.get("country_normalized") and row["country_normalized"] != MISSING_LOCATION_VALUE)
     with_region = sum(1 for row in rows if row.get("region_normalized") and row["region_normalized"] != MISSING_LOCATION_VALUE)
@@ -457,13 +424,12 @@ def build_summary(rows, review_queue, new_rows, existing_rows, new_review_rows, 
         "full_review_queue_count": len(review_queue),
         "new_candidate_rows": len(new_rows),
         "existing_candidate_rows": len(existing_rows),
-        "changed_existing_rows": len(changed_existing_rows),
         "review_reason_counts": dict(sorted(review_reason_counts.items())),
         "unique_countries_sample": unique_countries[:25],
         "artifacts": {
             "review_queue_csv": str(REVIEW_QUEUE),
             "new_review_csv": str(NEW_REVIEW_CSV),
-            "existing_changes_csv": str(EXISTING_CHANGES_CSV),
+            "invalid_source_rows_csv": str(INVALID_SOURCE_ROWS_CSV),
             "country_matrix_csv": str(COUNTRY_MATRIX),
             "region_matrix_csv": str(REGION_MATRIX),
             "city_matrix_csv": str(CITY_MATRIX),
@@ -481,8 +447,6 @@ def run_load(csv_path, truncate=False, mode="insert"):
     command = [sys.executable, str(LOAD_SCRIPT), "--csv", str(csv_path)]
     if truncate:
         command.append("--truncate")
-    if mode != "insert":
-        command.extend(["--mode", mode])
     subprocess.run(command, check=True)
 
 
@@ -501,28 +465,16 @@ def run_pipeline(source_path=None, extract=False):
     if not output_path:
         raise RuntimeError("No se generó el CSV limpio.")
 
-    rows = read_clean_rows(CLEAN_CSV)
+    invalid_source_rows = build_invalid_source_rows_report(effective_source or output_path)
+    rows = [row for row in read_clean_rows(CLEAN_CSV) if has_required_name(row)]
+    if rows:
+        write_semicolon_csv(CLEAN_CSV, rows, rows[0].keys())
     review_queue = build_review_queue(rows)
-    baseline_rows = []
-    baseline_indexes = {"records": [], "pairs": {}, "websites": {}, "names": {}}
-    try:
-        baseline_rows = load_baseline_rows()
-        baseline_indexes = build_existing_indexes(baseline_rows)
-    except Exception:
-        baseline_rows = []
-
     existing_records = fetch_existing_records()
     db_indexes = build_existing_indexes(existing_records)
-
-    if baseline_rows:
-        baseline_new_rows, baseline_existing_rows = split_rows_by_existence(rows, baseline_indexes)
-        new_rows, existing_db_only_rows = split_rows_by_existence(baseline_new_rows, db_indexes)
-        existing_rows = baseline_existing_rows + existing_db_only_rows
-    else:
-        new_rows, existing_rows = split_rows_by_existence(rows, db_indexes)
+    new_rows, existing_rows = split_rows_by_existence(rows, db_indexes)
 
     new_review_rows = build_new_review_rows(new_rows)
-    changed_existing_rows = build_existing_changes_rows(existing_rows, baseline_indexes, db_indexes)
 
     write_csv(
         REVIEW_QUEUE,
@@ -547,15 +499,8 @@ def run_pipeline(source_path=None, extract=False):
         new_review_rows,
         list(rows[0].keys()) + ["review_reasons"] if rows else ["review_reasons"],
     )
-    write_semicolon_csv(
-        EXISTING_CHANGES_CSV,
-        changed_existing_rows,
-        list(rows[0].keys()) + ["existing_id", "match_basis", "changed_fields", "review_reasons"]
-        if rows
-        else ["existing_id", "match_basis", "changed_fields", "review_reasons"],
-    )
 
-    summary = build_summary(rows, review_queue, new_rows, existing_rows, new_review_rows, changed_existing_rows)
+    summary = build_summary(rows, review_queue, new_rows, existing_rows, new_review_rows)
     write_summary(summary)
 
     return {
@@ -564,8 +509,8 @@ def run_pipeline(source_path=None, extract=False):
         "new_rows": new_rows,
         "new_review_rows": new_review_rows,
         "existing_rows": existing_rows,
-        "changed_existing_rows": changed_existing_rows,
         "review_queue": review_queue,
+        "invalid_source_rows": invalid_source_rows,
         "staged_source": str(staged_source) if staged_source else None,
     }
 
@@ -578,7 +523,6 @@ def main():
     parser.add_argument("--source", help="Ruta local a un CSV/XLSX/XLSM para procesar.")
     parser.add_argument("--load", action="store_true", help="Carga el CSV limpio completo a MariaDB al finalizar.")
     parser.add_argument("--load-only-new", action="store_true", help="Carga solo las filas nuevas detectadas.")
-    parser.add_argument("--update-existing", action="store_true", help="Actualiza las filas existentes con cambios detectados.")
     parser.add_argument("--truncate", action="store_true", help="Si se usa junto con --load, reemplaza organizations.")
     parser.add_argument(
         "--fail-on-review",
@@ -593,22 +537,20 @@ def main():
     print(f"CSV limpio listo: {CLEAN_CSV}")
     print(f"Resumen de auditoria: {AUDIT_SUMMARY}")
     print(f"Revision de nuevas: {NEW_REVIEW_CSV} ({summary['review_queue_count']} filas)")
-    print(f"Existentes con cambios: {EXISTING_CHANGES_CSV} ({summary['changed_existing_rows']} filas)")
     print(f"Cola de revision completa: {REVIEW_QUEUE} ({summary['full_review_queue_count']} filas)")
+    print(f"Filas invalidas del origen: {INVALID_SOURCE_ROWS_CSV} ({len(result['invalid_source_rows'])} filas)")
     print(f"Filas nuevas detectadas: {summary['new_candidate_rows']}")
     print(f"Filas ya existentes detectadas: {summary['existing_candidate_rows']}")
 
-    selected_modes = sum(bool(option) for option in [args.load, args.load_only_new, args.update_existing])
+    selected_modes = sum(bool(option) for option in [args.load, args.load_only_new])
     if selected_modes > 1:
-        print("No se pueden combinar --load, --load-only-new y --update-existing.", file=sys.stderr)
+        print("No se pueden combinar --load y --load-only-new.", file=sys.stderr)
         sys.exit(1)
 
     if args.load:
         run_load(CLEAN_CSV, truncate=args.truncate)
     elif args.load_only_new:
         run_load(NEW_REVIEW_CSV, truncate=False)
-    elif args.update_existing:
-        run_load(EXISTING_CHANGES_CSV, truncate=False, mode="update")
 
     if args.fail_on_review and result["review_queue"]:
         print("Se detectaron filas para revision manual. Revisar la cola antes de continuar.", file=sys.stderr)
