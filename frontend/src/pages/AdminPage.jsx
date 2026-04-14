@@ -7,7 +7,7 @@ import { adminFetchOrganizations as listOrganizations } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import {
     LayoutDashboard, Plus, Search,
-    Database, RefreshCcw,
+    Database, RefreshCcw, Download,
     AlertCircle, ShieldX
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
@@ -170,6 +170,15 @@ export default function AdminPage() {
                         </div>
 
                         <div className="flex items-center gap-4">
+                            <Button
+                                variant="ghost"
+                                onClick={() => navigate('/admin/import')}
+                                className="lodo-animated-border font-black uppercase text-[10px] tracking-widest px-5 h-11 transition-all rounded-xl"
+                                style={{ color: lodoDark }}
+                            >
+                                <Download className="h-4 w-4 mr-2" />
+                                Gestionar Excel
+                            </Button>
                             <Button
                                 variant="ghost"
                                 onClick={() => refreshData()}
