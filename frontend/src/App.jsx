@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import MapPage from './pages/MapPage';
 import AdminPage from './pages/AdminPage';
+import AdminImportPage from './pages/AdminImportPage';
 import AdminStatsPage from './pages/AdminStatsPage';
 import AdminProfilePage from './pages/AdminProfilePage';
 import HomePage from './pages/HomePage';
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/map" element={<MapPage />} />
                 <Route path="/admin" element={<AdminPage />} />
+                <Route path="/admin/import" element={<AdminImportPage />} />
                 <Route path="/admin/stats" element={<AdminStatsPage />} />
                 <Route path="/admin/profile" element={<AdminProfilePage />} />
                 <Route path="/contacto" element={<ContactPage />} />

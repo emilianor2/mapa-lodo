@@ -278,26 +278,27 @@ def transform_row(row):
     }
 
 
-def transformar_datos():
+def transformar_datos(source_path=None, output_path=None):
     mode = "con geocodificacion" if GEOCODE_IN_TRANSFORMER else "sin geocodificacion"
     logging.info("Iniciando fase de Transformacion %s...", mode)
 
-    source_path = None
-    if os.path.exists(PATH_SUCIOS_CSV):
-        source_path = PATH_SUCIOS_CSV
-    elif os.path.exists(PATH_SUCIOS):
-        source_path = PATH_SUCIOS
+    resolved_source_path = source_path
+    if not resolved_source_path:
+        if os.path.exists(PATH_SUCIOS_CSV):
+            resolved_source_path = PATH_SUCIOS_CSV
+        elif os.path.exists(PATH_SUCIOS):
+            resolved_source_path = PATH_SUCIOS
 
-    if not source_path:
+    if not resolved_source_path:
         logging.error("Error: No se encontro archivo de origen en %s ni %s", PATH_SUCIOS_CSV, PATH_SUCIOS)
         return
 
-    if source_path.lower().endswith(".csv"):
-        df = normalize_dataframe_columns(pd.read_csv(source_path, encoding="utf-8"))
+    if resolved_source_path.lower().endswith(".csv"):
+        df = normalize_dataframe_columns(pd.read_csv(resolved_source_path, encoding="utf-8"))
     else:
-        df = normalize_dataframe_columns(pd.read_excel(source_path))
+        df = normalize_dataframe_columns(pd.read_excel(resolved_source_path))
 
-    logging.info("Archivo fuente detectado: %s", source_path)
+    logging.info("Archivo fuente detectado: %s", resolved_source_path)
     processed_records = []
 
     for index, row in df.iterrows():
@@ -306,25 +307,29 @@ def transformar_datos():
             continue
 
         processed_records.append(record)
-        location = json.loads(record["location"])
-        logging.info(
-            "[%s] Procesado: %s | %s / %s / %s (Coord: %s, %s)",
-            index,
-            record["name"],
-            location["country"],
-            location["region"],
-            location["city"],
-            record["lat"],
-            record["lng"],
-        )
+        if len(processed_records) <= 5 or len(processed_records) % 250 == 0:
+            location = json.loads(record["location"])
+            logging.info(
+                "[%s] Procesado: %s | %s / %s / %s (Coord: %s, %s)",
+                index,
+                record["name"],
+                location["country"],
+                location["region"],
+                location["city"],
+                record["lat"],
+                record["lng"],
+            )
 
     if processed_records:
         df_final = pd.DataFrame(processed_records)
-        os.makedirs(os.path.dirname(PATH_LIMPIOS), exist_ok=True)
-        df_final.to_csv(PATH_LIMPIOS, index=False, sep=";", encoding="utf-8-sig")
-        logging.info("Exito: Se han exportado %s registros a %s", len(df_final), PATH_LIMPIOS)
+        resolved_output_path = output_path or PATH_LIMPIOS
+        os.makedirs(os.path.dirname(resolved_output_path), exist_ok=True)
+        df_final.to_csv(resolved_output_path, index=False, sep=";", encoding="utf-8-sig")
+        logging.info("Exito: Se han exportado %s registros a %s", len(df_final), resolved_output_path)
+        return resolved_output_path
     else:
         logging.warning("No se procesaron registros. El CSV no fue generado.")
+        return None
 
 
 if __name__ == "__main__":

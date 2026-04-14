@@ -1,0 +1,1111 @@
+﻿name,country_raw,country_normalized,region_raw,region_normalized,city_raw,city_normalized,review_reasons
+Vytal,Alemania,Alemania,Renania del Norte,S/D,Colonia,Colonia,region_removed_or_unresolved
+Recove,India,India,S/D,S/D,India,S/D,city_removed_or_unresolved
+Paptic,Finlandia,Finlandia,Finlandiaia,S/D,Espoo,Espoo,region_removed_or_unresolved
+METYCLE,Alemania,Alemania,Alemania,S/D,Colonia,Colonia,region_removed_or_unresolved
+Eeden,Alemania,Alemania,Alemania,S/D,Münster,Münster,region_removed_or_unresolved
+Metalshub,Alemania,Alemania,Alemania,S/D,Düsseldorf,Düsseldorf,region_removed_or_unresolved
+Recyda GmbH,Alemania,Alemania,Alemania,S/D,Friburgo de Brisgovia,Friburgo de Brisgovia,region_removed_or_unresolved
+Fazla Gıda,Turquía,Turquía,Turquía,S/D,Estambul,Estambul,region_removed_or_unresolved
+Matter.,Reino Unido,Reino Unido,Reino Unido,S/D,Bristol,Bristol,region_removed_or_unresolved
+eureciclo,Brasil,Brasil,Brasil,S/D,São Paulo,São Paulo,region_removed_or_unresolved
+Ionic Technologies,Reino Unido,Reino Unido,Irlanda del Norte,S/D,Belfast,Belfast,region_removed_or_unresolved
+Ecobean,Polonia,Polonia,Polonia,S/D,Varsovia,Varsovia,region_removed_or_unresolved
+Cyclize,Alemania,Alemania,S/D,S/D,Alemania,S/D,city_removed_or_unresolved
+Horen,China,China,S/D,S/D,China,S/D,city_removed_or_unresolved
+Resortecs,Bélgica,Bélgica,Lievegem,S/D,Bruselas,Bruselas,region_removed_or_unresolved
+Tiptapp,Suecia,Suecia,S/D,S/D,Suecia,S/D,city_removed_or_unresolved
+Kokhavynska Paper Factory,Ucrania,Ucrania,S/D,S/D,Ucrania,S/D,city_removed_or_unresolved
+Plastiks,España,España,S/D,S/D,España,S/D,city_removed_or_unresolved
+ALIER,España,España,S/D,S/D,España,S/D,city_removed_or_unresolved
+ScrapAd,España,España,Madrid,S/D,Eibar,Eibar,region_removed_or_unresolved
+Umincorp,Países Bajos,Países Bajos,S/D,S/D,Países Bajos,S/D,city_removed_or_unresolved
+Mimbly,Suecia,Suecia,S/D,S/D,Suecia,S/D,city_removed_or_unresolved
+Tri’n’collect,Francia,Francia,S/D,S/D,Francia,S/D,city_removed_or_unresolved
+Loopfront,Noruega,Noruega,S/D,S/D,Noruega,S/D,city_removed_or_unresolved
+Myco,República Checa,República Checa,S/D,S/D,República Checa,S/D,city_removed_or_unresolved
+MarinaTex,Reino Unido,Reino Unido,S/D,S/D,Reino Unido,S/D,city_removed_or_unresolved
+AMCS Group,Irlanda,Irlanda,Irlanda,S/D,Limerick,Limerick,region_removed_or_unresolved
+SpexAI GmbH,Países Bajos,Países Bajos,S/D,S/D,Países Bajos,S/D,city_removed_or_unresolved
+Fortera,Estados Unidos.,Estados Unidos,S/D,S/D,Estados Unidos.,S/D,city_removed_or_unresolved
+NoTraffic,Israel,Israel,S/D,S/D,Israel,S/D,city_removed_or_unresolved
+Natron Energy,Estados Unidos,Estados Unidos,CA,S/D,Santa Clara,Santa Clara,region_removed_or_unresolved
+Mill,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+itselectric,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Charm Industrial,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+VEMO,España,España,Latam,S/D,España,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+ChargerHelp!,Estados Unidos,Estados Unidos,CA,S/D,Los Ángeles,los Ángeles,region_removed_or_unresolved
+Mycocycle,Estados Unidos,Estados Unidos,IL,S/D,Chicago,Chicago,region_removed_or_unresolved
+Pachama,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Electric Hydrogen,Estados Unidos,Estados Unidos,CA,S/D,San Carlos,San Carlos,region_removed_or_unresolved
+WattBuy,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Turntide Technologies,Estados Unidos,Estados Unidos,CA,S/D,San Jose,San Jose,region_removed_or_unresolved
+Symbrosia,Estados Unidos,Estados Unidos,Kona,S/D,Kailua,Kailua,region_removed_or_unresolved
+Northvolt,Suecia,Suecia,Skellefteå,S/D,Estocolmo,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+ZeroAvia,Reino Unido,Reino Unido,CA,S/D,Hollister,Hollister,region_removed_or_unresolved
+Lunar Energy,Estados Unidos,Estados Unidos,CA,S/D,San Jose,San Jose,region_removed_or_unresolved
+BlocPower,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Elcogen,Finlandia,Finlandia,Helsinki,S/D,Tallinn,Tallinn,region_removed_or_unresolved
+ALKEMIO,Países Bajos,Países Bajos,S/D,S/D,Países Bajos,S/D,city_removed_or_unresolved
+Thorizon,Países Bajos,Países Bajos,S/D,S/D,Países Bajos,S/D,city_removed_or_unresolved
+Zendure,Alemania,Alemania,Shenzhen,S/D,Berlín,Berlín,region_removed_or_unresolved
+Alternative Plants,Países Bajos,Países Bajos,S/D,S/D,Países Bajos,S/D,city_removed_or_unresolved
+Actual Veggies,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+NuCicer,Estados Unidos,Estados Unidos,CA,S/D,Davis,Davis,region_removed_or_unresolved
+Blue Diamond Growers,Estados Unidos,Estados Unidos,CA,S/D,Sacramento,Sacramento,region_removed_or_unresolved
+Van Leeuwen Ice Cream,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Shinkei Systems,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+UPSIDE Foods,Estados Unidos,Estados Unidos,CA,S/D,Berkeley,Berkeley,region_removed_or_unresolved
+Purely Elizabeth,Estados Unidos,Estados Unidos,CO,S/D,Boulder,Boulder,region_removed_or_unresolved
+Savor,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+UMAMI Bioworks,Singapur,Singapur,S/D,S/D,Singapur,S/D,city_removed_or_unresolved
+Sproud,Bélgica,Bélgica,S/D,S/D,Bélgica,S/D,city_removed_or_unresolved
+Beyond Snáck,India,India,Kerala,S/D,Kochi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Vicentin S.A.I.C.,Argentina,Argentina,Santa Fe,S/D,Avellaneda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Growthwell Group,Singapur,Singapur,S/D,S/D,Singapur,S/D,city_removed_or_unresolved
+Nordic SeaFarm,Noruega,Noruega,S/D,S/D,Noruega,S/D,city_removed_or_unresolved
+Olipop,Estados Unidos,Estados Unidos,CA,S/D,Oakland,Oakland,region_removed_or_unresolved
+Brightseed,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+FLY BY JING,Estados Unidos,Estados Unidos,CA,S/D,Los Ángeles,los Ángeles,region_removed_or_unresolved
+Prime Roots,Estados Unidos,Estados Unidos,CA,S/D,Berkeley,Berkeley,region_removed_or_unresolved
+Uncle Nearest,Estados Unidos,Estados Unidos,TN,S/D,Shelbyville,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Little Spoon,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Liquid Death,Estados Unidos,Estados Unidos,CA,S/D,Los Ángeles,los Ángeles,region_removed_or_unresolved
+Chef Robotics,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Bulletproof,Estados Unidos,Estados Unidos,CA,S/D,Los Ángeles,los Ángeles,region_removed_or_unresolved
+Hint,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Health-Ade,Estados Unidos,Estados Unidos,CA,S/D,Los Ángeles,los Ángeles,region_removed_or_unresolved
+MarginEdge,Estados Unidos,Estados Unidos,VA,S/D,Arlington,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Boisson,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Voltus,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Convergent Energy and Power,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Stream BioEnergy,Irlanda,Irlanda,S/D,S/D,Irlanda,S/D,city_removed_or_unresolved
+Crusoe Energy Systems,Estados Unidos,Estados Unidos,CO,S/D,Denver,Denver,region_removed_or_unresolved
+Trafigura,Singapur,Singapur,Singapur,S/D,Ginebra,Ginebra,region_removed_or_unresolved
+Shell Petroleum Development Company of Nigeria,Nigeria,Nigeria,Port Harcourt,S/D,Lagos,Lagos,"region_removed_or_unresolved, region_looks_like_address"
+Proteus,Estados Unidos,Estados Unidos,DE,S/D,Milford,Milford,region_removed_or_unresolved
+DynaMac Holdings,Singapore,Singapur,S/D,S/D,Singapur,S/D,city_removed_or_unresolved
+Lwart Environmental Solutions,Brasil,Brasil,SP,S/D,Lençóis Paulista,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+ML One,Estados Unidos,Estados Unidos,CO,S/D,Denver,Denver,region_removed_or_unresolved
+Collectif Énergie,Francia,Francia,S/D,S/D,Francia,S/D,city_removed_or_unresolved
+Bisonte,Polonia,Polonia,S/D,S/D,Polonia,S/D,city_removed_or_unresolved
+Radiant Nuclear,Estados Unidos,Estados Unidos,CA,S/D,El Segundo,El Segundo,region_removed_or_unresolved
+Koolboks,France,Francia,Africa,S/D,París,París,region_removed_or_unresolved
+DroneDeploy,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Mainspring Energy,Estados Unidos,Estados Unidos,CA,S/D,Menlo Park,Menlo Park,"region_removed_or_unresolved, city_looks_like_address"
+SPAN,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Nitricity,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Arevon Energy,Estados Unidos,Estados Unidos,AZ,S/D,Scottsdale,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Deep Isolation,Estados Unidos,Estados Unidos,CA,S/D,Berkeley,Berkeley,region_removed_or_unresolved
+Electra,Estados Unidos,Estados Unidos,CO,S/D,Boulder,Boulder,region_removed_or_unresolved
+Moleaer,Estados Unidos,Estados Unidos,CA,S/D,Torrance,Torrance,region_removed_or_unresolved
+Bidgely,Estados Unidos,Estados Unidos,CA,S/D,Los Altos,los Altos,region_removed_or_unresolved
+Form Energy,Estados Unidos,Estados Unidos,WV,S/D,Weirton,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Mosaic Solar Finance,Estados Unidos,Estados Unidos,CA,S/D,Oakland,Oakland,region_removed_or_unresolved
+EDP Asia Pacific,Portugal,Portugal,Asia,S/D,Lisboa,Lisboa,region_removed_or_unresolved
+NX-Tech,Corea del Sur,Corea del Sur,S/D,S/D,Corea del Sur,S/D,city_removed_or_unresolved
+BEP Korea,Corea del Sur,Corea del Sur,S/D,S/D,Corea del Sur,S/D,city_removed_or_unresolved
+Cortexia,Suiza,Suiza,S/D,S/D,Suiza,S/D,city_removed_or_unresolved
+SolarMonkey,Países Bajos,Países Bajos,S/D,S/D,Países Bajos,S/D,city_removed_or_unresolved
+New Cleo,Reino Unido,Reino Unido,Turín,S/D,Londres,Londres,region_removed_or_unresolved
+Ohmium,Estados Unidos,Estados Unidos,Fremont,S/D,Bangalore,Bangalore,region_removed_or_unresolved
+PosiGen,Estados Unidos,Estados Unidos,LA,S/D,New Orleans,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Gridmatic,Estados Unidos,Estados Unidos,CA,S/D,Campbell,Campbell,region_removed_or_unresolved
+NACO Technologies,Dinamarca,Dinamarca,S/D,S/D,Dinamarca,S/D,city_removed_or_unresolved
+Glean,Estados Unidos,Estados Unidos,CA,S/D,Palo Alto,Palo Alto,region_removed_or_unresolved
+Elise AI,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Cursor / Anysphere,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Cognition AI (Devin),Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Databricks,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Harvey AI,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Spring Health,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+You.com,Estados Unidos,Estados Unidos,CA,S/D,Palo Alto,Palo Alto,region_removed_or_unresolved
+MarqVision,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Character.ai,Estados Unidos,Estados Unidos,CA,S/D,Menlo Park,Menlo Park,"region_removed_or_unresolved, city_looks_like_address"
+Clay,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Sierra AI,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Apollo.io,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Vast Data,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Exa AI,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Distyl AI,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Ambience Healthcare,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Cyera,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Keychain,Estados Unidos,Estados Unidos,NY,S/D,New York,New York,region_removed_or_unresolved
+Motive (GoMotive),Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Trust & Will,Estados Unidos,Estados Unidos,CA,S/D,San Diego,San Diego,region_removed_or_unresolved
+Juniper Square,Estados Unidos,Estados Unidos,CA,S/D,San Francisco,San Francisco,region_removed_or_unresolved
+Justoken,Argentina / Brasil,S/D,S/D,S/D,Buenos Aires,Buenos Aires,"country_lost_during_normalization, country_contains_multiple_values"
+Fyo,Argentina,Argentina,Rosario,S/D,Santa Fe,Santa Fe,region_removed_or_unresolved
+Michroma,Argentina,Argentina,Chile,S/D,Argentina,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Nectras,Argentina,Argentina,S/D,S/D,Argentina,S/D,city_removed_or_unresolved
+Einsted Bio,S/D,S/D,sin contacto,S/D,Sitio no accesible,Sitio No Accesible,region_removed_or_unresolved
+Fertec,Argentina,Argentina,Argentina,S/D,Córdoba,Córdoba,region_removed_or_unresolved
+Genganar,Argentina,Argentina,Río Cuarto,S/D,Córdoba,Córdoba,region_removed_or_unresolved
+Maqtec,Argentina,Argentina,Venado Tuerto,S/D,Santa Fé,Santa Fé,region_removed_or_unresolved
+Thrive Agritech,Estados Unidos,Estados Unidos,CA,S/D,Los Angeles,los Angeles,region_removed_or_unresolved
+Shinkei Systems,Estados Unidos,Estados Unidos,CA,S/D,Alameda,Alameda,region_removed_or_unresolved
+Instacrops,Estados Unidos,Estados Unidos,CA,S/D,El Segundo,El Segundo,region_removed_or_unresolved
+Beanstalk,Estados Unidos,Estados Unidos,PA,S/D,Pittsburgh,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Thrive Agric,India,India,India,S/D,Hyderabad,Hyderabad,region_removed_or_unresolved
+Tule,Nigeria,Nigeria,Nigeria,S/D,Abuja,Abuja,region_removed_or_unresolved
+FarmLogs,Estados Unidos,Estados Unidos,CA,S/D,Davis,Davis,region_removed_or_unresolved
+Neomatix,Israel,Israel,Tel Aviv,S/D,26 HaBarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tufin,Israel,Israel,Ramat Gan,S/D,5 Shoham,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sookooroo,Israel,Israel,Even Yehudah,S/D,Haasmaut,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+Oktopost,Israel,Israel,Ramat Gan,S/D,Tuval 34,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Collabrium,Israel,Israel,Herzeliya,S/D,6 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+StockCG,Israel,Israel,holon,S/D,36 kdoshy kahir,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+applicaster,Israel,Israel,Tel Aviv,S/D,103 Allenby,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WSC Sports Technologies,Israel,Israel,Ramat Gan,S/D,Menachem Begin Road 20,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sevenpop,Israel,Israel,Tel Aviv,S/D,14 Nahmani,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Personyze,Israel,Israel,Tel Aviv,S/D,13 Noah Mozes,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TOPRO,Israel,Israel,Tel Aviv,S/D,Yosef Yekuti'eli 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Asocs,Israel,Israel,Rosh Haayin,S/D,21 Hamelacha St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BidFlyer,Israel,Israel,Tel Aviv,S/D,70 King George,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Singular,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CymbIoT,Israel,Israel,תל אביב יפו,S/D,שביל המרץ 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Homeppl,Israel,Israel,Tel Aviv,S/D,Ahad Ha'Am St 54,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+HIRO Media,Israel,Israel,Tel Aviv,S/D,11 Sderot Rothschild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NetApp,Israel,Israel,Ehad Ha'am,S/D,Shalom Tower,Shalom Tower,"region_removed_or_unresolved, region_looks_like_address"
+walkme,Israel,Israel,S/D,S/D,walter moses 1 tel aviv,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Coachr,Israel,Israel,Kfar saba,S/D,10 Moran,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+getStatus,Israel,Israel,Tel Aviv,S/D,Aluf Kalman Magen St 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lean On,Israel,Israel,Bene Beraq,S/D,HaRav Levin Marisha St 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Live Cam Therapy,Israel,Israel,Modiin,S/D,43 sara imenu,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tapingo,Israel,Israel,Tel Aviv,S/D,28 Yosef Karo,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PerimeterX,Israel,Israel,Hagag Towers,S/D,Osvaldo Aranha St 29,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+O'Daddy,Israel,Israel,Tel Aviv,S/D,Dubnov Street 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Objectifiers,Israel,Israel,Tel Aviv,S/D,68 Einstein,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NLT SPINE,Israel,Israel,Kfar Saba,S/D,6 Yad Harutzim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+2key,Israel,Israel,Tel Aviv,S/D,Yosef Karo Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Digital Trowel,Israel,Israel,Lod,S/D,4 HaMelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+2Track,Israel,Israel,Tel aviv,S/D,242 Ben Yehuda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Talent Tribe,Israel,Israel,Herzliya,S/D,Arieh Shenkar Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Hybrid Security,Israel,Israel,Tel Aviv,S/D,200 Dizengof,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CureFacts,Israel,Israel,58,S/D,Mohiliver Street 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Sesame Enable,Israel,Israel,Caesarea,S/D,HaEshel St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Planet of the Apps,Israel,Israel,Neve Ilan,S/D,Planet of the Apps,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+affiliaXe,Israel,Israel,Tel Aviv,S/D,90 Begin road,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Radgreen,Israel,Israel,Israel,S/D,Kiryat Ono,Kiryat Ono,region_removed_or_unresolved
+RideOn,Israel,Israel,Tel Aviv,S/D,13 Shoken,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kitchenbug,Israel,Israel,Tel Aviv,S/D,5 Yokneam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sayollo LTD,Israel,Israel,Bergman,S/D,Oppenheimer,Oppenheimer,region_removed_or_unresolved
+Onset Technology,Israel,Israel,Ramot Hashavim,S/D,19 Halimon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TownTouch,Israel,Israel,Israel,S/D,Herev Leet,Herev Leet,region_removed_or_unresolved
+ITAnalyzer,Israel,Israel,Nes Ziona,S/D,5 Golda Meir,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Medigus,Israel,Israel,Omer,S/D,1 Alumot,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SHOWee,Israel,Israel,Tel Aviv,S/D,60 pinsker,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SMBIG,Israel,Israel,Harzaliya,S/D,27 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NoCamels Israeli Innovation News,Israel,Israel,Herzliya,S/D,IDC Herzliya,Idc Herzliya,region_removed_or_unresolved
+Compass-EOS,Israel,Israel,Netanya,S/D,5 Hamelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CrowdSource Technologies,Israel,Israel,Mazkeret Batya,S/D,Eshel 17,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+KERNELiOS - Cyber Knowledge Center,Israel,Israel,Rishon LeTsiyon,S/D,Yosef Lishanski Boulevard 27,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Virtuality New Space,Israel,Israel,Israel,S/D,Jerusalem,Jerusalem,region_removed_or_unresolved
+Sets,Israel,Israel,Ramat Hasharon,S/D,3 Ehud,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+2Tangos,Israel,Israel,Tel Aviv,S/D,1 Graets,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+10beats,Israel,Israel,Tel Aviv,S/D,Haogen,Haogen,region_removed_or_unresolved
+Lending Express,Israel,Israel,Tel Aviv,S/D,Ein Ganim St 8,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Coin Commerce,Israel,Israel,Tel Aviv,S/D,31 Bilu St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CoolaData,Israel,Israel,Tel Aviv,S/D,12 Haumanim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SimilarGroup,Israel,Israel,Tel Aviv,S/D,23 Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TriviaFix,Israel,Israel,Beit Shemesh,S/D,24 Hayasmin b,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SkySaver,Israel,Israel,Jerusalem,S/D,1 HaMarpe,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SENSE,Israel,Israel,Tel Aviv,S/D,Rival 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BetterBill,Israel,Israel,Herzliya,S/D,WeWork,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MySkills,Israel,Israel,jerusalem,S/D,24 Hebron rd,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Timenote,Israel,Israel,Tel Aviv,S/D,Retsif Herbert Samuel St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Evento,Israel,Israel,Ramat Yishai,S/D,Simtat HaBrosh,Simtat Habrosh,region_removed_or_unresolved
+NowTecc,Israel,Israel,Israel Institute of Technology,S/D,Technion,Technion,region_removed_or_unresolved
+Webydo,Israel,Israel,Tel Aviv,S/D,7 Rival St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+boOola,Israel,Israel,Tel Aviv,S/D,16 Brenner,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Aaron High-Tech,Israel,Israel,Maale Adumim,S/D,34 Hasheminit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Merchico,Israel,Israel,Herzliya,S/D,Arieh Shenkar Street 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Triapodi,Israel,Israel,Herzliya,S/D,9 HaMenofim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ForNova,Israel,Israel,Yokneam Ilit,S/D,7 HaKidma St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Smore,Israel,Israel,Tel Aviv,S/D,45 Rothschild Blvd,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WeTicket,Israel,Israel,Eshtaol,S/D,270 Nachal Tzofit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Shoppimon,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 22,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Heyoya,Israel,Israel,Hertzelia,S/D,7 Mitzpe Yam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+L7 Defense,Israel,Israel,באר שבע,S/D,HaEnergia 77,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BillGuard,Israel,Israel,Tel Aviv,S/D,32 Rothschild Blvd.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Panorama Software,Israel,Israel,Tel Aviv,S/D,4 Raoul Wallenberg,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Namogoo,Israel,Israel,Raänana,S/D,HaSadna St 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Top Image Systems,Israel,Israel,Israel,S/D,Ramat Gan,Ramat Gan,region_removed_or_unresolved
+CharacTell,Israel,Israel,Tel Aviv,S/D,213 Bney Efrayim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Vaultive,Israel,Israel,Tel Aviv,S/D,29 Lilinblum,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Champions Oncology,Israel,Israel,Raanana,S/D,2 HaTa'asiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Playstrike,Israel,Israel,S/D,S/D,hod hasharon hrtzel 9,S/D,"city_removed_or_unresolved, city_looks_like_address"
+CloudOn,Israel,Israel,Herzliya,S/D,8 Sderot Abba Eban,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gizmox,Israel,Israel,Kfar Saba,S/D,9 Atir Yeda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Panoramic Power,Israel,Israel,Kfar Saba,S/D,20 Atir Yeda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SeedingSocial,Israel,Israel,Israel,S/D,Tel Aviv,Tel Aviv,region_removed_or_unresolved
+FormLogic,Israel,Israel,Snunit,S/D,2 Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+EventAct,Israel,Israel,Israel,S/D,Shfayim,Shfayim,region_removed_or_unresolved
+HopOn,Israel,Israel,Tel,S/D,28 hanatziv,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Connecteam,Israel,Israel,Tel Aviv,S/D,HaMasger 52,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Algonell - Scientific Trading,Israel,Israel,Bat Yam,S/D,HaHashmona'im St 75,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ayyeka,Israel,Israel,Jerusalem,S/D,Har Hotzvim,Har Hotzvim,region_removed_or_unresolved
+Poptin,Israel,Israel,Tel Aviv,S/D,Aluf Kalman Magen 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+FullDNA,Israel,Israel,Tel Aviv,S/D,Qibbutz Galuyot Road 34,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AppCell Mobile Advertising,Israel,Israel,Hod Hasharon,S/D,8 Maayani,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nextpeer,Israel,Israel,Tel Aviv,S/D,134 Rothschild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Komoona,Israel,Israel,Tel Aviv,S/D,12 Soncino,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tonara,Israel,Israel,Ramat Gan,S/D,10 Oholiav,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Magisto,Israel,Israel,Ness Ziyyona,S/D,HaMazmera Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NEWZIK,Israel,Israel,Dubnov Street 7,S/D,WeWork,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Adience,Israel,Israel,Tel,S/D,24 Saadia Gaon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+XTR3D,Israel,Israel,Herzliya,S/D,16 Sderot Abba Eban,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SaferVPN,Israel,Israel,Tel Aviv,S/D,Nakhmani Street 22,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tomigo,Israel,Israel,Herzliya,S/D,Medinat Hayehudim,Medinat Hayehudim,region_removed_or_unresolved
+RotaryView,Israel,Israel,Mefalsim,S/D,12 Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+User1st,Israel,Israel,Tel Aviv,S/D,127 Igal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+vocalzoom,Israel,Israel,Yokneam,S/D,5 hamada,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lemmeno,Israel,Israel,Tel Aviv,S/D,Bograshov Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MitrAssist,Israel,Israel,Karmiel,S/D,17 Tchelet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SensPD,Israel,Israel,Israel,S/D,Kiryat Tiv'on,Kiryat Tiv'on,region_removed_or_unresolved
+LiveU,Israel,Israel,Kfar Saba,S/D,Hagavish 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Macadamia Apps,Israel,Israel,Givat Shmuel,S/D,7 Gush Etsyon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ubiquidox,Israel,Israel,Efrat,S/D,David Hamelech,David Hamelech,region_removed_or_unresolved
+Innoviz Technologies,Israel,Israel,Kefar Sava,S/D,Atir Yeda Street 15,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CasaVersa,Israel,Israel,Tel Aviv,S/D,12 Baaley hamelaha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Bontact,Israel,Israel,Bnei Brak,S/D,168 Jabotinsky,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Marx Biotechnology,Israel,Israel,Tel Aviv,S/D,3 Maavar Hamitla,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Intellicon,Israel,Israel,S/D,S/D,35 Hanadiv St Zichron Ya'akov,S/D,"city_removed_or_unresolved, city_looks_like_address"
+LocalHub,Israel,Israel,Yafo,S/D,Tel Aviv,Tel Aviv,region_removed_or_unresolved
+MMNT,Israel,Israel,Dubnov Street,S/D,WeWork Dubnov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+tugger info,Israel,Israel,Tel Aviv,S/D,Yerushalmi Street 9,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+tour-mate,Israel,Israel,Tel Aviv,S/D,69 Bugrashove,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pure Value Ltd,Israel,Israel,Tel Aviv,S/D,Ramat HaHayal,Ramat Hahayal,region_removed_or_unresolved
+Collage Medical Imaging,Israel,Israel,beer sheva,S/D,77 haenergia,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CliniWorks,Israel,Israel,Ramat HaSharon,S/D,64 Sokolow,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Carambola,Israel,Israel,Raanana,S/D,14 Hamelach 14,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Better Place,Israel,Israel,Israel,S/D,Rosh Haayin,Rosh Haayin,region_removed_or_unresolved
+SimpleQL,Israel,Israel,Tel Aviv,S/D,13 Shocken,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WiseStamp Jerusalem,Israel,Israel,ירושלים,S/D,יד חרוצים 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+EverCompliant,Israel,Israel,Tel Aviv,S/D,Yigal Alon 55a,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cloudify,Israel,Israel,Yehudim St 89,S/D,Medinat ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+MyPermissions,Israel,Israel,Ramat Gan,S/D,2 Tushiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TrenDemon,Israel,Israel,Netanya,S/D,20 Giborei Israel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Walletex Microelectronics,Israel,Israel,Rishon LeZion,S/D,33 Lazarov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+UltraWis,Israel,Israel,S/D,S/D,Haenergia 77 Bear Sheba,S/D,"city_removed_or_unresolved, city_looks_like_address"
+IntSights,Israel,Israel,Herzliya,S/D,Maskit St 8,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mobario,Israel,Israel,Tel Aviv,S/D,6 Hanechoshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wizer,Israel,Israel,Caesarea,S/D,Halamish Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Codiscent,Israel,Israel,Yahud monoson,S/D,Mevo Tofah 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VivoText,Israel,Israel,Israel,S/D,Rakefet,Rakefet,region_removed_or_unresolved
+GroopMeUp,Israel,Israel,Tel Aviv,S/D,14 Nachmani,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+FarmGuests,Israel,Israel,Eilat,S/D,HaBalan St 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+My Advisor,Israel,Israel,Eilat,S/D,HaBalan St 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AppFront,Israel,Israel,Tel Aviv,S/D,124 Ibn Gabirol,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Leaf,Israel,Israel,Tel Aviv,S/D,Yad Harutsim 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Haystack,Israel,Israel,Tel Aviv,S/D,Bar Yokhai St 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Newvem,Israel,Israel,Tel Aviv,S/D,20 Echad Haam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WiFi Map,Israel,Israel,Ramat Gan,S/D,24 Hayetzira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ScheduleOnce,Israel,Israel,Karmiel,S/D,Tchelet,Tchelet,region_removed_or_unresolved
+Bazaart,Israel,Israel,Haifa,S/D,37 Raul Wallenberg,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+GooodJob,Israel,Israel,Tel Aviv,S/D,7 Dr. Elie Tavin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Optoacoustics,Israel,Israel,Mazor,S/D,17 Hanotea,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Etouri Ticketing,Israel,Israel,Tel Aviv,S/D,24 Machane Yosef,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PractiTest,Israel,Israel,Rehovot,S/D,5 Prof. Hillel Vehanan Oppenheimer,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TaKaDu,Israel,Israel,Yahud Monoson,S/D,4 Derech Hahoresh,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VideoJam.tv,Israel,Israel,Yetsira St 24,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Ayala Water & Ecology,Israel,Israel,Israel,S/D,Moshav Zippori,Moshav Zippori,region_removed_or_unresolved
+NovoSpeech,Israel,Israel,Ramat Gan,S/D,4 Bezalel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LawGeex,Israel,Israel,Tel Aviv,S/D,Homa Umigdal Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+helperz,Israel,Israel,Beit Dagan,S/D,Sderot Menachem Begin 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SaluDoc,Israel,Israel,Kfar Saba,S/D,4 HaGdud Haivri,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Heganoo,Israel,Israel,Pardes,S/D,7 Shoshan,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VASA Applied Technologies,Israel,Israel,Or Yehuda,S/D,16 Ha Haroshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Garagenik,Israel,Israel,S/D,S/D,3 Zivony Street Haifa Israel,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Augury,Israel,Israel,Haifa,S/D,Derech HaAtsma'ut 49,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+FairFly,Israel,Israel,Tel Aviv,S/D,68 Harakevet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+dapulse,Israel,Israel,Tel Aviv,S/D,Yehuda Halevi 48,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PACKAGE.AI,Israel,Israel,Caesarea,S/D,Halamish 15,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SmartPack,Israel,Israel,Tel Aviv,S/D,11 HaAchim Maslavita,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gili Medical,Israel,Israel,Kefar Sava,S/D,Atir Yeda St 21,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MorphiSec,Israel,Israel,Beer,S/D,77 HaEnergia,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Correlor Technologies,Israel,Israel,Jerusalem,S/D,16 Artom,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Bliss Technologies,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 53,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kaymera Technologies,Israel,Israel,Herzlyia,S/D,85 Medinat Hayehudim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Question2Answer,Israel,Israel,Tel Aviv,S/D,21 Bilu,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Anywhere Software,Israel,Israel,Israel,S/D,Yodfat,Yodfat,region_removed_or_unresolved
+vado security technologies,Israel,Israel,Yegi'a Kapayim St 21,S/D,Petach Tikva,Petah Tikva,"region_removed_or_unresolved, region_looks_like_address"
+Contguard,Israel,Israel,Kefar Sava,S/D,Derech HaSharon 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WorldMate,Israel,Israel,Derech Menachem Begin,S/D,132 Azrieli Center,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Audithech,Israel,Israel,Tavori,S/D,10 Moshe,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Price Rhythm,Israel,Israel,Rehovot,S/D,8 HaMada,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Xplenty,Israel,Israel,Tel Aviv,S/D,15 Gershon Shatz,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WalkMe,Israel,Israel,Tel Aviv,S/D,Kremenetski 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Total Boox,Israel,Israel,Tel Aviv,S/D,25 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AeroCRS,Israel,Israel,Tel Aviv,S/D,Derech Menachem Begin 114,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pickn'Tell,Israel,Israel,Tel Aviv,S/D,19 Hatzfira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LiveDefinition,Israel,Israel,Petah Tikva,S/D,1 Odem,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Skills and Knowledge,Israel,Israel,Holon,S/D,1 Yehoshua Rabinovich,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Just Park It,Israel,Israel,Givat Shemuel,S/D,4 Hashaked,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Option Samurai,Israel,Israel,Tel Aviv,S/D,39 Yehoshua bin nun,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Shopic,Israel,Israel,Tel Aviv,S/D,Dubnov 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LabWorm,Israel,Israel,Herzliya,S/D,Maskit 2 St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+EXACTME!,Israel,Israel,Raanana,S/D,2 HaTa'asiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Peak - Dynamics,Israel,Israel,Hod Hasharon,S/D,1 Hanagar St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Reactful,Israel,Israel,Tel Aviv,S/D,12 Shefa Tal,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Algopix,Israel,Israel,Bnei Brak,S/D,Rehov Bar Kochva 23,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nobex Technologies,Israel,Israel,Israel,S/D,Ramat Efal,Ramat Efal,region_removed_or_unresolved
+MediLogos,Israel,Israel,Beersheba,S/D,Ben Gurion University,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Versafe,Israel,Israel,Rishon Le Zion,S/D,11 Moshe Levi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Outbrain,Israel,Israel,Netanya,S/D,6 Arieh Segev,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nurami Medical,Israel,Israel,tsionut,S/D,4 Derekh ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NavIn,Israel,Israel,Tel Aviv,S/D,125 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zoeticx,Israel,Israel,Hertzliya,S/D,11 Galgalei Ha Plada,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LingoLearn,Israel,Israel,akko,S/D,1 shderot manof,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mintigo,Israel,Israel,Raanana,S/D,13 Zarhin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+plugNup,Israel,Israel,Netanya,S/D,54 Herzl,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Xicore Video Technologies,Israel,Israel,Kfar Saba,S/D,10 Weisman,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Parko,Israel,Israel,Tel Aviv,S/D,35 Ben Gurion,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Typemock,Israel,Israel,Tel Aviv,S/D,6 Koifman,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dome9 Security,Israel,Israel,Tel Aviv,S/D,Menachem Begin Road 144,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+UTR Security Technologies,Israel,Israel,Qiriat Onu,S/D,16 Yitzhak Rabin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fitfully,Israel,Israel,Tel Aviv,S/D,HaRechev Street 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+nanorep,Israel,Israel,Plada St 11,S/D,Galgalei ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Scoreoid,Israel,Israel,Tel Aviv,S/D,4 4 Ein Zeitim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fortscale,Israel,Israel,Tel Aviv,S/D,22 Raoul Wallenberg,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Slicr,Israel,Israel,Nazareth Illit,S/D,25 Halulav,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Trendy Pal,Israel,Israel,Tel Aviv,S/D,Ibe Gabirol Street 30,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Merjerz,Israel,Israel,Tel Aviv,S/D,157 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WeKast,Israel,Israel,Tel,S/D,68 Einstein,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+24me,Israel,Israel,Ganei Tikva,S/D,HaCarmel,Hacarmel,region_removed_or_unresolved
+Anodot,Israel,Israel,Ra'anana,S/D,HaTidhar Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Redis Labs,Israel,Israel,Tel Aviv,S/D,HaBarzel Street 28,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Genieo,Israel,Israel,Herzliya,S/D,10 HaSadnaot,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Askapedia,Israel,Israel,2 Zion Ariel Israel,S/D,9,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Perseus-BioMed,Israel,Israel,Petah Tikva,S/D,11 Odem,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+dadaviz,Israel,Israel,Tel Aviv,S/D,2 Tushiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zirra,Israel,Israel,Tel Aviv,S/D,Doctor Bodenheimer Street 32,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lance and Shield,Israel,Israel,Qadima,S/D,2 Halimon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+3-Rings,Israel,Israel,Israel,S/D,Hanaton,Hanaton,region_removed_or_unresolved
+GamEffective,Israel,Israel,Tel Aviv,S/D,Kiryat Atidim,Kiryat Atidim,region_removed_or_unresolved
+Swayy,Israel,Israel,Tel,S/D,8 Melchet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Incentive,Israel,Israel,Ariel,S/D,33 Kvish,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Porticor,Israel,Israel,Ramat HaSharon,S/D,3 Yermiyahu,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tekoia,Israel,Israel,Modiin,S/D,7 Nahal Bazak,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Askem,Israel,Israel,Tel Aviv,S/D,5 Haavoda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SixGill,Israel,Israel,Yokne'am Illit,S/D,HaMada Street 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Myze,Israel,Israel,Tel Aviv,S/D,35 Ehad Haam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Avisco,Israel,Israel,Qatsrin,S/D,Industrial Zone Katzrin,Industrial Zone Katzrin,region_removed_or_unresolved
+Pebbles Interfaces,Israel,Israel,kfar saba,S/D,17 Atir Yeda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+voyager-analytics,Israel,Israel,Hod Hasharon,S/D,4 Haharash,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lingua ly,Israel,Israel,Maccabbi St.,S/D,24 Yehuda Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+SparkBeyond,Israel,Israel,Netanya,S/D,HaMahshev 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fashioholic,Israel,Israel,Yokneam,S/D,13 13 Hatnufa St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DizziPay Holdings LTD,Israel,Israel,S/D,S/D,85 Medinat HaYehudim St. Herzliya,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Virtual Extension,Israel,Israel,Beit Dagan,S/D,5 Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SphereUp,Israel,Israel,Petah Tikva,S/D,14 Imber,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PrintSYSt,Israel,Israel,Israel,S/D,Ness Ziona,Ness Ziona,region_removed_or_unresolved
+MyHeritage - Tel Aviv,Israel,Israel,Tel Aviv,S/D,Dubnov 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Velis Media,Israel,Israel,Ramat,S/D,Ze'ev Jabotinsky 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Taranis,Israel,Israel,hod hasharon,S/D,28 hagai,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cronus Cyber Security,Israel,Israel,Haifa,S/D,Guglielmo Marconi Street 10,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BDB,Israel,Israel,ramat gan,S/D,38 tuval,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ImagineNation,Israel,Israel,Israel,S/D,Zikhron Yaakov,Zikhron Yaakov,region_removed_or_unresolved
+Planet of the Apps,Israel,Israel,Neve Ilan,S/D,Communication Center,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Hermes Innovation,Israel,Israel,even,S/D,12 Ayelet Hashahar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Verisense,Israel,Israel,Jerusalem,S/D,19 Artom,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pro Arc Medical,Israel,Israel,Israel,S/D,Sakhnin,Sakhnin,region_removed_or_unresolved
+ONDiGO,Israel,Israel,Tel Aviv,S/D,Ahad Ha'Am St 28,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ludus,Israel,Israel,Israel,S/D,Herzliya,Herzliya,region_removed_or_unresolved
+Capester,Israel,Israel,Petah Tikva,S/D,Shimshon Street 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Masa Media SEO,Israel,Israel,Rishon LeTsiyon,S/D,Mivtsa Nahshon Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tamuz Energy,Israel,Israel,Rosh,S/D,10 Haamal,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tradeo,Israel,Israel,Tel Aviv,S/D,98 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Amonetize,Israel,Israel,Israel,S/D,Raanana,Ra'anana,region_removed_or_unresolved
+Rubidium,Israel,Israel,Raanana,S/D,7 HaSadna,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Qmerce,Israel,Israel,Tel Aviv,S/D,4 Ravnitzki,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gimmonix Technologies,Israel,Israel,Tel Aviv,S/D,Kharuts Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+toluna,Israel,Israel,Israel,S/D,Haifa,Haifa,region_removed_or_unresolved
+GreenIQ,Israel,Israel,Petah Tikva,S/D,30 Hasivim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MauDau,Israel,Israel,Tel Aviv,S/D,14 Beit Hillel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cancelon,Israel,Israel,Raanana,S/D,Ahuza,Ahuza,region_removed_or_unresolved
+AnySilicon,Israel,Israel,Israel,S/D,Tel Aviv,Tel Aviv,region_removed_or_unresolved
+Screenpeaks,Israel,Israel,Rosh HaAyin,S/D,8 HaMelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nano Retina,Israel,Israel,Herzliya,S/D,85 Medinat Hayehudim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+my6sense,Israel,Israel,Tel Aviv,S/D,120 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+InterMatch,Israel,Israel,Tel Aviv,S/D,1 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Meteo-Logic,Israel,Israel,Ramot HaShavim,S/D,1 HaAlonim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Optimove,Israel,Israel,Tel Aviv,S/D,Ben Avigdor 18,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Hervana,Israel,Israel,Beit Shemesh,S/D,32 Hasitvanit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Reporty,Israel,Israel,Tel Aviv,S/D,Maze 56,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kyplex,Israel,Israel,Sapir,S/D,Har Ramon,Har Ramon,region_removed_or_unresolved
+CloudShare,Israel,Israel,Tel Aviv,S/D,13 Yad Harutsim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Glance - Group Photo Sharing,Israel,Israel,Tel Aviv,S/D,5 Eliyahoo Miferara,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+zensplit,Israel,Israel,Tel Aviv,S/D,18 Ben Avigdor,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pose,Israel,Israel,Tel Aviv,S/D,72 Ehad Haam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Transmit Security,Israel,Israel,Tel Aviv,S/D,Yigal Alon 96,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fitany,Israel,Israel,Neve Yaraq,S/D,87 Haegoz,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+FORTVISION,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Edgybees,Israel,Israel,Israel,S/D,Beit Herut,Beit Herut,region_removed_or_unresolved
+RevDefender,Israel,Israel,Tel Aviv,S/D,Montefiore St 46,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Clicktale,Israel,Israel,Ramat Gan,S/D,2 Shoham,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Virtual Try,Israel,Israel,tel aviv,S/D,10 ben yehuda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Investing dot com,Israel,Israel,Tel Aviv,S/D,48 Derech Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Crazy eCommerce,Israel,Israel,Haifa,S/D,51 Derech Jaffa,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Montiera Technologies,Israel,Israel,Tel Aviv,S/D,46 Retsif Herbert Samuel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Scoompa,Israel,Israel,Tel Aviv,S/D,Prof. Yehezkel Kaufmann 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Elevation Academy,Israel,Israel,Tel Aviv,S/D,HaPelech Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Eyecam,Israel,Israel,Rishon Le Zion,S/D,1 Yoseph Lishanski,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+My RecipeBox,Israel,Israel,Israel,S/D,Ariel,Ariel,region_removed_or_unresolved
+Scanmarker,Israel,Israel,Tirat Karmel,S/D,5 Etgar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rumble,Israel,Israel,Tel Aviv,S/D,Shevah 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lusha,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 45,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kidkedoo,Israel,Israel,Ness Ziyyona,S/D,Bilu St 20,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+twofold data,Israel,Israel,Herzliya,S/D,16 Aba Eban,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+POP Medical Solutions,Israel,Israel,Tel Aviv,S/D,27 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Modular Construction Toys,Israel,Israel,Be&#x60,S/D,2 Merhavia,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Svyver,Israel,Israel,Ashdod,S/D,2 Hahadarim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Adquant,Israel,Israel,Tel Aviv,S/D,90 Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Plarium Global,Israel,Israel,Herzeliya Pituah,S/D,1 Hamenofim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Beam Networks,Israel,Israel,Israel,S/D,Rehovot,Rehovot,region_removed_or_unresolved
+Xtendi,Israel,Israel,Tel Aviv,S/D,18 Leah,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+5skills,Israel,Israel,Tel Aviv,S/D,8 Bloch St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zollo,Israel,Israel,Tel Aviv,S/D,30 Kalischer,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kiddiz.me,Israel,Israel,Pardes Hanna,S/D,Shabazi 18,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Headbox,Israel,Israel,Tel Aviv,S/D,5 zvi herman segal,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BeyondSpark,Israel,Israel,Herzliya,S/D,Shderot Aba Eban,Shderot Aba Eban,region_removed_or_unresolved
+Netotiate,Israel,Israel,Tel Aviv,S/D,124 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Bizzabo,Israel,Israel,Herzliya,S/D,3 Hapiyus,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Joonko,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 45,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Otipo,Israel,Israel,Ramat HaSharon,S/D,8 Balfur,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Votiro,Israel,Israel,Tel Aviv,S/D,126 Igal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ITQlick,Israel,Israel,Ein vered,S/D,Hadror,Hadror,region_removed_or_unresolved
+Advanced Mem-Tech,Israel,Israel,Nes Ziona,S/D,2 hamada,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iguazio,Israel,Israel,Herzliya,S/D,Arieh Shenkar Street 18,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Stevie,Israel,Israel,Tel Aviv,S/D,Levontin 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nextplus,Israel,Israel,Rosh Haayin,S/D,HaMelacha St 23,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Shimeba,Israel,Israel,Tel Aviv,S/D,64 Frishman,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tipengo,Israel,Israel,Tel Aviv,S/D,4 Ein Zeitim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Core Bone,Israel,Israel,Israel,S/D,Efrat,Efrat,region_removed_or_unresolved
+Lexifone,Israel,Israel,Israel,S/D,Haifa,Haifa,region_removed_or_unresolved
+DiscoverCloud,Israel,Israel,Tel Aviv,S/D,47 Rothschild Boulvard,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+3dYouAndMe,Israel,Israel,Rishon Le Zion,S/D,20 Habashan str,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+GreenShpits,Israel,Israel,Raanana,S/D,90 Akiva,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mobileye,Israel,Israel,Jerusalem,S/D,E.S. Artom Street 13,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+yourbizzz,Israel,Israel,Kibbutz Horashim,S/D,0,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Proso,Israel,Israel,Ness Ziona,S/D,Golda Meir 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mer CellO,Israel,Israel,Holon,S/D,HaTsoref 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TalkSparks,Israel,Israel,Ramat Hasharon,S/D,36 Sokolov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Toonimo,Israel,Israel,Tel Aviv,S/D,3 Rothschild Blvd,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Best Tv,Israel,Israel,Tel Aviv,S/D,167 Hayarkon St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+The Table,Israel,Israel,tel aviv,S/D,94 allenby,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Legalogic,Israel,Israel,tel aviv,S/D,31 yavne,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fooducate,Israel,Israel,Tel Aviv,S/D,8 Tushiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DealPly,Israel,Israel,Tel Aviv,S/D,124 Ibn Gabirol,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PassCall Advanced Technologies,Israel,Israel,Haifa,S/D,2 Huri,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kontera,Israel,Israel,Herzliya,S/D,1 Arieh Shenkar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wis2Biz (Wisdom to Business),Israel,Israel,Rishon LeTzion,S/D,mazal eliezr 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NIMD,Israel,Israel,Jerusalem,S/D,2 Abu Obieda Ibn Al Jarah,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+On-Semble,Israel,Israel,Israel,S/D,Ra'anana,Ra'anana,region_removed_or_unresolved
+Roundforest,Israel,Israel,Tel Aviv,S/D,Har Sinai St 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Qrate,Israel,Israel,Tel Aviv,S/D,3 Pineles,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Finnetrix,Israel,Israel,Tel Aviv,S/D,38 HaRav Friedman,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wemark,Israel,Israel,Tel Aviv,S/D,Kaufmann 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tel-Aviv Times,Israel,Israel,Tel Aviv,S/D,6 Andrews,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CrediFi,Israel,Israel,Modi'in,S/D,Yigael Yadin 53,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SEOgenie,Israel,Israel,Herzliya,S/D,11 Hamenofim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nano Dimension,Israel,Israel,Ness Tsiona,S/D,Ilan Ramon 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Slyce,Israel,Israel,Israel,S/D,Alonim,Alonim,region_removed_or_unresolved
+LikeiD,Israel,Israel,Kiryat Ata,S/D,11 HaTaasiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+koltrol,Israel,Israel,Even Yehuda,S/D,41 hameyasdim st,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Discover Medical Devices,Israel,Israel,Tel Aviv,S/D,84 Yitzhak Rabin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TReino Unidouoro,Israel,Israel,Israel,S/D,Tel Aviv District,Tel Aviv District,region_removed_or_unresolved
+Propel,Israel,Israel,Tel Aviv,S/D,Aluf Kalman Magen Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Deeplink,Israel,Israel,Tel Aviv,S/D,7 Dubnov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Morpheus Design Technologies,Israel,Israel,tel aviv,S/D,98 yigal alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CiValue,Israel,Israel,יקנעם עילית,S/D,היצירה 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tabtale,Israel,Israel,Tel Aviv,S/D,Raoul Wallenberg St 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zoom Analytics,Israel,Israel,Kiryat,S/D,9 Hakfar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pulssoft,Israel,Israel,Beer Sheva,S/D,1 Yetsiat Eropa St 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tok Media,Israel,Israel,Jerusalem,S/D,28 Hebron,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Bit2c,Israel,Israel,Tel aviv,S/D,4 Kaplan,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+eWaveMD,Israel,Israel,Yam,S/D,1 Kibutz Glil,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Waterfall Security Solutions,Israel,Israel,Rosh Haayin,S/D,21 HaMelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Highcon Systems,Israel,Israel,Yavne,S/D,4 Paran,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Screenovate,Israel,Israel,Ra'anana,S/D,34 Jerusalem street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Feedweb Research,Israel,Israel,Raanana,S/D,7 HaTaasiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CreativeMinds,Israel,Israel,Rimon Street 76,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Jinni,Israel,Israel,Rosh Haayin,S/D,10 HaAmal Park Afek,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Yalla.Do,Israel,Israel,Jerusalem,S/D,2 Issawiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zikk Software,Israel,Israel,Tel,S/D,70 Hayarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+T-REX,Israel,Israel,Tel Aviv,S/D,Yigal Alon St 65,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Shopiz,Israel,Israel,Tel,S/D,45 Rothschild Avn.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Evature,Israel,Israel,Ness Ziona,S/D,53 A Moshe Levi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Spaceek,Israel,Israel,Petah Tikva,S/D,HaSivim 18,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Evolero,Israel,Israel,Tel Aviv,S/D,Dubnov 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mediagno,Israel,Israel,tel aviv,S/D,9 gildesgim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Yotpo,Israel,Israel,Tel Aviv,S/D,12 David Khakhami,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ViXi TV,Israel,Israel,S/D,S/D,hashikma 2 Azur,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Wiser,Israel,Israel,תל אביב יפו,S/D,אחד העם 28,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Onavo,Israel,Israel,Ramat Gan,S/D,16 Aba Hillel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tactile mobility,Israel,Israel,Haifa,S/D,HaAtsma'ut Road 45,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SlideMagic,Israel,Israel,Tel Aviv,S/D,10 Herzl Rosenblum,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Teradata Mobile (Formerly Appoxee),Israel,Israel,Tel Aviv,S/D,3 HaBarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+zerobillbank,Israel,Israel,Tel Aviv,S/D,52 Nahalat Binyamin St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Aorato,Israel,Israel,Herzliya,S/D,35 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Taboola,Israel,Israel,Ramat Gan,S/D,Jabotinsky St 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Groundwork BioAg,Israel,Israel,Moshav Mazor,S/D,27 Hashachar St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Chiasma,Israel,Israel,Jerusalem,S/D,10 artom,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pulse Play,Israel,Israel,Kharuv 8,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+ReacTics,Israel,Israel,Yavne,S/D,10 Hayarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Jungo Connectivity,Israel,Israel,Netanya,S/D,1 Hamachshev St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Intigua,Israel,Israel,Herzliya,S/D,8 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Umoove,Israel,Israel,Jerusalem,S/D,8 HaMarpe,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Jelly Button Games,Israel,Israel,Tel Aviv,S/D,Schocken 27,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Protextme,Israel,Israel,Ra'anana,S/D,HaSadna St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ALMtoolbox (f. GoMidjets),Israel,Israel,Petah Tikva,S/D,68 Shlomo Kaplanski,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Stepin,Israel,Israel,Herzliya,S/D,5 Sokolov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iridize,Israel,Israel,Arets Industial Zone,S/D,1 Lev ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dyadic Security,Israel,Israel,Givat Shmuel,S/D,13 Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cliniclicks,Israel,Israel,tel aviv,S/D,5 Druyanov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+2BI,Israel,Israel,Rosh Ha'ain,S/D,19 Ein Gedy,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Medic Vision,Israel,Israel,Israel,S/D,Tirat Carmel,Tirat Carmel,region_removed_or_unresolved
+Pursway,Israel,Israel,Herzliya,S/D,8 Hamada,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AppsFlyer,Israel,Israel,Yehudim Street 85,S/D,Medinat ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+MiRobot,Israel,Israel,Tel Aviv,S/D,65 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PowToon,Israel,Israel,Tel Aviv,S/D,6 Haarbaa,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Black Angus,Israel,Israel,Tel Aviv,S/D,15 Florentin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TourVR,Israel,Israel,Erez 79,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+SleepRate,Israel,Israel,Petach Tikva,S/D,20 Hamagshimim St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VideoStir,Israel,Israel,Tel Aviv,S/D,HaNehoshet Street 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tailor Brands,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Funzing,Israel,Israel,Tel Aviv,S/D,35 Sderot Yehudit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Safe-T,Israel,Israel,Herzliya Pituach,S/D,8 Aba Even,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cellepathy Ltd.,Israel,Israel,Tel Aviv,S/D,Arlozorov Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Celebros,Israel,Israel,Herzliya Pituach,S/D,8 Abba Eban,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Big Blue Parrot,Israel,Israel,Tel Aviv,S/D,30 Ibn Gabirol,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Global-e,Israel,Israel,&#x60,S/D,25 Bazel street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Adzonesocial,Israel,Israel,Tel Aviv,S/D,5 Bar Yohai,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Stitch Videos,Israel,Israel,Jerusalem,S/D,Shlomo HaLevi,Shlomo Halevi,region_removed_or_unresolved
+Spondoolies-Tech,Israel,Israel,kiryat gat,S/D,2 HALESHEM,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Conversioner,Israel,Israel,Tel Aviv,S/D,69 Bograshov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+konekti.me,Israel,Israel,Modi'in,S/D,Migdal Halevanon 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ForeScout Technologies,Israel,Israel,Tel Aviv,S/D,Raoul Wallenberg St 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Seeking Alpha,Israel,Israel,Raanana,S/D,47 HaNesiim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Snyk.io,Israel,Israel,Tel Aviv,S/D,Nahalat Binyamin Street 85,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+dispop,Israel,Israel,Tel Aviv,S/D,14 Karlibach,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ReupMobile,Israel,Israel,Matan,S/D,Kalanit Street 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fabrix Systems,Israel,Israel,Rannana,S/D,HaHaroshet 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SCREEMO,Israel,Israel,Tel Aviv,S/D,4 Ein Zeitim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Backed Personal Loans,Israel,Israel,Tel Aviv,S/D,Dubnov Street 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Testim.io,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 45,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Silo,Israel,Israel,Tel Aviv,S/D,Bar Yokhai 12,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Adventure Mob,Israel,Israel,Herzliya,S/D,22 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Humavox,Israel,Israel,Kfar Saba,S/D,8 Hacharoshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WonderLogix,Israel,Israel,Hi,S/D,Hatnufa street 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cigol Digital Systems,Israel,Israel,Yokneam,S/D,3 Hatamar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wedivite,Israel,Israel,Tel Aviv,S/D,110 Derech Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SlideIT,Israel,Israel,Jerusalem,S/D,7 Yam Suf,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CREMESO,Israel,Israel,Ashdod,S/D,Sderot Yerushalayim,Sderot Yerushalayim,region_removed_or_unresolved
+LiveVPS IL,Israel,Israel,Rosh Haayin,S/D,HaAvoda 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+feedbox,Israel,Israel,Raanana,S/D,17 hatidhar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+JETS Israel,Israel,Israel,Jerusalem,S/D,3 Berniki,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+eMotion Technologies,Israel,Israel,Afula,S/D,25 Arlozorov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cloudyn,Israel,Israel,Raanana,S/D,10 HaYetzira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LocalYoo,Israel,Israel,Raanana,S/D,11 Hataasiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LiveGiving TV,Israel,Israel,Jerusalem,S/D,6 King Georges,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ejovo,Israel,Israel,Jerusalem,S/D,8 HaMarpe,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ubimo,Israel,Israel,Tel,S/D,73 HaYarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Win.com,Israel,Israel,Tel Aviv,S/D,28 Ehad Haam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Metacafe,Israel,Israel,Tel Aviv,S/D,9 Ahad Ha'Am,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Owlytics,Israel,Israel,Ramat Gan,S/D,Derech Menachem Begin 12,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+The Elegant Monkeys,Israel,Israel,Weizmann Street,S/D,The Elegant Monkeys HQ,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address"
+Intofeed,Israel,Israel,Kiryat Bialik,S/D,12 HaTeenim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Synereo,Israel,Israel,תל אביב יפו,S/D,Brandeis,Brandeis,region_removed_or_unresolved
+PineApp,Israel,Israel,Nesher,S/D,71 Derech Bar Yehuda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Power Offer,Israel,Israel,Bnei,S/D,29 Hayarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AniView,Israel,Israel,Herzliya,S/D,Arieh Shenkar Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pzartech,Israel,Israel,Tel Aviv,S/D,Lilienblum Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Next Insurance,Israel,Israel,Kefar Sava,S/D,Atir Yeda Street 15,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Eybna Technologies,Israel,Israel,Hod hasharon,S/D,99 Hacharash St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+2P2D,Israel,Israel,Tel Aviv,S/D,18 Bitsaron,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Vubooo,Israel,Israel,Tel Aviv,S/D,32 Ben Yahuda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Vicomi,Israel,Israel,tel aviv,S/D,7 Dobnov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SC CITY,Israel,Israel,S/D,S/D,halamed heh 6,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Liola,Israel,Israel,Lehavim,S/D,15 Snunit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Townflix,Israel,Israel,Bnei Brak,S/D,5 Kineret,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ginger Software,Israel,Israel,Tel Aviv,S/D,9 Ahad HaAm,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mobiright,Israel,Israel,Tel Aviv,S/D,14 Carlebach,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VideoFlow,Israel,Israel,Rosh Haayin,S/D,11 Haamal,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DOOMORO,Israel,Israel,tel aviv,S/D,9 ehad aham,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Inka Robotics,Israel,Israel,Haifa,S/D,HaNamal 28,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PmP,Israel,Israel,Tzoran,S/D,1 Hamatechet St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Win Interactive,Israel,Israel,Tel Aviv,S/D,62 Rothschild Boulevard,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Academix,Israel,Israel,Jerusalem,S/D,Givat Ram,Givat Ram,region_removed_or_unresolved
+Echo,Israel,Israel,Tel Aviv,S/D,Kalisher Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fooditall,Israel,Israel,Ashkelon,S/D,3 Yam HaMelach,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+imVision Technologies,Israel,Israel,Ramat Gan,S/D,HaYetsira Street 29,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iPhysicist,Israel,Israel,Netanya,S/D,2 Gad Manela,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Immune Pharmaceuticals,Israel,Israel,Herzliya,S/D,15 Aba Eban,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BountyC,Israel,Israel,Khaluts Street 46,S/D,He,He,"region_removed_or_unresolved, region_looks_like_address"
+Saguna Networks,Israel,Israel,Yokneam,S/D,13 Hatnufa,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Onysus,Israel,Israel,Haifa,S/D,HaNamal 28,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+The Stock Sonar,Israel,Israel,Lod,S/D,4 HaMelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Riskified,Israel,Israel,Tel Aviv,S/D,Kalischer Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iAngels,Israel,Israel,Tel Aviv,S/D,32 HaBarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Snap Israel,Israel,Israel,Yafo,S/D,Tel Aviv,Tel Aviv,region_removed_or_unresolved
+G2M-team,Israel,Israel,Israel,S/D,Ramat Gan,Ramat Gan,region_removed_or_unresolved
+Webyclip,Israel,Israel,Tel Aviv,S/D,HaHashmonaim Street 95,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BandPad,Israel,Israel,Tel Aviv,S/D,14 Zirelson 14,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Foresight,Israel,Israel,Israel,S/D,Kfar Netter,Kfar Netter,region_removed_or_unresolved
+Everything.Me,Israel,Israel,תל אביב יפו,S/D,Menachem Begin Road 154,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rspct,Israel,Israel,Tel Aviv,S/D,Sanhedrin Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Howazit,Israel,Israel,Herzliya,S/D,Maskit Street 13,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Viewbix,Israel,Israel,Beit Shemesh,S/D,7 Nahal Dolev,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Windward,Israel,Israel,Tel Aviv,S/D,2 Har Sinay,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Reliance,Israel,Israel,Tel Aviv,S/D,22 Mercaz Baaleh Melacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zipy,Israel,Israel,Beer Sheva,S/D,1 Ramot,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SpaceIL,Israel,Israel,Tel Aviv,S/D,30 Haim Levanon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Annoto,Israel,Israel,Tel Aviv,S/D,Dubnov 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Vodio,Israel,Israel,Tel Aviv,S/D,HaRechev 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+KAL Silicon Technologies,Israel,Israel,Israel,S/D,Hadera,Hadera,region_removed_or_unresolved
+Magdent Ltd.,Israel,Israel,5120109 Bnei,S/D,BSR Tower No. 3 15th floor. 9Mesada St.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Say Media Group,Israel,Israel,Tel Aviv,S/D,1 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Chat Leap,Israel,Israel,Tel Aviv,S/D,Rokach Boulevard 101,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Plataine,Israel,Israel,Petah Tikva,S/D,Derekh Em Hamoshavot 94,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+KanooLi,Israel,Israel,raanana,S/D,11 hataasia st.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BuzzSpice,Israel,Israel,Petah Tikva,S/D,rotschild,Rotschild,region_removed_or_unresolved
+Team Do,Israel,Israel,Beit Herut,S/D,10 Hatamar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Veed.me HQ,Israel,Israel,Tel Aviv,S/D,Kibuts Galuyot Road 32,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SoftPublisher,Israel,Israel,Jerusalem,S/D,13 Hadafna,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Market-Box,Israel,Israel,Tel Aviv,S/D,41 Montefiore Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ShopEat,Israel,Israel,Israel,S/D,Kiryat Bialik,Kiryat Bialik,region_removed_or_unresolved
+Yoovi,Israel,Israel,Tel Aviv,S/D,98 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dourp,Israel,Israel,Tel Aviv,S/D,81 Rothschild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CodersClan,Israel,Israel,Tel,S/D,7 Dubnov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Traffilog,Israel,Israel,Rosh Haayin,S/D,10 Haamal,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CastPlus,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 47,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DBS-H BigData Integration,Israel,Israel,Jerusalem,S/D,24 Hebron Road,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Skyline AI,Israel,Israel,Tel Aviv,S/D,Ein Ganim Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SimilarWeb,Israel,Israel,Tel Aviv,S/D,23 Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Optier,Israel,Israel,Ramat Gan,S/D,14 Derech Aba Hillel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Freshionup,Israel,Israel,shoham po.box 3535,S/D,100 modiem,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Weird Science Lab,Israel,Israel,Tel Aviv,S/D,45 Rothschild Blvd,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WinkApp,Israel,Israel,Ramat Gan,S/D,HaTaas 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+shopnfly,Israel,Israel,Tel Aviv,S/D,169 Hayarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lyra Medical,Israel,Israel,Binyamina Giv'at Ada,S/D,HaMelacha Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Trippin' in,Israel,Israel,Tel Aviv,S/D,9 Marmorek,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pink Pangea,Israel,Israel,Tel Aviv,S/D,6 Allenby 65,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LabSuit Project,Israel,Israel,Haifa,S/D,16 Palmach,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+IsraMarket.me,Israel,Israel,Jerusalem,S/D,Ben Yehuda 34,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LeanCiti,Israel,Israel,Herzliya,S/D,15 Hovevei Tsiyon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sigmento,Israel,Israel,Ramat Hasharon,S/D,Haroshet 18,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Commugen,Israel,Israel,Tel Aviv,S/D,Nahalat Binyamin Street 47,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PowerPlug,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 19,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Slidely,Israel,Israel,Tel Aviv,S/D,22 Raoul Wallenberg 22a,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Scodix,Israel,Israel,Rosh HaAyin,S/D,2 HaMelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AwayTeam,Israel,Israel,Herzliya,S/D,91 Medinat Hayehudim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sensilize,Israel,Israel,Haifa,S/D,Sha'ar Palmer Street 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+RayV,Israel,Israel,Tel Aviv,S/D,30 Kalischer,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Yingele,Israel,Israel,Ramat Gan,S/D,Yad Shalom 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Symbo,Israel,Israel,Tel Aviv,S/D,34 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SafeWallet,Israel,Israel,Tel Aviv,S/D,17 HaYarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WHIPCLIP,Israel,Israel,Hertsliya,S/D,Medinat HaYehudim 89,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pointer Intelligent Agri-Systems,Israel,Israel,Ramat Yishai,S/D,Tsaftsafa St 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Butterfly Media Networks,Israel,Israel,Tel Aviv,S/D,68 hashmonaim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Treato,Israel,Israel,Yehud,S/D,9 HaAtsmaut,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+YEVVO,Israel,Israel,Tel Aviv,S/D,39 Rothschild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nation - E,Israel,Israel,Yehudim Street 89,S/D,Medinat ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Bengigi Studio,Israel,Israel,Israel,S/D,Mazkeret Batya,Mazkeret Batya,region_removed_or_unresolved
+Sovevos,Israel,Israel,Tel Aviv,S/D,68 Einstein,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+StickyTacs,Israel,Israel,Tel,S/D,9 Wolfson,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Bisconi Cones,Israel,Israel,Efrat,S/D,38 Yonatan Hachashmonai Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zadara Storage,Israel,Israel,Israel,S/D,Tavor Building,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iceSCRM,Israel,Israel,Har Adar,S/D,5 Har Adar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Motinize,Israel,Israel,Tel Aviv,S/D,Derech Menachem Begin 114,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SOOMLA,Israel,Israel,Tel Aviv,S/D,37 Sderot Shaul Hamelech,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MyQuest,Israel,Israel,Ramat Gan,S/D,Jabotinsky 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zuznow,Israel,Israel,Tel Aviv,S/D,24 Pombedita,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LOCODOR,Israel,Israel,Tel Aviv,S/D,HaMasger Street 55,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rondo,Israel,Israel,Israel,S/D,Netanya,Netanya,region_removed_or_unresolved
+AbiliSense,Israel,Israel,Tel Aviv,S/D,Eli Cohen Street 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gemsense,Israel,Israel,Haifa,S/D,32 Sderot Hameginim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Media Forest,Israel,Israel,Netanya,S/D,25 HaMelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+mce-systems,Israel,Israel,Tel Aviv,S/D,Ben Zakai 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+StoreYa,Israel,Israel,Israel,S/D,Ramat Hasharon,Ramat Hasharon,region_removed_or_unresolved
+TechsoMed,Israel,Israel,Ramat Gan,S/D,2 Katzir,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rompr,Israel,Israel,Tel Aviv,S/D,1 Mordehai Zeira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Xeround,Israel,Israel,Yehud,S/D,20 Altalef,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tridinetworks,Israel,Israel,Nesher,S/D,195 Derech Bar Yehuda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DriveMe,Israel,Israel,Israel,S/D,Tel Aviv,Tel Aviv,region_removed_or_unresolved
+Glide,Israel,Israel,Ramat Gan,S/D,Shoham Street 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SyncFu,Israel,Israel,Hadera,S/D,1 Harei Besamim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Open House Studios,Israel,Israel,Jerusalem,S/D,2 Poalei Tsedek,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+"Opereto - Continuous System Testing Hub For Distributed, Hybrid Cloud and Cloud Native Applications",Israel,Israel,Israel,S/D,Ra'anana,Ra'anana,region_removed_or_unresolved
+Pixplit,Israel,Israel,Tel Aviv,S/D,15 rothschild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Aprende Hebreo H.Q,Israel,Israel,Tel Aviv,S/D,Y.L. Perets Street 13,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+sFBI,Israel,Israel,Rishpon,S/D,8 HaCharuv,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cloudinary,Israel,Israel,Petah Tikva,S/D,Aharon Bart St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CallmyName,Israel,Israel,Ramat Gan,S/D,29 HaYetsira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MINIPPS,Israel,Israel,Kfar Yona,S/D,8 Ehus Manor,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SocialClicks,Israel,Israel,Tel Aviv,S/D,7 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Aqua Security,Israel,Israel,Ramat Gan,S/D,Menachem Begin Road 20,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+RIDARTECH,Israel,Israel,Tel,S/D,15 Rothchild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Produvia,Israel,Israel,Raanana,S/D,25 Hataasiya St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VideoDubber,Israel,Israel,Airport City,S/D,2 Negev,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MotionCooker,Israel,Israel,Raanana,S/D,66 Rambam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Powtoon,Israel,Israel,Tel Aviv,S/D,HaArba'a Street 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Emefcy,Israel,Israel,Caesarea,S/D,7 Haeshel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Idomoo,Israel,Israel,Hod Hasharon,S/D,4 HaHarash,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Come2Play - Tel Aviv,Israel,Israel,Tel Aviv,S/D,45 Yehuda Halevi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PowerMat,Israel,Israel,Kiryat Yearim,S/D,5 Hasadot,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+justAd,Israel,Israel,Tel Aviv,S/D,3 Ahuzat Bayit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NoProblem,Israel,Israel,Raanana,S/D,10 Zarchin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MeetMeet,Israel,Israel,Tel Aviv,S/D,111 Derch Namir,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+COPYLEAKS,Israel,Israel,tel aviv,S/D,53 nahamani,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SpeedAPP,Israel,Israel,Nesher,S/D,9 Dereh Hashalom,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+storyboard,Israel,Israel,Tel Aviv,S/D,5 Bar Yochai,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NETO,Israel,Israel,Modi'in Ilit,S/D,Sha'arei Tshuva 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Analoc,Israel,Israel,Tel Aviv,S/D,7 Atidim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zula,Israel,Israel,Tel Aviv,S/D,7 Dubnov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Transceptar Lab,Israel,Israel,Yesod Street 2,S/D,Keren ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Kaymera,Israel,Israel,Herzelia,S/D,85 Medinat Hayehudim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+eRated,Israel,Israel,Tel Aviv,S/D,98 Igal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WeSEE,Israel,Israel,Herzliya,S/D,22 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+webstockpro,Israel,Israel,Rosh Haayin,S/D,Rosh Haayin,Rosh Haayin,region_removed_or_unresolved
+TherapyEverywhere,Israel,Israel,Givat Zeev,S/D,17 Shevet Binyamin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Easy Social Shop,Israel,Israel,Tel Aviv,S/D,21 Rothschild Boulevard,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fusic,Israel,Israel,Tel Aviv,S/D,22 Saadya Gaon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gryphonet,Israel,Israel,Yehud,S/D,1 Shabazi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+OpenLM,Israel,Israel,Kibbutz Givat Haim Ihud,S/D,1 Beit Theresienstadt,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+JoyTunes,Israel,Israel,Tel Aviv,S/D,43 HaNatsiv,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Numbeez,Israel,Israel,Kfar Saba,S/D,16 Atir Yeda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+eToro,Israel,Israel,Tel Aviv,S/D,32 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WeFind,Israel,Israel,Schocken Street,S/D,SOSA,Sosa,"region_removed_or_unresolved, region_looks_like_address"
+Vidoco,Israel,Israel,Ramat Gan,S/D,6 Avnei Hahoshen,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Twine Solutions,Israel,Israel,Petah Tikva,S/D,Imber St 14,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+OcuCloud Cloud Security,Israel,Israel,S/D,S/D,28 Itzhak Sadeh St. Tel Aviv,S/D,"city_removed_or_unresolved, city_looks_like_address"
+SimpleOrder,Israel,Israel,Tel Aviv,S/D,117 Hachashmonaim Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Jops,Israel,Israel,tel aviv,S/D,14 Ben ezra,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Polycoin,Israel,Israel,Even Yehuda,S/D,30 Kibbutz Galuyot,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Boxee,Israel,Israel,Tel Aviv,S/D,16 Ha'arbaa,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+GlimpseDash,Israel,Israel,Israel,S/D,Rishon LeTsiyon,Rishon Letsiyon,region_removed_or_unresolved
+syncmart,Israel,Israel,S/D,S/D,harav bloy 6,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Nanny2Go,Israel,Israel,Eilat,S/D,HaBalan Street 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Minute,Israel,Israel,tel aviv,S/D,9 hataasiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+JJF Media,Israel,Israel,Ramat,S/D,32 Tuval,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Spikko,Israel,Israel,Tel Aviv,S/D,3 Menorat HaMaor,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Big Link,Israel,Israel,Tel Aviv,S/D,2233,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Healables - Biotech,Israel,Israel,Jerusalem,S/D,"ניסן ב""ק","ניסן ב""ק",region_removed_or_unresolved
+Mantis Vision,Israel,Israel,Petah Tikva,S/D,24 Imber,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wispa,Israel,Israel,Tel Aviv,S/D,262 HaYarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VeedyBox,Israel,Israel,Herzliya,S/D,HaMenofim 8,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Arideas,Israel,Israel,Ashdod,S/D,26 HaTsiyonut,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mekomy,Israel,Israel,Herzliya,S/D,14 HaZeitim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Juno Lab,Israel,Israel,Tel Aviv,S/D,Menachem Begin Road 23,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nicevend,Israel,Israel,Petah Tikva,S/D,12 modiin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Spirala,Israel,Israel,Tel Aviv,S/D,5 Sderot HaVatikim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BioGaming,Israel,Israel,Tel Aviv,S/D,4 HaNehoshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Comeet,Israel,Israel,123,S/D,Derech Menachem Begin 121,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Appsfire,Israel,Israel,Tel Aviv,S/D,195 Ibn Gvirol,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Continuse Biometrics,Israel,Israel,Tel Aviv,S/D,Kiryat Atidim,Kiryat Atidim,region_removed_or_unresolved
+Nanosynex,Israel,Israel,Tel Aviv,S/D,Hovevei Tsiyon Street 22,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PostAround me,Israel,Israel,Tel Aviv,S/D,2 Bitsaron,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wave Guard Technologies,Israel,Israel,Kfar,S/D,25 Hataas,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BioControl Medical,Israel,Israel,Yehud,S/D,3 Avraham Giron,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AppendAd,Israel,Israel,Tel Aviv,S/D,14 Nahmani,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sababa,Israel,Israel,Eilat,S/D,HaBalan Street 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Medicamind Connections,Israel,Israel,Netanya,S/D,2 Hamelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ecoloox,Israel,Israel,Ashkelon,S/D,10 Hagdud Haivri,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tbus,Israel,Israel,Jerusalem,S/D,Nerot Shabat St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+B-Shoe,Israel,Israel,Israel,S/D,Haifa,Haifa,region_removed_or_unresolved
+Zizio,Israel,Israel,Tel Aviv,S/D,14 Raoul Wallenberg,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TeleMessage,Israel,Israel,Mefalsim,S/D,17 Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Signcopa Technologies,Israel,Israel,Givat Ela,S/D,10 Dan,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Solvesting,Israel,Israel,Tel Aviv,S/D,7 Atidim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Oribi,Israel,Israel,Barzel Street 33,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Emmett Global,Israel,Israel,Jerusalem,S/D,619 Adam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Landbridge,Israel,Israel,Jerusalem,S/D,1 HaMagid,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Celebrator,Israel,Israel,Herzliya,S/D,22 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Traido,Israel,Israel,Tel Aviv,S/D,13 Shocken,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Feng-GUI,Israel,Israel,Rehovot,S/D,11 Yehiel Paldi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+OwnBackup,Israel,Israel,Herzliya,S/D,Arye Shenkar Street 13,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nurego,Israel,Israel,Herztelya,S/D,1 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Homie,Israel,Israel,Tel Aviv,S/D,36 Frug,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+3dInteractive,Israel,Israel,Tel Aviv,S/D,12 Nahliel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Hardenite,Israel,Israel,S/D,S/D,27 Maskit st. Herzeliya,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Lessoons,Israel,Israel,Petah Tikva,S/D,72 Zeev Orlov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+indeni,Israel,Israel,Tel Aviv,S/D,Isserles St 22,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LiFeBond,Israel,Israel,Israel,S/D,Caesarea Maritima,Caesarea Maritima,region_removed_or_unresolved
+PalTip,Israel,Israel,Tel Aviv,S/D,Derech Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zazoo,Israel,Israel,Netanya,S/D,7 Giborei Israel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+rebookey.com,Israel,Israel,Even Yehuda,S/D,HaDekel 20,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DMWay Analytics,Israel,Israel,Jerusalem,S/D,Hebron Road 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Make A Point,Israel,Israel,Tel,S/D,Yossef Hanessi 12,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CliniCrowd,Israel,Israel,All,S/D,BE,Be,region_removed_or_unresolved
+Amenity Analytics,Israel,Israel,Sivim St 30,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Qwilt,Israel,Israel,Hod HaSharon,S/D,8 HaNagar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+The Jerusalem Gift Shop,Israel,Israel,Jerusalem,S/D,7 Yoel Moshe Solomon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Praxell Inc,Israel,Israel,Rehovot,S/D,1 Hamada,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TicTacTi,Israel,Israel,Tel Aviv,S/D,19 Tel Aviv Port,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+CUPS,Israel,Israel,Tel Aviv,S/D,2 HaShfela,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Shmuli Goldberg,Israel,Israel,S/D,S/D,3 HaNehoshet Street,S/D,"city_removed_or_unresolved, city_looks_like_address"
+TheHomeFixers,Israel,Israel,Har Street 1,S/D,Tsela ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+RevenueStream,Israel,Israel,Hertzliyya,S/D,69 Habanim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Caaresys,Israel,Israel,Hassida 6,S/D,Ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+WORKCAPITAL,Israel,Israel,Bnei Brak,S/D,Kinneret Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Meganeev Studios,Israel,Israel,Rishon Lezion,S/D,6 Moshe Sharet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Life-Beam Technologies,Israel,Israel,Tel Aviv,S/D,24 Rothschild,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TOMODO,Israel,Israel,Tel Aviv,S/D,2 Tushiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Manage Your Trip Ltd,Israel,Israel,נתניה,S/D,David Pinkas 45,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Actus Digital,Israel,Israel,Tel Aviv,S/D,24 Raoul Wallenberg,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Online Content Manager,Israel,Israel,תל אביב יפו,S/D,מנחם בגין 37,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ruckus Wireless,Israel,Israel,Netanya,S/D,7 Sderot Giborei Israel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iMingle,Israel,Israel,Tel Aviv,S/D,Hana and Mordekhai Veisser,S/D,"region_removed_or_unresolved, city_removed_or_unresolved"
+We-Test,Israel,Israel,hadera,S/D,11 asher peled,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Exigence Ltd.,Israel,Israel,2 Mishol Hauzrad St. Jerusalem,S/D,13,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Weepsi LTD,Israel,Israel,Netivot,S/D,Eli Sinai 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Guiderr,Israel,Israel,Tel Aviv,S/D,Einstein Street 86,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BeyondVerbal,Israel,Israel,tel,S/D,125 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Doorbellz,Israel,Israel,Tel Aviv,S/D,136 Rotchild st,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+U GIVE STARS,Israel,Israel,Hod Ha Sharon,S/D,41 Ben Gurion,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+BuddyGuards,Israel,Israel,TEL AVIV,S/D,7 Bar Yochai,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+LiveU,Israel,Israel,Kfar Saba,S/D,5 HaGavish,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Appixia Mobile Commerce,Israel,Israel,Ramat Gan,S/D,7 Abba Hillel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Moving Life,Israel,Israel,Kadima Tzoran,S/D,HaOfe Street 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Xjet Solar,Israel,Israel,Rehovot,S/D,14 Prof. Hillel Vehanan Oppenheimer,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Farmigo,Israel,Israel,Tel Aviv,S/D,Prof. Schorr Street 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Challengio,Israel,Israel,Tel Aviv,S/D,14 Isserles,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+All My Faves,Israel,Israel,Tel Aviv,S/D,39 Bilu,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Anoomi,Israel,Israel,Tel Aviv,S/D,38 Bloch,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gaonic,Israel,Israel,Ra'anana,S/D,HaTa'asiya Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Zerto,Israel,Israel,Herzliya,S/D,2 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Trustware,Israel,Israel,Tel Aviv,S/D,2 HaNehoshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Invoice Ninja,Israel,Israel,Pardes Chana,S/D,10 HaOranim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Funtomic,Israel,Israel,Ramat Gan,S/D,5 Hahilazon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Stealth,Israel,Israel,Eilat,S/D,HaBalan St 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cyabra,Israel,Israel,Tel Aviv,S/D,Sderot Rothschild 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cedato,Israel,Israel,Hod Hasharon,S/D,HaNagar,Hanagar,region_removed_or_unresolved
+Total Media,Israel,Israel,Ramat Gan,S/D,14 a Aba Hilel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+OvuCon,Israel,Israel,Kiryat Ono,S/D,Montefiore Street 19,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Uponit,Israel,Israel,Tel Aviv,S/D,Ahad Ha'Am Street 9,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Loom Systems,Israel,Israel,Tel Aviv,S/D,Yigal Alon 114,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Greenbox,Israel,Israel,Tel Aviv,S/D,120 Arlozorov,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kinor Knowledge Networks,Israel,Israel,Israel,S/D,Mitzpe Netofa,Mitzpe Netofa,region_removed_or_unresolved
+Moment me,Israel,Israel,Tel Aviv,S/D,34 Nahmani,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DeepCoding,Israel,Israel,Jabotinsky 2 18th floor,S/D,Atrium Tower,Atrium Tower,"region_removed_or_unresolved, region_looks_like_address"
+Lucid,Israel,Israel,Kfar Netter,S/D,Industrial Park,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+inboundli,Israel,Israel,Tel Aviv,S/D,1 Arvei Nahal Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SendnSpend,Israel,Israel,Tel Aviv,S/D,31 31 Bilu Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+InnoLap Surgical,Israel,Israel,Karmiel,S/D,17 Tchelet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+eVigilo,Israel,Israel,Netanya,S/D,2 Hamelacha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Spectoos,Israel,Israel,Sde Warburg,S/D,1 Hadarim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fanwaze,Israel,Israel,Omer,S/D,12 Alumot St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Everflow,Israel,Israel,Israel,S/D,Herzliya,Herzliya,region_removed_or_unresolved
+inQuber,Israel,Israel,Ashqelon,S/D,34 Mivza Moshe st,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MyState,Israel,Israel,Kfar Tapuah,S/D,5 hazayit st.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Replay Technologies,Israel,Israel,Tel Aviv,S/D,7 Habarzel Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SayVU,Israel,Israel,Herzliya,S/D,Sokolov Street 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Magnektik,Israel,Israel,Ramat HaSharon,S/D,Beniamini,Beniamini,region_removed_or_unresolved
+DeepR,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 65,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Maxillent,Israel,Israel,Herzliya,S/D,85 Medinat Hayehudim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wayerz Solutions,Israel,Israel,Tel Aviv,S/D,Prof. Yehezkel Kaufmann Street 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MobileMax,Israel,Israel,Herzliya,S/D,4 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Smart Sleyed,Israel,Israel,Israel,S/D,Moreshet,Moreshet,region_removed_or_unresolved
+ActivePath,Israel,Israel,Petah Tikva,S/D,Leshem,Leshem,region_removed_or_unresolved
+Kilometer.io,Israel,Israel,Herzliya,S/D,27 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TAKO,Israel,Israel,Herzliya,S/D,46107 POB.797,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Codefresh,Israel,Israel,Israel,S/D,Ramat Gan,Ramat Gan,region_removed_or_unresolved
+Eco Campus,Israel,Israel,Ramat Gan,S/D,22 Rehovot HaNahar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Maxtech Networks,Israel,Israel,Yavne,S/D,2 Haprat,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+bitJob,Israel,Israel,Tel Aviv,S/D,Elifelet St 26,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kilometer.io,Israel,Israel,Herzliya,S/D,Herzliya Pituach,Herzliya Pituach,region_removed_or_unresolved
+GeoSpotX,Israel,Israel,Tel Aviv,S/D,38 Bnei Dan,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cytegic,Israel,Israel,Tel Aviv,S/D,39 Shaul Hemelech,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Magdent,Israel,Israel,Ramat Gan,S/D,4 Bezalel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SolarEdge Technologies,Israel,Israel,Hod HaSharon,S/D,2 HaMasger,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DReino Unidoe Robotic Systems,Israel,Israel,Tirat Karmel,S/D,Etgar 1,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Car Adviser,Israel,Israel,Netanya,S/D,Rehov HaKalir,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Joggify,Israel,Israel,Tel Aviv,S/D,24 Lipsky,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VoiceItt,Israel,Israel,Ramat Gan,S/D,Dov Friedman Street 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Datorama,Israel,Israel,Tel Aviv,S/D,HaBarzel 34,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Weepo,Israel,Israel,Jerusalem,S/D,22 Simhat cohen,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SeatID,Israel,Israel,Hod Hasharon,S/D,1 Hanagar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BreezoMeter,Israel,Israel,Haifa,S/D,HaMeginim Ave 35,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Aquarius Spectrum,Israel,Israel,Netanya,S/D,8 Zoran,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Logz.io,Israel,Israel,Sira St 1,S/D,Kaf Gimel Yordei ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+MobileSpaces,Israel,Israel,Petah Tikva,S/D,7 Motta Gur,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Valseer,Israel,Israel,Tel Aviv,S/D,HaShalom Road 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Stagee,Israel,Israel,Petah Tikva,S/D,8 Hashiloach,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iOnRoad,Israel,Israel,Ramat,S/D,155 Bialik,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Covertix,Israel,Israel,Kfar Sava,S/D,2 HaNagar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+GradTrain,Israel,Israel,Jerusalem,S/D,24 Derech Chevron,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Soundudes,Israel,Israel,Tel Aviv,S/D,4 Reuven Rubin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DiViNetworks,Israel,Israel,Tel Aviv,S/D,98 Yigal Alon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lets!,Israel,Israel,Ramat Gan,S/D,20 Toval,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Appenue,Israel,Israel,Ramat Gan,S/D,Hibat Tsiyon Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TUNE,Israel,Israel,Tel Aviv,S/D,7 Nachal Ayalon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+XM Cyber,Israel,Israel,Plada St 11,S/D,Galgalei ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Meekan,Israel,Israel,Tel Aviv,S/D,124 Ibn Gvirol St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Spot IM,Israel,Israel,Tel Aviv,S/D,19 Rothschild devops.co.il,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tweezar,Israel,Israel,Ramat Gan,S/D,HaYetsira Street 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MetalCompass,Israel,Israel,Haifa,S/D,125 HaNasi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Ringya,Israel,Israel,Givatayim,S/D,37 Berdyczewski,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+YouLicense,Israel,Israel,Tel Aviv,S/D,5 Ishtori HaParhi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Totango,Israel,Israel,Tel Aviv,S/D,125 Derech Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Colu,Israel,Israel,תל אביב יפו,S/D,Har Sinai 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Implisit,Israel,Israel,Tel Aviv,S/D,35 Yehudit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Comparaboo,Israel,Israel,Tel Aviv,S/D,Har Sinai 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Gingee Games,Israel,Israel,tel aviv,S/D,2 habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cequesta Water,Israel,Israel,GAN YAVNE,S/D,3 Habrosh 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+The 6th Sense - social enterprises Ltd,Israel,Israel,Eilat,S/D,2 Rehov haNagar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+otonomic,Israel,Israel,TEL AVIV,S/D,22 SEADIA GAON,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+sweetCaptcha,Israel,Israel,tel,S/D,9 stein,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Doctome,Israel,Israel,Ramat Gan,S/D,28 Hayetzira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BlogsRelease,Israel,Israel,Netanya,S/D,7 Hamasger,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Lucy Platforms,Israel,Israel,Israel,S/D,Ramat Gan,Ramat Gan,region_removed_or_unresolved
+Bnadiv,Israel,Israel,S/D,S/D,הנגר 8 כפר סבא,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Tooveo,Israel,Israel,Holon,S/D,16 Kibutz galoyot,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Nuvo Group,Israel,Israel,Modiin,S/D,Modiin,Modi'in,region_removed_or_unresolved
+woosh Water Systems,Israel,Israel,Petach Tikva,S/D,8 Martin Gehl,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Applause,Israel,Israel,Herzliya,S/D,Galgalei HaPlada 11,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+40 Cloud,Israel,Israel,Tel Aviv,S/D,HaHarash 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Seraphim Sense,Israel,Israel,Nordia,S/D,HaAlon 29,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Meetey,Israel,Israel,Tel Aviv,S/D,72 Weizman,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VSTORY,Israel,Israel,Neve Ative,S/D,8 Naftali,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WOO,Israel,Israel,Herzliya,S/D,Maskit 15,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Widdit,Israel,Israel,Ramat Gan,S/D,12 Ben Gurion,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dragonplay,Israel,Israel,Tel Aviv,S/D,26 Ben Avigdor st.,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TUNE,Israel,Israel,Tel Aviv,S/D,Nahal Ayalon Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TvTak,Israel,Israel,Israel,S/D,Omer,Omer,region_removed_or_unresolved
+ZoZa Tree,Israel,Israel,Tel Aviv,S/D,13 Beit Oved,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Como,Israel,Israel,Ness Ziona,S/D,2 Ilan Ramon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Insightera,Israel,Israel,Petah Tikva,S/D,24 Imber,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TokenAds,Israel,Israel,Tel Aviv,S/D,9 Ehad haam,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Skybox,Israel,Israel,Israel,S/D,Herzliya,Herzliya,region_removed_or_unresolved
+MST,Israel,Israel,Israel,S/D,Yokneam Ilit,Yokneam Ilit,region_removed_or_unresolved
+Atrenity,Israel,Israel,Kfar Saba,S/D,1 HaNagar,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VisionMap,Israel,Israel,Ramat Gan,S/D,7 Derech Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WorldClass,Israel,Israel,Tel Aviv,S/D,4 Eliyahu Bachur,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tellavista,Israel,Israel,Tel Aviv,S/D,39 Levinski,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TradAir,Israel,Israel,Tel Aviv,S/D,19 HaBarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Velostrata,Israel,Israel,Netanya,S/D,HaMelacha 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+FirstImpression.io,Israel,Israel,Tel Aviv,S/D,Dubnov 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cellwize,Israel,Israel,Tel,S/D,21 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PLYmedia,Israel,Israel,Israel,S/D,Tel Aviv,Tel Aviv,region_removed_or_unresolved
+BiondVax Pharmaceuticals,Israel,Israel,Ness Ziona,S/D,Einstein Street 14,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tersus,Israel,Israel,Herzliya,S/D,16 Sderot Abba Eban,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+EyeCue,Israel,Israel,Israel,S/D,Yokneam,Yokneam,region_removed_or_unresolved
+BigPanda,Israel,Israel,Tel Aviv,S/D,Seadya Gaon 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Seculert,Israel,Israel,Petah Tikva,S/D,6 Efal,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dreame,Israel,Israel,tel aviv,S/D,13 Burla,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+D-ID,Israel,Israel,Tel Aviv,S/D,Ya'el 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MBA2GO,Israel,Israel,Tel Aviv,S/D,5 Ben Yehuda 166,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Endobetix,Israel,Israel,Karmiel,S/D,17 Tchelet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Reblaze,Israel,Israel,Herzliya,S/D,1 Sapir,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BioData,Israel,Israel,Rosh HaAyin,S/D,1 HaAvoda,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sekindo - Universal McCann,Israel,Israel,Tel Aviv,S/D,Raoul Wallenberg Street 2a,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BlazeMeter,Israel,Israel,Tel Aviv,S/D,HaUmanim 14,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+IQP Corporation,Israel,Israel,Abba Hillel,S/D,15 Zaksenberg Tower,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Primary Data,Israel,Israel,Herzilya,S/D,8 Hamanofim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Fly Money,Israel,Israel,Tel Aviv,S/D,Ben Shemen 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+QleeQ,Israel,Israel,Jerusalem,S/D,David Yellin,David Yellin,region_removed_or_unresolved
+C-True Face Recognition,Israel,Israel,Petah Tikva,S/D,2 Yehiel Drezner,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+wit-me,Israel,Israel,Herzliya,S/D,209 Wingate,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Binpress,Israel,Israel,Tel Aviv,S/D,75 Yehuda Halevy,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VEESTARS,Israel,Israel,Modiin,S/D,19 Migdal Halevanon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Kampyle,Israel,Israel,Ramat Gan,S/D,7 Derech Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ARTsys360,Israel,Israel,Rishon LeTsiyon,S/D,40 Hannah Rovina,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ReThink Pharmaceutical Technologies,Israel,Israel,Tel Aviv,S/D,Aluf Kalman Magen 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Eye Shop Direct,Israel,Israel,S/D,S/D,Margolin 19 Rishon Lezion,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Geltbox,Israel,Israel,Israel,S/D,Kfar Saba,Kfar Saba,region_removed_or_unresolved
+Expango - Tripopotamus,Israel,Israel,Israel,S/D,Petah Tikva,Petah Tikva,region_removed_or_unresolved
+Visualead,Israel,Israel,Herzliya,S/D,Galgalei HaPlada St 20,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sendemo LLC,Israel,Israel,S/D,S/D,Hapalmach 6 Kfar Tavor,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Mixtiles,Israel,Israel,Tel Aviv,S/D,23 Melchett,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cannatrix,Israel,Israel,Israel,S/D,Petah Tikva,Petah Tikva,region_removed_or_unresolved
+Continuity Software,Israel,Israel,Tel Aviv,S/D,Raoul Wallenberg Street 24,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rumble News,Israel,Israel,Tel Aviv,S/D,7 Shevah,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VBL Therapeutics,Israel,Israel,Or Yehuda,S/D,6 Yehonatan Netanyahu,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ACE Applied Cognitive Engineering,Israel,Israel,Hod Hasharon,S/D,5 Habanai street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Mellanox,Israel,Israel,Israel,S/D,Yokneam,Yokneam,region_removed_or_unresolved
+Discovering Coffee,Israel,Israel,Aluf Kalman Magen Street,S/D,WeWork,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Wix,Israel,Israel,Tel Aviv,S/D,40 Tel Aviv Port,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Convertro,Israel,Israel,Raanana,S/D,7 HaSadna,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MID/Modular Implant Design,Israel,Israel,Ra'anana,S/D,HaHaroshet Street 25,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Persona.ly,Israel,Israel,Ness Ziona,S/D,Pinhas Sapir 8,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+iChina,Israel,Israel,S/D,S/D,192 Levi Eshkul St. Kiryat Uno,S/D,"city_removed_or_unresolved, city_looks_like_address"
+sketchheroes,Israel,Israel,Tel Aviv,S/D,65 Derech Ben Tsvi,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Argus Cyber Security,Israel,Israel,Tel Aviv,S/D,24 Raoul Wallenberg,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+RailVision,Israel,Israel,Ra'anana,S/D,HaTidhar Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Takoomi,Israel,Israel,Tel Aviv,S/D,5 haarad,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Healables,Israel,Israel,33,S/D,Yisra'el Zarkhi Street 88,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Neura,Israel,Israel,Herzliya,S/D,El Al 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+MARKS,Israel,Israel,Ahad Ha'Am Street,S/D,Mindspace Ahad Ha'am,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+ZEFO,Israel,Israel,YETSIRA,S/D,28 HA,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+GetStocks,Israel,Israel,Tel Aviv,S/D,Allenby St 103,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Wapit,Israel,Israel,netanya,S/D,7 giborei israel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tube-Eye Medical,Israel,Israel,Sderot,S/D,Derech HaAliya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+BiFlow Medical,Israel,Israel,Israel,S/D,Nazareth,Nazareth,region_removed_or_unresolved
+SkyGiraffe,Israel,Israel,Herzliya,S/D,32 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rumble,Israel,Israel,Tel Aviv,S/D,Shevah 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sparkly,Israel,Israel,Ramat Hasharon,S/D,HaEtsel Street 4,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+RePark Social Parking,Israel,Israel,tel aviv,S/D,10 tushiya,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Folloyu,Israel,Israel,Israel,S/D,Even Yehuda,Even Yehuda,region_removed_or_unresolved
+Opinimize,Israel,Israel,Tel Aviv,S/D,10 Hertzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+QuickRing,Israel,Israel,Israel,S/D,Haifa,Haifa,region_removed_or_unresolved
+Fundbox,Israel,Israel,Levi Street 23,S/D,Yehuda ha,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+Nova Plasma Ltd.,Israel,Israel,Israel,S/D,Kibbutz Megiddo,Kibbutz Megiddo,region_removed_or_unresolved
+Mavrik Dental Systems,Israel,Israel,Ra'anana,S/D,HaHaroshet Street 25,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+GetApplicant,Israel,Israel,Tel Aviv,S/D,1 Soon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+IQTELL,Israel,Israel,Modi'in,S/D,HaMa'ayan,Hama'ayan,region_removed_or_unresolved
+LogiTag Systems,Israel,Israel,Netanya,S/D,2 Hamelacha St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dooblo,Israel,Israel,Kfar Saba,S/D,20 HaTaas,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PTech HM,Israel,Israel,Ramat Yishai,S/D,Tsaftsafa St,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Artbit,Israel,Israel,Tel Aviv,S/D,Gershon Shatz Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Atlis Labs,Israel,Israel,Tel Aviv,S/D,6 Hanechoshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Commun it,Israel,Israel,tel aviv,S/D,32 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DAU-UP,Israel,Israel,Tel Aviv,S/D,HaBarzel St 21,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SNEEZZ,Israel,Israel,Tel Aviv,S/D,Ben Tsiyon Blvd 34,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+TIPIT,Israel,Israel,Ra'anana,S/D,HaHaroshet 19,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SRP Analytics,Israel,Israel,Caesarea,S/D,Khalamish Street 15,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Roundforest,Israel,Israel,Jerusalem,S/D,Hartom Street 19,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Farm Dog,Israel,Israel,Israel,S/D,Herzliya,Herzliya,region_removed_or_unresolved
+CoderZ,Israel,Israel,Rosh Haayin,S/D,HaMelacha Street 13,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Cadabra Gifts,Israel,Israel,Israel,S/D,Haifa,Haifa,region_removed_or_unresolved
+Kido Games Studio,Israel,Israel,Tel Aviv,S/D,32 Ben Yoseph Shlomo 23,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ExceeMatrix,Israel,Israel,Or Yehuda,S/D,26 HaHaroshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DigiFlex,Israel,Israel,Kfar Saba,S/D,6 Yad Harutzim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Payoneer,Israel,Israel,Petah Tikva,S/D,HaMagshimim St 6,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Hargol FoodTech (Steak TzarTzar),Israel,Israel,Tchelet Street 17,S/D,Misgav Regional Council,Misgav Regional Council,"region_removed_or_unresolved, region_looks_like_address"
+Dragonera,Israel,Israel,Ramat Gan,S/D,Jabotinski 2,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+EVR Motors,Israel,Israel,Petah Tikva,S/D,Baltimore Street 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Checkmarx,Israel,Israel,round building,S/D,20 Azrieli Center,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, region_looks_like_address, city_looks_like_address"
+SlidePiper,Israel,Israel,Tel Aviv,S/D,Ahad Ha'Am Street 54,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Crowdx,Israel,Israel,Tel Aviv,S/D,6 Hanechoshet,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+sCoolTV,Israel,Israel,Tel Aviv,S/D,5 Har Sinai,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SkillsIn,Israel,Israel,Tel Aviv,S/D,21 Rotschild Boulevard,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Trekking-in,Israel,Israel,Tel Aviv,S/D,2 Rabenu Yeruham,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+VisoMall,Israel,Israel,Ashdod,S/D,36 Exodus 26,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Adoptim,Israel,Israel,Tel Aviv,S/D,Rothschild Boulevard 45,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+securithings,Israel,Israel,רמת גן,S/D,בצלאל 3,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Sunset Games,Israel,Israel,Tel Aviv,S/D,4 Kaufman,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+ConvertMedia,Israel,Israel,Ramat Gan,S/D,Shoham St 5,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Guesty,Israel,Israel,Tel Aviv,S/D,Nahmani Street 22,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Pluralis,Israel,Israel,Tel Aviv,S/D,39 HaMasger,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Enjoiners,Israel,Israel,Tel Aviv,S/D,13 Florentin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+DizziPay Holdings LTD,Israel,Israel,S/D,S/D,85 Medinat HaYehudim St. Herzliya,S/D,"city_removed_or_unresolved, city_looks_like_address"
+Avraham Pharma,Israel,Israel,Yavne,S/D,42 Hayarkon,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Social Paragraph,Israel,Israel,Tel Aviv,S/D,7 Wiesel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+SurfingHub,Israel,Israel,Ashdod,S/D,13 Jerusalem ave,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PayItSimple,Israel,Israel,Herzliya,S/D,3 Hamaapilim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Codewalker,Israel,Israel,Tel Aviv,S/D,45 Florentin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Dynamic Yield,Israel,Israel,Tel Aviv,S/D,Eliezer Kaplan 8,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Learni,Israel,Israel,Raanana,S/D,17 aruza,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+PlayCative,Israel,Israel,tel aviv,S/D,4 Brandeis,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Rentitb,Israel,Israel,Tel,S/D,90 Menachem Begin,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Swifto,Israel,Israel,Herzliya,S/D,15 Maskit,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Xuntes,Israel,Israel,Tel Aviv,S/D,31 Habarzel,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+WRNTY,Israel,Israel,Raanana,S/D,8 Hasadna,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Brandefender,Israel,Israel,Tel Aviv,S/D,Nahalat Binyamin 52,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+NodeSquad,Israel,Israel,Ramat Gan,S/D,Jabotinsky 7,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Tutorialize,Israel,Israel,Holon,S/D,35 HaMaapilim,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Infinity Augmented Reality,Israel,Israel,Petah Tikva,S/D,Mota Gur Street,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+Giraffic Technologies,Israel,Israel,Tel,S/D,1 Kaf Gimel Yordei HaSira,S/D,"region_removed_or_unresolved, city_removed_or_unresolved, city_looks_like_address"
+AgroNova Test,D Brasil,Brasil,SP,S/D,São Paulo,São Paulo,region_removed_or_unresolved
+BioLoop Inventada,Argentina / Brasil,S/D,S/D,S/D,Capital Federal,Capital Federal,"country_lost_during_normalization, country_contains_multiple_values"
