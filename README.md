@@ -1,178 +1,150 @@
-# 🏛️ LODO - Plataforma de Gestión de Startups
+# 🏛️ LODO – Startup Ecosystem Platform (Cloud Native)
 
-LODO es una solución **Full Stack** diseñada para la visualización y gestión de ecosistemas de startups.  
-La arquitectura está construida bajo estándares de **alta disponibilidad, seguridad y escalabilidad**, utilizando **Google Cloud Platform** como infraestructura principal.
+> Full stack platform deployed on Google Cloud, designed with scalability, security and DevOps practices.
 
-La plataforma permite centralizar información de startups, facilitando su gestión, visualización y escalabilidad dentro de un ecosistema tecnológico moderno.
-
----
-
-# 🛠️ Tecnologías Principales
-
-- **Frontend:** React (Vite) + Tailwind CSS + Radix UI  
-- **Backend:** Go 1.24 (Clean Architecture)  
-- **Infraestructura:** Google Cloud Run, Artifact Registry, Cloud SQL (MariaDB)  
-- **Contenerización:** Docker & Docker Compose  
-- **Servidor Web:** Nginx
+🔗 **Live demo:**
+https://lodo-frontend-412424314458.southamerica-east1.run.app/map
 
 ---
 
-# 🏗️ Arquitectura y Seguridad
+## 📌 Description
 
-## Gestión de Configuración (Senior Approach)
+LODO is a full stack platform designed to manage and visualize startup ecosystems.
 
-### Backend
+The system centralizes startup data, enabling scalable management and visualization within a modern cloud-native architecture.
 
-El backend implementa un flujo **agnóstico de configuración**, evitando dependencias directas de archivos `.env` en producción.
+---
 
-- Utiliza variables de entorno mediante `os.Getenv`
-- Permite integrarse con sistemas de gestión de secretos
-- Mejora la seguridad y portabilidad entre entornos
+## 🚀 What this project demonstrates
+
+* ✔️ Full stack development (React + Go)
+* ✔️ Cloud deployment on Google Cloud Platform
+* ✔️ Containerization with Docker
+* ✔️ CI/CD deployment workflows
+* ✔️ Scalable architecture with Cloud Run
+* ✔️ Secure configuration management
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
 
-El frontend utiliza **inyección de variables en tiempo de compilación (build-time args)**.
+* React (Vite)
+* Tailwind CSS
+* Radix UI
 
-- La URL de la API se define durante el build
-- Evita exponer secretos en el cliente
-- Los valores quedan integrados en los assets estáticos generados por Docker
+### Backend
 
----
+* Go (Clean Architecture)
 
-## Servidor de Producción (Nginx)
+### Cloud & Infrastructure
 
-El frontend se sirve mediante **Nginx como servidor web de grado industrial**.
+* Google Cloud Run
+* Artifact Registry
+* Cloud SQL (MariaDB)
 
-Configuración clave:
+### DevOps
 
-- Manejo de rutas SPA mediante `try_files`
-- Evita errores `404` al refrescar rutas internas
-- Optimiza la entrega de archivos estáticos
-
----
-
-# 📦 Infraestructura en Google Cloud
-
-La plataforma se despliega completamente en **Google Cloud Platform**.
-
-Componentes principales:
-
-- **Cloud Run** → ejecución de servicios backend y frontend en contenedores
-- **Artifact Registry** → almacenamiento de imágenes Docker
-- **Cloud SQL (MariaDB)** → base de datos relacional administrada
-- **Docker** → empaquetado y portabilidad de servicios
-
-Esta arquitectura permite:
-
-- Escalado automático
-- Alta disponibilidad
-- Despliegue reproducible
+* Docker
+* Docker Compose
+* Nginx
 
 ---
 
-# 🗂️ Estructura del Proyecto
+## ⚙️ Architecture Overview
+
+* Frontend SPA served via Nginx
+* Backend REST API built in Go
+* Managed relational database (Cloud SQL)
+* Containerized services deployed on Cloud Run
+
+---
+
+## 🔒 Configuration & Security
+
+### Backend
+
+* Environment variables via `os.Getenv`
+* No direct dependency on `.env` files in production
+* Ready for secret managers
+
+### Frontend
+
+* Build-time environment injection
+* No exposure of sensitive data in client-side code
+
+---
+
+## ☁️ Cloud Infrastructure (GCP)
+
+* **Cloud Run** → container execution
+* **Artifact Registry** → Docker images
+* **Cloud SQL** → managed database
+
+### Key features:
+
+* Auto-scaling
+* High availability
+* Reproducible deployments
+
+---
+
+## 🗂️ Project Structure
 
 ```
 lodo/
-│
-├── frontend/           # Aplicación React
-│
-├── backend/            # API en Go (Clean Architecture)
-│
-├── docker/             # Configuración de contenedores
-│
-├── docker-compose.yml  # Orquestación local
-│
+├── frontend/
+├── backend/
+├── docker/
+├── docker-compose.yml
 └── README.md
 ```
 
 ---
 
-# 💻 Desarrollo Local
-
-Para levantar todo el ecosistema localmente (Frontend, Backend y Base de Datos):
-
-### 1️⃣ Requisitos
-
-Instalar previamente:
-
-- Docker Desktop
-- Docker Compose
-
-### 2️⃣ Ejecutar el proyecto
+## 💻 Local Development
 
 ```bash
 docker-compose up --build
 ```
 
-Esto levantará automáticamente todos los servicios del entorno local.
+---
+
+## 🖥️ Services
+
+| Service  | URL                   |
+| -------- | --------------------- |
+| Frontend | http://localhost      |
+| Backend  | http://localhost:8080 |
 
 ---
 
-# 🖥️ Servicios Locales
+## 🚀 Deployment
 
-Una vez ejecutado el entorno con Docker Compose, los servicios estarán disponibles en:
+Deployment is based on immutable Docker images stored in Artifact Registry.
 
-| Servicio | URL / Puerto |
-|--------|--------|
-| Frontend | http://localhost (Puerto 80) |
-| Backend | http://localhost:8080 |
-| Base de Datos | Puerto 3307 (interno 3306) |
+Example:
 
----
-
-# 🚀 Despliegue (CI/CD)
-
-El despliegue se basa en **imágenes inmutables almacenadas en Artifact Registry**, permitiendo despliegues seguros, versionados y reproducibles.
-
-## Políticas de Limpieza
-
-Se han configurado **políticas de limpieza automática en Google Cloud** para mantener únicamente las **últimas 5 versiones de cada servicio**, lo que permite:
-
-- Optimizar el almacenamiento
-- Reducir costos
-- Mantener puntos de restauración seguros
-
----
-
-## Comandos de Despliegue
-
-Ejemplo de despliegue manual desde **PowerShell**:
-
-```powershell
-# Ejemplo para Frontend v5
-
-docker build --build-arg VITE_API_URL=https://tu-api.run.app -t gcr.io/proyecto/front:v5 .
-
-docker push gcr.io/proyecto/front:v5
-
-gcloud run services update lodo-frontend --image gcr.io/proyecto/front:v5
+```bash
+docker build -t gcr.io/project/frontend:v1 .
+docker push gcr.io/project/frontend:v1
+gcloud run services update lodo-frontend --image gcr.io/project/frontend:v1
 ```
 
-Este flujo permite:
+---
 
-1. Construir la imagen Docker
-2. Subirla a Artifact Registry
-3. Actualizar el servicio en Cloud Run
+## 🔐 Repository Security
+
+* Secrets excluded via `.gitignore`
+* No sensitive data committed
+* Production-ready structure
 
 ---
 
-# 🔒 Seguridad de Repositorio
+## 👨‍💻 Authors
 
-El archivo `.gitignore` está configurado estrictamente para proteger información sensible.
-
-Elementos protegidos:
-
-- Archivos de secretos `.env`
-- Llaves de servicio de Google Cloud (`service_account.json`)
-- Dependencias locales (`node_modules`, `vendor`)
-- Binarios generados
-- Datos persistentes de la base de datos local (`lodo_db_data/`)
-
-Esto asegura que **credenciales, datos sensibles y artefactos locales no se filtren al repositorio**.
-
----
-
-# 👨‍💻 Autores
-
-**Leonel Valdivia - Martín López - Gabriel Macocco - Emiliano Rodríguez**
+Leonel Valdivia
+Martín López
+Gabriel Macocco
+Emiliano Rodríguez
